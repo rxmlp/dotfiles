@@ -1,0 +1,91 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "top",
+  "control-center-layer": "top",
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "notification-window-width": 400,
+  "keyboard-shortcuts": true,
+  "image-visibility": "always",
+  "transition-time": 200,
+  "hide-on-clear": true,
+  "hide-on-action": true,
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-left": 0,
+  "control-center-width": 600,
+  "control-center-height": 600,
+  "notification-window-width": 500,
+  "notification-visibility": {
+    "Cider": {
+      "state": "muted",
+      "urgency": "Low",
+      "app-name": "Cider"
+    },
+    "cider": {
+      "state": "muted",
+      "urgency": "Low",
+      "app-name": "cider"
+    },
+    "Cider2": {
+      "state": "muted",
+      "urgency": "Low",
+      "app-name": "Cider2"
+    },
+    "cider2": {
+      "state": "muted",
+      "urgency": "Low",
+      "app-name": "cider2"
+    }
+  },
+  "widgets": [
+    "menubar",
+    "dnd",
+    "notifications",
+    "mpris"
+  ],
+  "widget-config": {
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 12
+    },
+    "menubar": {
+      "label": "Notifications",
+      "menu#power-buttons": {
+        "label": "⏼",
+        "position": "right",
+        "actions": [
+          {
+            "label": "   Reboot",
+            "command": "systemctl reboot"
+          },
+          {
+            "label": "   Lock",
+            "command": "swaylock -f --image ~/.config/hypr/wall/b-250.jpg"
+          },
+          {
+            "label": "   Shut down",
+            "command": "systemctl poweroff"
+          }
+        ]
+      },
+      "buttons#topbar-buttons": {
+        "position": "left",
+        "actions": [
+          {
+            "label": "",
+            "command": "easyeffects"
+          },
+          {
+            "label": "🗑",
+            "command": "swaync-client -C"
+          }
+        ]
+      }
+    }
+  }
+}
