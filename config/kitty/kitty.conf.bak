@@ -1,0 +1,8 @@
+#include ./themes/Dracula.conf
+background_opacity 0.95
+
+
+# BEGIN_KITTY_THEME
+# Dracula
+include dracula-theme.conf
+# END_KITTY_THEMEz

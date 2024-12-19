@@ -29,11 +29,18 @@ git clone https://github.com/rxmlp/dotfiles.git ~/.dotfiles
 
 ```zsh
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/config/kitty ~/.config/kitty
+ln -s ~/.dotfiles/config/alacritty ~/.config/alacritty
+ln -s ~/.dotfiles/config/neofetch ~/.config/neofetch
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 
 # Hyprland
 ln -s ~/.dotfiles/config/hypr ~/.config/hypr
 ln -s ~/.dotfiles/config/hyprlauncher ~/.config/hyprlauncher
 ln -s ~/.dotfiles/config/waybar ~/.config/waybar
+ln -s ~/.dotfiles/config/swayosd ~/.config/swayosd
+ln -s ~/.dotfiles/config/swaync ~/.config/swaync
+ln -s ~/.dotfiles/config/rofi ~/.config/rofi
+
 
 ```
