@@ -1,0 +1,74 @@
+[window]
+width = 600                           # Width of the launcher window in pixels
+height = 600                          # Height of the launcher window in pixels
+anchor = "center"                     # Window position: "center", "top", "bottom", "left", "right", "top_left", "top_right", "bottom_left", "bottom_right"
+margin_top = 0                        # Margin from the top of the screen in pixels
+margin_bottom = 0                     # Margin from the bottom of the screen in pixels
+margin_left = 0                       # Margin from the left of the screen in pixels
+margin_right = 0                      # Margin from the right of the screen in pixels
+show_descriptions = false             # Show application descriptions in the list
+show_paths = false                    # Show application paths in the list
+show_icons = true                     # Show application icons in the list
+show_search = true                    # Show the search bar
+show_actions = false                  # Show additional application actions in the list
+show_border = true                    # Show window border
+border_width = 2                      # Border width in pixels
+use_gtk_colors = false                # Use GTK theme colors instead of custom colors
+use_custom_css = false                # Use custom CSS file for styling
+max_entries = 50                      # Maximum number of entries to show in the list
+
+[window.custom_navigate_keys]
+up = "k"                              # Key to move selection up
+down = "j"                            # Key to move selection down
+delete_word = "h"                     # Key to delete word in search
+
+[theme.colors]
+border = "#cba6f7"
+window_bg = "#1e1e2e"
+search_bg = "#181825"
+search_bg_focused = "#181825"
+item_bg = "#1e1e2e"
+item_bg_hover = "#181825"
+item_bg_selected = "#181825"
+search_text = "#cdd6f4"
+search_caret = "#cba6f7"
+item_name = "#cdd6f4"
+item_name_selected = "#cba6f7"
+item_description = "#a6adc8"
+item_description_selected = "#cdd6f4"
+item_path = "#6c7086"
+item_path_selected = "#cdd6f4"
+
+[theme.corners]
+window = 12
+search = 8
+list_item = 8
+
+[theme.spacing]
+search_margin = 12
+search_padding = 12
+item_margin = 6
+item_padding = 4
+
+[theme.typography]
+search_font_size = 16
+item_name_size = 14
+item_description_size = 12
+item_path_size = 12
+item_path_font_family = "monospace"
+
+[debug]
+disable_auto_focus = false            # Disable automatic keyboard focus
+enable_logging = true                # Enable application logging
+
+[dmenu]
+allow_invalid = false                 # Allow invalid entries when no matches are found
+case_sensitive = false                # Enable case-sensitive matching
+
+[web_search]
+enabled = true                       # Enable/disable web search functionality
+engine = "startpage"                 # Use preset engine name
+prefixes = []                         # Disables all custom search prefixes
+
+[calculator]
+enabled = false                       # Enable/disable calculator functionality

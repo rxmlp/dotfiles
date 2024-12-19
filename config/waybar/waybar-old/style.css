@@ -1,0 +1,195 @@
+@import "mocha.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family:
+    JetBrainsMonoNF,
+    monospace;
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 0;
+}
+
+modules-right {
+  border-radius: 10px;
+}
+
+window#waybar {
+  background: rgba(21, 18, 27, 0);
+  color: @text;
+}
+
+tooltip {
+  background: @base;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: @crust;
+}
+
+#workspaces button {
+  color: @surface0;
+}
+
+#workspaces button.active {
+  color: @surface1;
+}
+
+#workspaces button.focused {
+  color: @surface2;
+  background: @maroon;
+  border-radius: 10px;
+}
+
+#workspaces button.urgent {
+  color: @crust;
+  background: @green;
+  border-radius: 10px;
+}
+
+#workspaces button:hover {
+  background: @crust;
+  color: @text;
+  border-radius: 10px;
+}
+
+#window,
+#custom-killactive,
+#custom-launcher,
+#clock,
+#wireplumber,
+#network,
+#bluetooth,
+#workspaces,
+#tray,
+#cpu,
+#custom-gpu-usage,
+#temperature,
+#memory,
+#custom-clipboard,
+#custom-recorder,
+#custom-recorder.enabled,
+#custom-hyprpicker,
+#custom-notification,
+#backlight {
+  background: @base;
+  padding: 0px 10px;
+  margin: 3px 0px;
+  margin-top: 10px;
+  border: 1px solid @border;
+}
+
+#tray {
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+#workspaces {
+  background: @base;
+  border-radius: 10px;
+  margin-left: 10px;
+  padding-right: 0px;
+  padding-left: 5px;
+}
+
+#custom-killactive {
+  color: @red;
+  border-radius: 10px 0 0 10px;
+  border-left: 60px;
+  border-right: 0px;
+}
+
+#window {
+  border-radius: 0 10px 10px 0;
+  margin-left: 0px;
+  margin-right: 60px;
+}
+
+#clock {
+  color: @peach;
+  border-radius: 10px 10px 10px 10px;
+  margin-left: 0px;
+  margin-right: 10px;
+  border-right: 0px;
+}
+
+#custom-launcher {
+  color: @peach;
+  border-radius: 10px 10px 10px 10px;
+  padding: 0px 20px 0px 15px;
+  margin-left: 10px;
+  margin-right: 0px;
+  border-right: 0px;
+}
+
+#network {
+  color: @overlay;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#bluetooth {
+  color: @overlay;
+}
+
+#wireplumber {
+  color: @blue;
+  border-radius: 10px 0 0 10px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#custom-notification {
+  color: @blue;
+}
+
+#cpu {
+  color: @purple;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#custom-gpu-usage {
+  color: @purple;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#temperature {
+  color: @purple;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#memory {
+  color: @purple;
+  border-radius: 0 10px 10px 0;
+  margin-right: 10px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#custom-clipboard {
+  color: @purple;
+  border-radius: 10px 0 0 10px;
+  margin-right: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#custom-recorder {
+  color: @green;
+}
+
+#custom-recorder.enabled {
+  color: @red;
+}
+
+#custom-hyprpicker {
+  color: @purple;
+  border-radius: 0 10px 10px 0;
+  margin-right: 10px;
+  border-left: 0px;
+  border-right: 0px;
+}

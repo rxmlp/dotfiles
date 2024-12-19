@@ -1,0 +1,163 @@
+{
+    "output": "DP-1",
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 0,
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces",
+        "tray"
+    ],
+    "modules-center": [
+    "clock"
+    ],
+    "modules-right": [
+        "custom/clipboard",
+        "custom/hyprpicker",
+        "wireplumber",
+        "custom/notification",
+        "network",
+        "bluetooth"
+    ],
+
+    "custom/hyprpicker": {
+        "format": "󰌁",
+        "on-click": "hyprpicker -a",
+        "tooltip": false
+    },
+
+    "custom/recorder": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/recorder-check",
+        "on-click": "~/.config/waybar/scripts/recorder-switch",
+        "return-type": "json",
+        "signal": 12
+    },
+
+    "custom/clipboard": {
+        "format": "",
+        "on-click": "clipman pick -t rofi",
+        "tooltip": false
+    },
+
+    "hyprland/window": {
+        "format": "{}"
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace m+1",
+        "on-scroll-down": "hyprctl dispatch workspace m-1",
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": []
+        },
+        "format-icons": {
+          "active": "󰮯",
+          "empty": "",
+          "default": ""
+        }
+    },
+
+    "custom/launcher": {
+        "interval": "once",
+        "format": "",
+        "on-click": "pkill rofi || rofi -show drun",
+        "on-click-right": "bash ~/.config/waybar/scripts/power-menu/powermenu.sh",
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+    "clock": {
+        "format": " {:%H:%M}",
+        "format-alt": "󰃭 {:%d·%m·%y}",
+        "on-click-right": "mode",
+        "tooltip": false
+    },
+
+    "wireplumber": {
+        "format": "{icon}  {volume}%",
+      	"on-scroll-up": "swayosd-client --output-volume 5",
+      	"on-scroll-down": "swayosd-client --output-volume -5",
+        "tooltip": false,
+        "format-muted": " Muted",
+	    "on-click": "swayosd-client --output-volume mute-toggle",
+        "on-click-right": "pavucontrol",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "custom/nm-applet": {
+        "name": "custom/nm-applet",
+        "exec": "nm-applet",
+        "click-left": "nm-connection-editor",
+        "tooltip": "Network",
+        "return-type": "none"
+    },
+
+    "network": {
+        "tooltip": true,
+        "format-wifi": " ",
+        "rotate": 0,
+        "on-click-right": "bash ~/.config/waybar/scripts/rofi-wifi-menu.sh",
+        "format-ethernet": "󰈀 ",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "interval": 2
+    },
+    
+	"bluetooth": {
+		"format": " {status}",
+		"format-disabled": " off",
+		"format-connected": " {num_connections}",
+		"tooltip-format": "{device_alias}",
+		"tooltip-format-connected": " {device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "~/.config/waybar/scripts/rofi-bluetooth &"
+	},
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+        "notification": "<span foreground='red'><small><sup>𑗊</sup></small></span>",
+        "none": " ",
+        "dnd-notification": "<span foreground='red'><small><sup>𑗊</sup></small></span>",
+        "dnd-none": " "
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "sleep 0.1 && swaync-client -t -sw",
+        "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+        "escape": true
+    }
+
+}
