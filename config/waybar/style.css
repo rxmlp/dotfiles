@@ -158,7 +158,7 @@ tooltip {
 #custom-gpu-usage {
   color: @purple;
   border-radius: 10px 0 0 10px;
-  margin-left: 10px;
+  margin-right: 0px;
   border-left: 0px;
   border-right: 0px;
 }
