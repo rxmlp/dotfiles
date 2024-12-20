@@ -1,23 +1,26 @@
 
+# These might be a mess but ehh they work for me
+Don't come crying if these dotfiles are shit, I made it so it works for my day to day.
 
-# Chaotic aur (optional)
-```# We start by retrieving the primary key to enable the installation of our keyring and mirror list:
-```
+
+
+1. Chaotic aur (optional)
+
+We start by retrieving the primary key to enable the installation of our keyring and mirror list:
 ```zsh
 pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 pacman-key --lsign-key 3056513887B78AEB
 pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
 pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 ```
-```# Then, we append (adding at the end) the following to /etc/pacman.conf:
-```
+
+Then, we append (adding at the end) the following to /etc/pacman.conf:
 ```zsh
 [chaotic-aur]
 Include = /etc/pacman.d/chaotic-mirrorlist
 ```
 
-
-1. Install essentials
+2.  Installing a few things...
 
 ```zsh
 sudo pacman -S yay zsh git
@@ -28,18 +31,9 @@ sudo pacman -S yay zsh git
 chsh -s $(which zsh)
 ```
 
-2.  Clone repo into new hidden directory.
-
 ```zsh
-# Use SSH (if set up)...
-git clone git@github.com:rxmlp/dotfiles.git ~/.dotfiles
+yay -S hyprland-git hyprlock-git hypridle-git hyprutils-git hyprgraphics-git hyprcursor-git hyprwayland-scanner-git hyprpicker-git xdg-desktop-portal-hyprland-git hyprland-qtutils-git xdg-desktop-portal-gtk xdg-desktop-portal-wlr-git wl-clipboard clipman waybar waybar-module-pacman-updates-git swaync swayosd-git rofi-wayland kitty jq grim slurp grimblast-git hyprpaper-git qt5ct sddm catppuccin-cursors-mocha hyprpolkitagent-git hyprlauncher-bin 
 ```
-
-```zsh
-# ...or use HTTPS and switch remotes later.
-git clone https://github.com/rxmlp/dotfiles.git ~/.dotfiles
-```
-
 
 3. Create symlinks in the Home directory to the real files in the repo.
 
