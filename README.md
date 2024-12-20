@@ -3,8 +3,16 @@
 Don't come crying if these dotfiles are shit, I made it so it works for my day to day.
 
 
+1. Kinda need git for to clone and yay for last
+```zsh
+sudo pacman -S yay git
+```
+```zsh
+git clone git@github.com:rxmlp/dotfiles.git ~/.dotfiles
+```
 
-1. Chaotic aur (optional)
+
+2. Chaotic aur (optional)
 
 We start by retrieving the primary key to enable the installation of our keyring and mirror list:
 ```zsh
@@ -20,20 +28,6 @@ Then, we append (adding at the end) the following to /etc/pacman.conf:
 Include = /etc/pacman.d/chaotic-mirrorlist
 ```
 
-2.  Installing a few things...
-
-```zsh
-sudo pacman -S yay zsh git
-```
-
-```zsh
-# Set zsh as default
-chsh -s $(which zsh)
-```
-
-```zsh
-yay -S hyprland-git hyprlock-git hypridle-git hyprutils-git hyprgraphics-git hyprcursor-git hyprwayland-scanner-git hyprpicker-git xdg-desktop-portal-hyprland-git hyprland-qtutils-git xdg-desktop-portal-gtk xdg-desktop-portal-wlr-git wl-clipboard clipman waybar waybar-module-pacman-updates-git swaync swayosd-git rofi-wayland kitty jq grim slurp grimblast-git hyprpaper-git qt5ct sddm catppuccin-cursors-mocha hyprpolkitagent-git hyprlauncher-bin 
-```
 
 3. Create symlinks in the Home directory to the real files in the repo.
 
@@ -51,6 +45,16 @@ ln -s ~/.dotfiles/config/waybar ~/.config/waybar
 ln -s ~/.dotfiles/config/swayosd ~/.config/swayosd
 ln -s ~/.dotfiles/config/swaync ~/.config/swaync
 ln -s ~/.dotfiles/config/rofi ~/.config/rofi
+```
 
 
+4.  Installing a few things...
+
+```zsh
+yay -S hyprland-git hyprlock-git hypridle-git hyprutils-git hyprgraphics-git hyprcursor-git hyprwayland-scanner-git hyprpicker-git xdg-desktop-portal-hyprland-git hyprland-qtutils-git xdg-desktop-portal-gtk xdg-desktop-portal-wlr-git wl-clipboard clipman waybar waybar-module-pacman-updates-git swaync swayosd-git rofi-wayland kitty zsh jq grim slurp grimblast-git hyprpaper-git qt5ct sddm catppuccin-cursors-mocha hyprpolkitagent-git hyprlauncher-bin nvtop
+```
+
+```zsh
+# Set zsh as default
+chsh -s $(which zsh)
 ```
