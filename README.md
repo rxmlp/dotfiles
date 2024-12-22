@@ -54,7 +54,7 @@ ln -s ~/.dotfiles/config/rofi ~/.config/rofi
 yay -S hyprland-git hyprlock-git hypridle-git hyprutils-git hyprgraphics-git hyprcursor-git hyprwayland-scanner-git hyprpicker-git xdg-desktop-portal-hyprland-git hyprland-qtutils-git xdg-desktop-portal-gtk xdg-desktop-portal-wlr-git wl-clipboard clipman waybar waybar-module-pacman-updates-git swaync swayosd-git rofi-wayland kitty zsh jq grim slurp grimblast-git hyprpaper-git qt5ct sddm catppuccin-cursors-mocha hyprpolkitagent-git hyprlauncher-bin nvtop
 ```
 
+Set zsh as default
 ```zsh
-# Set zsh as default
 chsh -s $(which zsh)
 ```
