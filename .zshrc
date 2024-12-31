@@ -118,17 +118,17 @@ alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' 
 alias yay="yay --color=always" # Yay always color
 
 # Alias's for multiple directory listing commands
-alias ls='lsd' # Use lsd insead of ls
-alias la='lsd -Alh' # show hidden files
-alias lsa='lsd -aFh' # add colors and file type extensions
-alias lx='lsd -lXBh' # sort by extension
-alias lk='lsd -lSrh' # sort by size
-alias lka='lsd -AlSrh' # sort by size | show hidden files
-alias lr='lsd -lRh' # recursive ls
-alias lt='lsd -ltrh' # sort by date
-alias lf="lsd -l | egrep -v '^d'" # files only
-alias ldir="lsd -l | egrep '^d'" # directories only
-alias lz="lsd *.zip *.tgz *.zst *.gz *.tar *.spk *.jar *.vlt *.txz *.xz" # Search for these files
+alias ls='eza --icons --color=always' # Use lsd insead of ls
+alias la='eza --icons --color=always -Alh' # show hidden files
+alias lsa='eza --icons --color=always -aFh' # add colors and file type extensions
+alias lx='eza --icons --color=always -lXBh' # sort by extension
+alias lk='eza --icons --color=always -lSrh' # sort by size
+alias lka='eza --icons --color=always -AlSrh' # sort by size | show hidden files
+alias lr='eza --icons --color=always -lRh' # recursive ls
+alias lt='eza --icons --color=always -ltrh' # sort by date
+alias lf="eza --icons --color=always -l | egrep -v '^d'" # files only
+alias ldir="eza --icons --color=always -l | egrep '^d'" # directories only
+alias lz="ls *.zip *.tgz *.zst *.gz *.tar *.spk *.jar *.vlt *.txz *.xz" # Search for these files
 
 # Color for manpages in less makes manpages a little easier to read
 export LESS_TERMCAP_mb=$'\E[01;31m'
