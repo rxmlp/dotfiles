@@ -41,6 +41,7 @@ ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 
 # Hyprland
 ln -s ~/.dotfiles/config/hypr ~/.config/hypr
+ln -s ~/.dotfiles/config/fuzzel ~/.config/fuzzel
 ln -s ~/.dotfiles/config/hyprlauncher ~/.config/hyprlauncher
 ln -s ~/.dotfiles/config/waybar ~/.config/waybar
 ln -s ~/.dotfiles/config/swayosd ~/.config/swayosd
