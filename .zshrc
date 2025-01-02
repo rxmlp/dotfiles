@@ -85,27 +85,8 @@ bindkey "^[[57438;5u" backward-word
 
 
 #-------My cute lil random alias-------#
-alias ai='sh ~/.sh/ai2.sh' # Start and stop ai
+alias ai='sh ~/.sh/ai.sh' # Start and stop ai
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"' #   sleep 10; alert
-alias signal-theme="sh ~/.sh/signal-theme.sh"
-
-
-alias myip="whatsmyip" # IP address lookup
-function whatsmyip ()
-{
-	# External IP Lookup 
-	echo -e "External IP:\n\e[31m$(curl -s myip.wtf/text)\e[0m\n"
-
-	# Internal IP Lookup.
-	if [ -e /sbin/ip ];
-	then
-		echo -e "Internal IP:\n\e[32m$(/sbin/ip addr show enp6s0 | grep "inet " | awk '{print $2}' | cut -d/ -f1)\e[0m"
-	else
-		echo -n "Internal IP: " ; /sbin/ifconfig wlan0 | grep "inet " | awk -F: '{print $1} |' | awk '{print $2}'
-	fi
-}
-
-
 
 
 #-------Techy-------#

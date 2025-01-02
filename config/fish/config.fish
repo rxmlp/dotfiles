@@ -21,7 +21,7 @@ alias pamcan=pacman
 
 alias ..="cd .. "
 
-#-------Colors-------#
+# Colors
 alias yay="yay --color=always" # Yay always color
 
 # Alias's for multiple directory listing commands
@@ -37,7 +37,8 @@ alias lf="eza --icons --color=always -l | egrep -v '^d'" # files only
 alias ldir="eza --icons --color=always -l | egrep '^d'" # directories only
 alias lz="ls *.zip *.tgz *.zst *.gz *.tar *.spk *.jar *.vlt *.txz *.xz" # Search for these files
 
-# function fish_prompt
-#   set_color cyan; echo (pwd)
-#   set_color green; echo '> '
-# end
+# Remove all here
+alias rmd="/bin/rm  --recursive --force --verbose"
+
+# Pacman logs
+alias plog="grep -Ei '(removed|installed|upgraded)' /var/log/pacman.log"
