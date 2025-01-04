@@ -1,4 +1,4 @@
-
+shell-integration = fish
 command = fish
 theme = catppuccin-mocha
 
