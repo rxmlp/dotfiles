@@ -1,5 +1,6 @@
+
+command = /usr/bin/env fish
 shell-integration = fish
-command = fish
 theme = catppuccin-mocha
 
 font-family = Berkeley Mono
