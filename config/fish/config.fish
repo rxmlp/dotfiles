@@ -42,3 +42,14 @@ alias rmd="/bin/rm  --recursive --force --verbose"
 
 # Pacman logs
 alias plog="grep -Ei '(removed|installed|upgraded)' /var/log/pacman.log"
+
+function spf
+    set -gx SPF_LAST_DIR "$HOME/.local/state/superfile/lastdir"
+
+    command spf $(pwd)
+
+    if test -f "$SPF_LAST_DIR"
+        source "$SPF_LAST_DIR"
+        rm -f -- "$SPF_LAST_DIR" > /dev/null
+    end
+end
