@@ -2,9 +2,9 @@
 
 # Configuration
 DEFAULT_TEMP=6000  # Default temperature (daylight)
-SUNSET_TIME="18:00"  # Sunset time
+SUNSET_TIME="22:00"  # Sunset time
 SUNRISE_TIME="06:00" # Sunrise time
-NIGHT_TEMP=3000      # Temperature at midnight
+NIGHT_TEMP=3500      # Temperature at midnight
 GRADUAL_INTERVAL=10  # Interval for gradual changes (in minutes)
 
 # Function to convert time to minutes since midnight
