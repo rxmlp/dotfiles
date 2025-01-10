@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 SWWW_TRANSITION=random
 export stills="$1"

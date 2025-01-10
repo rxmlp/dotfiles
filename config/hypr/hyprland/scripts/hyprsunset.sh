@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # Configuration
 DEFAULT_TEMP=6000  # Default temperature (daylight)

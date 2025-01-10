@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 DATE=$(date +"%Y-%m-%d_%H-%M-%S")
 
