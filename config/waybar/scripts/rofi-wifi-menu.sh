@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 notify-send "Getting list of available Wi-Fi networks..."
 # Get a list of available wifi connections and morph it into a nice-looking list
@@ -6,9 +6,9 @@ wifi_list=$(nmcli --fields "SECURITY,SSID" device wifi list | sed 1d | sed 's/  
 
 connected=$(nmcli -fields WIFI g)
 if [[ "$connected" =~ "enabled" ]]; then
-	toggle="睊  Disable Wi-Fi"
+	toggle="󰖪  Disable Wi-Fi"
 elif [[ "$connected" =~ "disabled" ]]; then
-	toggle="直  Enable Wi-Fi"
+	toggle="󰖩  Enable Wi-Fi"
 fi
 
 # Use rofi to select wifi network
