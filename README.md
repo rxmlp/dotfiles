@@ -8,7 +8,7 @@ Don't come crying if these dotfiles are shit, I made it so it works for my day t
 sudo pacman -S yay git
 ```
 ```zsh
-git clone git@github.com:rxmlp/dotfiles.git ~/.dotfiles
+git clone https://github.com/rxmlp/dotfiles.git ~/.dotfiles
 ```
 
 
