@@ -53,9 +53,9 @@ run_cmd() {
   selected="$(confirm_exit)"
   if [[ "$selected" == "$yes" ]]; then
     if [[ $1 == '--shutdown' ]]; then
-      systemctl poweroff
+      $HOME/.config/waybar/scripts/power-menu/shutdown.sh
     elif [[ $1 == '--reboot' ]]; then
-      systemctl reboot
+      $HOME/.config/waybar/scripts/power-menu/reboot.sh
     elif [[ $1 == '--suspend' ]]; then
       $HOME/.config/waybar/scripts/power-menu/hyprlock.sh & sleep 1; systemctl suspend
     elif [[ $1 == '--logout' ]]; then

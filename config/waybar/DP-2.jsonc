@@ -30,7 +30,7 @@
     },
     "exec-if": "which waybar-module-pacman-updates",
     "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300",
-    "on-click": "hyprctl dispatch exec '[workspace 1; float; size 750 500; bordercolor 0xFFF6D56A 0xFFe33131 90deg]' kitty yay"
+    "on-click": "hyprctl dispatch exec '[monitor DP-1; workspace special:update; float; size 750 500; bordercolor 0xFFF6D56A 0xFFe33131 90deg]' kitty yay"
     },
 
     "hyprland/workspaces": {
