@@ -111,14 +111,6 @@
         }
     },
 
-    "custom/nm-applet": {
-        "name": "custom/nm-applet",
-        "exec": "nm-applet",
-        "click-left": "nm-connection-editor",
-        "tooltip": "Network",
-        "return-type": "none"
-    },
-
     "network": {
         "tooltip": true,
         "format-wifi": " ",
