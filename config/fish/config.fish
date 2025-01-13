@@ -23,7 +23,6 @@ alias lr='eza --icons --color=always -lRh' # recursive ls
 alias lt='eza --icons --color=always -ltrh' # sort by date
 alias lf="eza --icons --color=always -l | egrep -v '^d'" # files only
 alias ldir="eza --icons --color=always -l | egrep '^d'" # directories only
-alias lz="ls *.zip *.tgz *.zst *.gz *.tar *.spk *.jar *.vlt *.txz *.xz" # Search for these files
 
 # Remove all here
 alias rmd="/bin/rm  --recursive --force --verbose"
