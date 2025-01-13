@@ -1,6 +1,5 @@
 #-------Theming-------#
 
-
 # Install Starship - curl -sS https://starship.rs/install.sh | sh
 #eval "$(starship init zsh)"
 
@@ -12,9 +11,6 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh" # Where is $ZSH?
 ZSH_THEME="powerlevel10k/powerlevel10k" # Theme for typing area...
-
-
-
 
 
 #-------oh-my-zsh-------#
@@ -70,7 +66,6 @@ source $ZSH/oh-my-zsh.sh
 # HIST_STAMPS="mm/dd/yyyy"
 
 
-
 #-------Bindkeys-------#
 
 # Fix CTRL + C
@@ -83,7 +78,6 @@ bindkey "^[[57439;5u" forward-word
 bindkey "^[[57438;5u" backward-word
 
 
-
 #-------My cute lil random alias-------#
 alias ai='sh ~/.sh/ai.sh' # Start and stop ai
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"' #   sleep 10; alert
@@ -92,7 +86,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 #-------Techy-------#
 # Show all logs in /var/log
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
-
+alias plog="grep -Ei '(removed|installed|upgraded)' /var/log/pacman.log"
 
 
 #-------Colors-------#
@@ -109,7 +103,6 @@ alias lr='eza --icons --color=always -lRh' # recursive ls
 alias lt='eza --icons --color=always -ltrh' # sort by date
 alias lf="eza --icons --color=always -l | egrep -v '^d'" # files only
 alias ldir="eza --icons --color=always -l | egrep '^d'" # directories only
-alias lz="ls *.zip *.tgz *.zst *.gz *.tar *.spk *.jar *.vlt *.txz *.xz" # Search for these files
 
 # Color for manpages in less makes manpages a little easier to read
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -121,18 +114,12 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 
-
-
-
 #-------KITTY-------#
 alias kssh="kitty +kitten ssh"
 # KITTY - alias to be able to use kitty features when connecting to remote servers(e.g use tmux on remote server)
 alias pi="kitty +kitten ssh pi"
 # Alias's for SSH
 # alias SERVERNAME='ssh YOURWEBSITE.com -l USERNAME -p PORTNUMBERHERE'
-
-
-
 
 
 #-------Files-------#
