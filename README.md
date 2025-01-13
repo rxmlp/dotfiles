@@ -52,7 +52,6 @@ ln -s ~/.dotfiles/config/superfile ~/.config/superfile
 
 4.  Installing a few things...
 
-
 Hypr
 ```zsh
 yay -S hyprland-git hyprlock-git hypridle-git hyprutils-git hyprgraphics-git hyprcursor-git hyprwayland-scanner-git hyprpicker-git xdg-desktop-portal-hyprland-git hyprland-qtutils-git hyprpaper-git hyprland-protocols-git hyprsunset ninja gcc cmake meson libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite libxrender pixman wayland-protocols cairo pango seatd libxkbcommon xcb-util-wm glaze xorg-xwayland libinput libliftoff libdisplay-info cpio tomlplusplus xcb-util-errors qt6ct
@@ -61,13 +60,9 @@ Xdg
 ```zsh 
 yay -S xdg-desktop-portal-gtk xdg-desktop-portal-wlr-git
 ```
-Clip
+Bar, launcher, clip & record
 ```zsh 
-yay -S wl-clipboard clipman grim slurp grimblast-git
-```
-Bar & connections
-```zsh 
-yay -S waybar waybar-module-pacman-updates-git swaync swayosd-git rofi-wayland fuzzel
+yay -S waybar waybar-module-pacman-updates-git swaync swayosd-git rofi-wayland fuzzel networkmanager blueman bluez bluez-tools bluez-utils wl-clipboard clipman grim slurp grimblast-git wf-recorder
 ```
 Terminal
 ```zsh 
@@ -77,4 +72,7 @@ Theme stuff
 ```zsh 
 yay -S sddm catppuccin-cursors-mocha
 ```
-
+Filemanagement
+```zsh 
+yay -S nemo nemo-fileroller superfile pinta gimp libreoffice-still vscodium
+```
