@@ -13,8 +13,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "~/.config/waybar/scripts/power-menu/colors.rasi"
-@import                          "~/.config/waybar/scripts/power-menu/fonts.rasi"
+@import                          "~/.config/waybar/scripts/power-menu/theme.rasi"
 
 /*****----- Main Window -----*****/
 window {
