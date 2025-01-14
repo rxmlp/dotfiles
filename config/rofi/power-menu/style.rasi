@@ -1,19 +1,10 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Rofi Theme File
- * Rofi Version: 1.7.3
- **/
-
 /*****----- Configuration -----*****/
 configuration {
     show-icons:                 false;
 }
 
 /*****----- Global Properties -----*****/
-@import                          "~/.config/waybar/scripts/power-menu/theme.rasi"
+@import                          "theme.rasi"
 
 /*****----- Main Window -----*****/
 window {
@@ -30,11 +21,11 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
+    border:                      3px;
+    border-color:                @border;
     border-radius:               12px;
-    border-color:                @selected;
-    cursor:                      "default";
     background-color:            @background;
+    cursor:                      "default";
 }
 
 /*****----- Main Box -----*****/
@@ -45,7 +36,7 @@ mainbox {
     padding:                     20px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @border;
     background-color:            transparent;
     children:                    [ "inputbar", "message", "listview" ];
 }
@@ -58,9 +49,9 @@ inputbar {
     padding:                     0px;
     border:                      0px;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @border;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @text;
     children:                    [ "textbox-prompt-colon", "prompt"];
 }
 
@@ -70,14 +61,14 @@ textbox-prompt-colon {
     str:                         "";
     padding:                     10px 14px;
     border-radius:               10px;
-    background-color:            @urgent;
+    background-color:            @default;
     text-color:                  @background;
 }
 prompt {
     enabled:                     true;
     padding:                     10px;
     border-radius:               10px;
-    background-color:            @active;
+    background-color:            @default;
     text-color:                  @background;
 }
 
@@ -88,16 +79,16 @@ message {
     padding:                     10px;
     border:                      0px solid;
     border-radius:               10px;
-    border-color:                @selected;
+    border-color:                @border;
     background-color:            @background-alt;
-    text-color:                  @foreground;
+    text-color:                  @text;
 }
 textbox {
     background-color:            inherit;
     text-color:                  inherit;
     vertical-align:              0.5;
     horizontal-align:            0.0;
-    placeholder-color:           @foreground;
+    placeholder-color:           @text;
     blink:                       true;
     markup:                      true;
 }
@@ -105,9 +96,9 @@ error-message {
     padding:                     10px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @border;
     background-color:            @background;
-    text-color:                  @foreground;
+    text-color:                  @text;
 }
 
 /*****----- Listview -----*****/
@@ -128,9 +119,9 @@ listview {
     padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @border;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @text;
     cursor:                      "default";
 }
 
@@ -142,9 +133,9 @@ element {
     padding:                     10px;
     border:                      0px solid;
     border-radius:               10px;
-    border-color:                @selected;
+    border-color:                @border;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @text;
     cursor:                      pointer;
 }
 element-text {
@@ -155,6 +146,6 @@ element-text {
     horizontal-align:            0.0;
 }
 element selected.normal {
-    background-color:            var(selected);
-    text-color:                  var(background);
+    background-color:            var(selected-background);
+    text-color:                  var(selected-text);
 }

@@ -76,3 +76,15 @@ Filemanagement
 ```zsh 
 yay -S nemo nemo-fileroller superfile pinta gimp libreoffice-still vscodium
 ```
+
+5. Installing some plugins
+
+Install hyprland plugins
+```zsh
+hyprpm add https://github.com/hyprwm/hyprland-plugins
+```
+Enable used plugins
+```zsh
+hyprpm enable xtra-dispatchers
+hyprpm enable hyprexpo
+```

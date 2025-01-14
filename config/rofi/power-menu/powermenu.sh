@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Current Theme
-dir="~/.config/waybar/scripts/power-menu/"
+dir="power-menu"
 theme='style'
 
 # CMDs

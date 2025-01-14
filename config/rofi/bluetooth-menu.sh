@@ -258,7 +258,7 @@ device_menu() {
 show_menu() {
     # Get menu options
     if power_on; then
-        power="Power: on"
+        power="Bluetooth: on"
 
         # Human-readable names of devices, one per line
         # If scan is off, will only list paired devices
@@ -272,7 +272,7 @@ show_menu() {
         # Options passed to rofi
         options="$devices\n$divider\n$power\n$scan\n$pairable\n$discoverable\nExit"
     else
-        power="Power: off"
+        power="Bluetooth: off"
         options="$power\nExit"
     fi
 
