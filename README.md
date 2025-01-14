@@ -41,7 +41,6 @@ ln -s ~/.dotfiles/config/fish ~/.config/fish
 
 # Hyprland
 ln -s ~/.dotfiles/config/hypr ~/.config/hypr
-ln -s ~/.dotfiles/config/fuzzel ~/.config/fuzzel
 ln -s ~/.dotfiles/config/waybar ~/.config/waybar
 ln -s ~/.dotfiles/config/swayosd ~/.config/swayosd
 ln -s ~/.dotfiles/config/swaync ~/.config/swaync
@@ -62,7 +61,7 @@ yay -S xdg-desktop-portal-gtk xdg-desktop-portal-wlr-git
 ```
 Bar, launcher, clip & record
 ```zsh 
-yay -S waybar waybar-module-pacman-updates-git swaync swayosd-git rofi-wayland fuzzel networkmanager blueman bluez bluez-tools bluez-utils wl-clipboard clipman grim slurp grimblast-git wf-recorder
+yay -S waybar waybar-module-pacman-updates-git swaync swayosd-git rofi-wayland networkmanager blueman bluez bluez-tools bluez-utils wl-clipboard clipman grim slurp grimblast-git wf-recorder
 ```
 Terminal
 ```zsh 

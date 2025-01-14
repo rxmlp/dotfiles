@@ -53,11 +53,11 @@ run_cmd() {
   selected="$(confirm_exit)"
   if [[ "$selected" == "$yes" ]]; then
     if [[ $1 == '--shutdown' ]]; then
-      $HOME/.config/waybar/scripts/power-menu/shutdown.sh
+      $HOME/.config/rofi/power-menu/shutdown.sh
     elif [[ $1 == '--reboot' ]]; then
-      $HOME/.config/waybar/scripts/power-menu/reboot.sh
+      $HOME/.config/rofi/power-menu/reboot.sh
     elif [[ $1 == '--suspend' ]]; then
-      $HOME/.config/waybar/scripts/power-menu/hyprlock.sh & sleep 1; systemctl suspend
+      $HOME/.config/rofi/power-menu/hyprlock.sh & sleep 1; systemctl suspend
     elif [[ $1 == '--logout' ]]; then
       if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
         hyprctl dispatch exit 1
@@ -79,7 +79,7 @@ case $chosen in
     ;;
   $lock)
     if [[ -x '/usr/bin/Hyprland' ]]; then
-      ~/.config/waybar/scripts/power-menu/hyprlock.sh
+      ~/.config/hypr/hyprlock.sh
     fi
     ;;
   $suspend)

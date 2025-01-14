@@ -8,14 +8,12 @@ plugin {
         bar_precedence_over_border = true
         bar_part_of_window = true
 
-        bar_color = rgba(1D1011FF)
-        col.text = rgba(F7DCDEFF)
+        bar_color = $background
+        col.text = $text
 
 
         # example buttons (R -> L)
         # hyprbars-button = color, size, on-click
         hyprbars-button = rgb(F7DCDE), 13, 󰖭, hyprctl dispatch killactive
-        hyprbars-button = rgb(F7DCDE), 13, 󰖯, hyprctl dispatch fullscreen 1
-        hyprbars-button = rgb(F7DCDE), 13, 󰖰, hyprctl dispatch movetoworkspacesilent special
     }
 }
