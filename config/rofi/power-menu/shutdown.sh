@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Current Theme
-dir="~/.config/waybar/scripts/power-menu/"
+dir="~/.config/rofi/power-menu/"
 theme='style'
 
 # Check if any of the applications are running
