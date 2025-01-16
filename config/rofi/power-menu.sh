@@ -1,10 +1,6 @@
 #!/usr/bin/env sh
 
-# Current Theme
-dir="power-menu"
-theme='style'
-
-# CMDs
+theme='power-menu'
 uptime="$(uptime -p | sed -e 's/up //g')"
 host=$(cat /etc/hostname)
 
@@ -12,8 +8,8 @@ host=$(cat /etc/hostname)
 shutdown=' Shutdown'
 reboot=' Reboot'
 lock=' Lock'
-suspend='  Suspend'
-logout='  Logout'
+suspend=' Suspend'
+logout=' Logout'
 yes='וֹ Yes'
 no='תּ No'
 
@@ -48,16 +44,48 @@ run_rofi() {
   echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
 }
 
+rofi_canceled() {
+  rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 500px;}' \
+    -theme-str 'mainbox {children: [ "message", "listview" ];}' \
+    -theme-str 'listview {columns: 1; lines: 1;}' \
+    -theme-str 'element-text {horizontal-align: 0.5;}' \
+    -theme-str 'textbox {horizontal-align: 0.5;}' \
+    -dmenu \
+    -p 'Cancelled' \
+    -mesg 'One or more applications are running, shutting down cancelled.' \
+    -theme "$dir/$theme".rasi
+  exit 1
+}
+
+ctloff() {
+  if pgrep -f "ollama" > /dev/null || pgrep -f "steam" > /dev/null || pgrep -f "timeshift" > /dev/null; then
+    echo -e "Ohh ok" | rofi_canceled; else
+    systemctl poweroff
+  fi
+}
+
+ctlreboot() {
+  if pgrep -f "ollama" > /dev/null || pgrep -f "steam" > /dev/null || pgrep -f "timeshift" > /dev/null; then
+    echo -e "Ohh ok" | rofi_canceled; else
+    systemctl reboot
+  fi
+}
+
 # Execute Command
 run_cmd() {
   selected="$(confirm_exit)"
   if [[ "$selected" == "$yes" ]]; then
     if [[ $1 == '--shutdown' ]]; then
-      $HOME/.config/rofi/power-menu/shutdown.sh
+      ctloff
     elif [[ $1 == '--reboot' ]]; then
-      $HOME/.config/rofi/power-menu/reboot.sh
+      ctlreboot
+    elif [[ $1 == '--lock' ]]; then
+      playerctl pause -a
+      hyprlock
     elif [[ $1 == '--suspend' ]]; then
-      $HOME/.config/rofi/power-menu/hyprlock.sh & sleep 1; systemctl suspend
+      playerctl pause -a
+      hyprlock
+      sleep 1; systemctl suspend
     elif [[ $1 == '--logout' ]]; then
       if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
         hyprctl dispatch exit 1
@@ -78,9 +106,7 @@ case $chosen in
     run_cmd --reboot
     ;;
   $lock)
-    if [[ -x '/usr/bin/Hyprland' ]]; then
-      ~/.config/hypr/hyprlock.sh
-    fi
+      run_cmd --lock
     ;;
   $suspend)
     run_cmd --suspend

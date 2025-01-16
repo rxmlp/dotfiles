@@ -61,7 +61,7 @@ yay -S xdg-desktop-portal-gtk xdg-desktop-portal-wlr-git
 ```
 Bar, launcher, clip & record
 ```zsh 
-yay -S waybar waybar-module-pacman-updates-git swaync swayosd-git rofi-wayland networkmanager blueman bluez bluez-tools bluez-utils wl-clipboard clipman grim slurp grimblast-git wf-recorder
+yay -S waybar waybar-module-pacman-updates-git swaync swayosd-git rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grim slurp grimblast-git wf-recorder pavucontrol
 ```
 Terminal
 ```zsh 
