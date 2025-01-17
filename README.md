@@ -65,7 +65,7 @@ yay -S waybar waybar-module-pacman-updates-git swaync swayosd-git rofi-wayland n
 ```
 Terminal
 ```zsh 
-yay -S kitty zsh nvtop fastfetch imagemagick superfile ghostty fish
+yay -S kitty zsh nvtop fastfetch imagemagick superfile ghostty fish eza
 ```
 Theme stuff
 ```zsh 
