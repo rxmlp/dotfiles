@@ -20,11 +20,15 @@ window#waybar {
 }
 
 tooltip {
-  background: @base;
+  background: @background;
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
   border-color: @crust;
+}
+
+tooltip * {
+  border-radius: 10px
 }
 
 #workspaces button {
@@ -73,7 +77,7 @@ tooltip {
 #custom-hyprpicker,
 #custom-notification,
 #backlight {
-  background: @base;
+  background: @background;
   padding: 0px 10px;
   margin: 3px 0px;
   margin-top: 10px;
@@ -86,7 +90,7 @@ tooltip {
 }
 
 #workspaces {
-  background: @base;
+  background: @background;
   border-radius: 10px;
   margin-left: 10px;
   padding-right: 0px;

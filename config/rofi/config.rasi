@@ -2,18 +2,17 @@
 @theme "theme"
 
 configuration{
-    modi: "run,drun,window";
-    icon-theme: "Oranchelo";
+    modi: "drun,window,ssh";
+    icon-theme: "Dracula";
     show-icons: true;
-    terminal: "alacritty";
+    terminal: "kitty";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-drun: "   Apps ";
-    display-run: "   Run ";
+    display-drun: " 󰌧  Apps ";
     display-window: " 󰕰  Window";
-    display-Network: " 󰤨  Network";
+    display-ssh: " 󰒋  SSH";
     sidebar-mode: true;
 }
 
@@ -21,13 +20,10 @@ window {
     height:                      360px;
     width:                       600;
     border:                      3px;
-    border-color:                @border;
     border-radius:               12px;
-    background-color:            @background;
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    cursor:                      "default";
 }
 
 element-text, element-icon , mode-switcher { 
@@ -35,21 +31,14 @@ element-text, element-icon , mode-switcher {
     text-color:       inherit;
 }
 
-mainbox {
-    background-color: @background;
-}
-
 inputbar {
     children: [prompt,entry];
-    background-color: @background;
     border-radius: 5px;
     padding: 2px;
 }
 
 prompt {
-    background-color: @default;
     padding: 6px;
-    text-color: @background;
     border-radius: 3px;
     margin: 20px 0px 0px 20px;
 }
@@ -62,8 +51,6 @@ textbox-prompt-colon {
 entry {
     padding: 6px;
     margin: 20px 0px 0px 10px;
-    text-color: @text;
-    background-color: @background;
 }
 
 listview {
@@ -72,13 +59,10 @@ listview {
     margin: 10px 0px 0px 20px;
     columns: 2;
     lines: 5;
-    background-color: @background;
 }
 
 element {
     padding: 5px;
-    background-color: @background;
-    text-color: @text  ;
 }
 
 element-icon {
@@ -86,30 +70,20 @@ element-icon {
 }
 
 element selected {
-    background-color:  @selected-background;
-    text-color: @selected-text;
-    border-radius:               10px;
+    border-radius: 10px;
 }
 
 mode-switcher {
     spacing: 0;
-  }
+}
 
 button {
     padding: 10px;
-    background-color: @background;
-    text-color: @default-alt;
     vertical-align: 0.5; 
     horizontal-align: 0.5;
 }
 
-button selected {
-  background-color: @background;
-  text-color: @default;
-}
-
 message {
-    background-color: @background-alt;
     margin: 2px;
     padding: 2px;
     border-radius: 5px;
@@ -118,6 +92,4 @@ message {
 textbox {
     padding: 6px;
     margin: 20px 0px 0px 20px;
-    text-color: @default;
-    background-color: @background-alt;
 }
