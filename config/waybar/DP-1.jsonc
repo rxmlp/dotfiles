@@ -76,7 +76,7 @@
         "interval": "once",
         "format": "",
         "on-click": "pkill rofi || rofi -show drun",
-        "on-click-right": "~/.config/rofi/power-menu.sh",
+        "on-click-right": "$HOME/.config/rofi/power-menu.sh",
         "tooltip": false
     },
 
@@ -114,7 +114,7 @@
     "network": {
         "tooltip": true,
         "format-wifi": " ",
-        "on-click-right": "~/.config/rofi/wifi-menu.sh",
+        "on-click-right": "$HOME/.config/rofi/wifi-menu.sh",
         "format-ethernet": "󰈀 ",
         "tooltip-format-wifi": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b> \n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> \n<span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "tooltip-format-ethernet": "Interface: <b>{ifname}</b>\nLocal ip: <b>{ipaddr}</b> \n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> \n<span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
@@ -134,24 +134,15 @@
 		"tooltip-format-connected": " {device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}",
         "tooltip": false,
-        "on-click-right": "~/.config/rofi/bluetooth-menu.sh"
+        "on-click-right": "$HOME/.config/rofi/bluetooth-menu.sh"
 	},
 
     "custom/notification": {
         "tooltip": false,
-        "format": "{icon}",
-        "format-icons": {
-        "notification": "<span foreground='red'><small><sup>𑗊</sup></small></span>",
-        "none": " ",
-        "dnd-notification": "<span foreground='red'><small><sup>𑗊</sup></small></span>",
-        "dnd-none": " "
-        },
+        "format": "",
         "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "sleep 0.1 && swaync-client -t -sw",
-        "on-click-right": "sleep 0.1 && swaync-client -d -sw",
-        "escape": true
+        "on-click": "$HOME/.config/rofi/notifications.sh",
+        "escape": true,
     }
 
 }
