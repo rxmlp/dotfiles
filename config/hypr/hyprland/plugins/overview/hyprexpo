@@ -1,5 +1,8 @@
 
-bind = SUPER, TAB, hyprexpo:expo, toggle
+#bind = SUPER, TAB, hyprexpo:expo, toggle
+
+# This just makes it so hyprexpo don't work on my left monitor
+bind = SUPER, TAB, exec, $hyprland/plugins/overview/hyprexpo.sh
 
 plugin {
     hyprexpo {

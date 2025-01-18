@@ -69,7 +69,7 @@ yay -S kitty zsh nvtop fastfetch imagemagick superfile ghostty fish eza
 ```
 Theme stuff
 ```zsh 
-yay -S sddm catppuccin-cursors-mocha
+yay -S sddm catppuccin-cursors-mocha catppuccin-gtk-theme-mocha dracula-icons-git
 ```
 Filemanagement
 ```zsh 
