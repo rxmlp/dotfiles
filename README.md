@@ -7,6 +7,7 @@ There are also some keybinds set to use special keys my keyboard has G815. The s
 As I am also changing the setup a lot of you don't read changes before applying they might not work. Missing apps ect. That is usually not a problem but you have been warned.
 
 ![DP-1](DP-1.jpg)
+![DP-2](DP-2.jpg)
 
 
 1. Kinda need git for to clone and yay for last
