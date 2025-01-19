@@ -24,8 +24,8 @@ win_height='200px'
 
 copy=' Copy'
 save=' Save'
-copy_save='Copy & Save'
-edit='Edit Screenshot'
+copy_save='CopySave'
+edit='Edit'
 
 rofi_cmd() {
   rofi -theme-str "window {width: $win_width;}" \
