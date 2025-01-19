@@ -2,6 +2,12 @@
 # These might be a mess but ehh they work for me
 Don't come crying if these dotfiles are shit, I made it so it works for my day to day.
 
+This setup was made for dual monitor, so if you want to use only one monitor this might not work perfectly. It for sure won't work as intended.
+There are also some keybinds set to use special keys my keyboard has G815. The setup uses the G1-G5 buttons and the volume wheel (you probably have something that will work with the volume part but).
+As I am also changing the setup a lot of you don't read changes before applying they might not work. Missing apps ect. That is usually not a problem but you have been warned.
+
+![DP-1](DP-1.jpg)
+
 
 1. Kinda need git for to clone and yay for last
 ```zsh
@@ -56,9 +62,9 @@ Xdg
 ```zsh 
 yay -S xdg-desktop-portal-gtk xdg-desktop-portal-wlr-git
 ```
-Bar, launcher, notifications, clip & record
+Bar, launcher, volume, notifications, clip & record
 ```zsh 
-yay -S waybar waybar-module-pacman-updates-git dunst rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grim slurp grimblast-git wf-recorder pavucontrol
+yay -S waybar waybar-module-pacman-updates-git dunst jq rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grim slurp grimblast-git wf-recorder pavucontrol
 ```
 Terminal
 ```zsh 
