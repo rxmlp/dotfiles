@@ -40,7 +40,6 @@ ln -s ~/.dotfiles/config/ghostty ~/.config/ghostty
 ln -s ~/.dotfiles/config/fish ~/.config/fish
 ln -s ~/.dotfiles/config/hypr ~/.config/hypr
 ln -s ~/.dotfiles/config/waybar ~/.config/waybar
-ln -s ~/.dotfiles/config/swayosd ~/.config/swayosd
 ln -s ~/.dotfiles/config/dunst ~/.config/dunst
 ln -s ~/.dotfiles/config/rofi ~/.config/rofi
 ln -s ~/.dotfiles/config/superfile ~/.config/superfile
@@ -59,7 +58,7 @@ yay -S xdg-desktop-portal-gtk xdg-desktop-portal-wlr-git
 ```
 Bar, launcher, notifications, clip & record
 ```zsh 
-yay -S waybar waybar-module-pacman-updates-git swayosd-git dunst rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grim slurp grimblast-git wf-recorder pavucontrol
+yay -S waybar waybar-module-pacman-updates-git dunst rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grim slurp grimblast-git wf-recorder pavucontrol
 ```
 Terminal
 ```zsh 
