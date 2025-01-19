@@ -38,8 +38,6 @@ ln -s ~/.dotfiles/config/kitty ~/.config/kitty
 ln -s ~/.dotfiles/config/fastfetch ~/.config/fastfetch
 ln -s ~/.dotfiles/config/ghostty ~/.config/ghostty
 ln -s ~/.dotfiles/config/fish ~/.config/fish
-
-# Hyprland
 ln -s ~/.dotfiles/config/hypr ~/.config/hypr
 ln -s ~/.dotfiles/config/waybar ~/.config/waybar
 ln -s ~/.dotfiles/config/swayosd ~/.config/swayosd

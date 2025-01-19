@@ -9,6 +9,8 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
         keyword general:gaps_out 0;\
         keyword general:border_size 1;\
         keyword decoration:rounding 0"
+    hyprctl notify 2 2000 "0" "Game mode on"
     exit
 fi
 hyprctl reload
+hyprctl notify 2 2000 "0" "Game mode off"

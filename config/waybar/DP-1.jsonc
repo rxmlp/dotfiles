@@ -94,11 +94,11 @@
 
     "wireplumber": {
         "format": "{icon}  {volume}%",
-      	"on-scroll-up": "swayosd-client --output-volume 5",
-      	"on-scroll-down": "swayosd-client --output-volume -5",
+      	"on-scroll-up": "$HOME/.config/hypr/hyprland/scripts/dunst-volume.sh up",
+      	"on-scroll-down": "$HOME/.config/hypr/hyprland/scripts/dunst-volume.sh down",
         "tooltip": false,
         "format-muted": " Muted",
-	    "on-click": "swayosd-client --output-volume mute-toggle",
+	    "on-click": "$HOME/.config/hypr/hyprland/scripts/dunst-volume.sh mute",
         "on-click-right": "pavucontrol",
         "format-icons": {
             "headphone": "",
@@ -141,7 +141,8 @@
         "tooltip": false,
         "format": "",
         "return-type": "json",
-        "on-click": "$HOME/.config/rofi/notifications.sh",
+        "on-click": "dunstctl history-pop",
+        "on-click-right": "$HOME/.config/rofi/notifications.sh",
         "escape": true,
     }
 
