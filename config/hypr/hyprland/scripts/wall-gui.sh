@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+pidof hyprpaper || (hyprpaper & disown) 
+monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name')
+cd $HOME/.config/hypr/wall
+choices=$(fd . --type f -d 1 --format {/.} | shuf | fzf --cycle --preview='$HOME/.config/hypr/hyprland/scripts/fzf-preview.sh {}' --preview-window=right,70% --info=hidden --color prompt:green,pointer:green,current-bg:-1,current-fg:green,gutter:-1,border:bright-black,current-hl:red,hl:red)
+
+hyprctl dispatch movetoworkspacesilent special:load
+choice_fd=$(fd $choices)
+choice="$HOME/.config/hypr/wall/$choice_fd"
+
+
+
+if [ -n "$choice" ] && [ -f "$choice" ]; then
+  if [[ "$choice" =~ \.(mp4)$ ]]; then
+    mpv --wayland-app-id="mpv-bg" --loop --mute --load-scripts=no "$choice" --input-ipc-server=/tmp/mpv-socket-$monitor
+  fi
+  if [[ "$choice" =~ \.(png|jpg)$ ]]; then
+    hyprctl -q hyprpaper reload "$monitor,$choice"
+    hyprctl -q hyprpaper unload unused
+    killall random.sh && pkill -f "sleep 3600"
+    killall mpv
+  fi
+fi

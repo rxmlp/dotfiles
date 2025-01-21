@@ -30,22 +30,10 @@
         "tooltip": false
     },
 
-    "custom/recorder": {
-        "format": "{}",
-        "exec": "~/.config/waybar/scripts/recorder-check",
-        "on-click": "~/.config/waybar/scripts/recorder-switch",
-        "return-type": "json",
-        "signal": 12
-    },
-
     "custom/clipboard": {
         "format": "",
         "on-click": "clipman pick -t rofi",
         "tooltip": false
-    },
-
-    "hyprland/window": {
-        "format": "{}"
     },
 
     "hyprland/workspaces": {
@@ -145,5 +133,4 @@
         "on-click-right": "$HOME/.config/rofi/notifications.sh",
         "escape": true,
     }
-
 }

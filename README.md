@@ -57,11 +57,15 @@ ln -s ~/.dotfiles/config/superfile ~/.config/superfile
 
 Hypr
 ```zsh
-yay -S hyprland-git hyprlock-git hypridle-git hyprutils-git hyprgraphics-git hyprcursor-git hyprwayland-scanner-git hyprpicker-git xdg-desktop-portal-hyprland-git hyprland-qtutils-git hyprpaper-git hyprland-protocols-git hyprsunset ninja gcc cmake meson libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite libxrender pixman wayland-protocols cairo pango seatd libxkbcommon xcb-util-wm glaze xorg-xwayland libinput libliftoff libdisplay-info cpio tomlplusplus xcb-util-errors qt6ct
+yay -S hyprland-git hyprlock-git hypridle-git hyprutils-git hyprgraphics-git hyprcursor-git hyprwayland-scanner-git hyprpicker-git xdg-desktop-portal-hyprland-git hyprland-qtutils-git hyprland-protocols-git hyprsunset ninja gcc cmake meson libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite libxrender pixman wayland-protocols cairo pango seatd libxkbcommon xcb-util-wm glaze xorg-xwayland libinput libliftoff libdisplay-info cpio tomlplusplus xcb-util-errors qt6ct
 ```
 Xdg
 ```zsh 
 yay -S xdg-desktop-portal-gtk xdg-desktop-portal-wlr-git
+```
+Wallpaper stuff
+```zsh
+yay -S hyprpaper-git ffmpegthumbnailer fd mpv fzf
 ```
 Bar, launcher, volume, notifications, clip & record
 ```zsh 
@@ -90,4 +94,5 @@ Enable used plugins
 ```zsh
 hyprpm enable xtra-dispatchers
 hyprpm enable hyprexpo
+hyprpm enable hyprwinwrap
 ```

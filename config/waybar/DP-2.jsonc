@@ -86,14 +86,6 @@
         "interval": 2,
         "hwmon-path": "/sys/class/hwmon/hwmon2/temp2_input"
     },
-
-    "custom/launcher": {
-        "interval": "once",
-        "format": "",
-        "on-click": "pkill rofi || rofi -show drun",
-        "on-click-right": "bash ~/.config/waybar/scripts/power-menu/powermenu.sh",
-        "tooltip": false
-    },
     
     "tray": {
         "icon-size": 16,

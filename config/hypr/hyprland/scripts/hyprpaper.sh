@@ -1,13 +1,12 @@
 #!/usr/bin/env sh
 
-# Define the directory containing wallpapers
 wallpapers="${HOME}/.config/hypr/wall"
 
-# Select a random wallpaper
-wallpaper=$(find "$wallpapers" -type f | shuf -n 1)
-
-# Preload the random wallpaper
-hyprctl hyprpaper preload "$wallpaper"
-
-# Apply the wallpaper
-hyprctl hyprpaper wallpaper "DP-1,$wallpaper"
+# hyprctl hyprpaper reload "DP-1,$(fd . $wallpapers --type f -d 1 | shuf -n 1)"
+sleep 2;
+while true; do
+    pidof hyprpaper || (hyprpaper &)
+    hyprctl -q hyprpaper reload DP-1,$(fd . $wallpapers --type f -d 1 | shuf -n 1)
+    hyprctl -q hyprpaper unload unused
+    sleep 3600
+done
