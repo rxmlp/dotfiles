@@ -145,6 +145,7 @@ timer() {
 }
 
 takescreenshot() {
+  sleep 1
   grimblast --notify "$option_chosen" "$option_type_screenshot"
 }
 

@@ -1,4 +1,8 @@
+
+
+@import "wallust/colors-waybar.css";
 @import "mocha.css";
+
 
 * {
   border: none;
@@ -16,7 +20,7 @@ modules-right {
 
 window#waybar {
   background: rgba(21, 18, 27, 0);
-  color: @text;
+  color: @foreground;
 }
 
 tooltip {
@@ -24,7 +28,7 @@ tooltip {
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
-  border-color: @crust;
+  border-color: @color0;
 }
 
 tooltip * {
@@ -32,28 +36,28 @@ tooltip * {
 }
 
 #workspaces button {
-  color: @surface0;
+  color: @color9;
 }
 
 #workspaces button.active {
-  color: @surface1;
+  color: @color7;
 }
 
 #workspaces button.focused {
-  color: @surface2;
-  background: @maroon;
+  color: @color8;
+  background: @color14;
   border-radius: 10px;
 }
 
 #workspaces button.urgent {
-  color: @crust;
-  background: @green;
+  color: @color0;
+  background: @color10;
   border-radius: 10px;
 }
 
 #workspaces button:hover {
-  background: @crust;
-  color: @text;
+  background: @color0;
+  color: @foreground;
   border-radius: 10px;
 }
 
@@ -81,7 +85,7 @@ tooltip * {
   padding: 0px 10px;
   margin: 3px 0px;
   margin-top: 10px;
-  border: 1px solid @border;
+  border: 1px solid @cursor;
 }
 
 #tray {
@@ -98,7 +102,7 @@ tooltip * {
 }
 
 #custom-killactive {
-  color: @red;
+  color: @color6;
   border-radius: 10px 0 0 10px;
   border-left: 60px;
   border-right: 0px;
@@ -111,7 +115,7 @@ tooltip * {
 }
 
 #clock {
-  color: @peach;
+  color: @color15;
   border-radius: 10px 10px 10px 10px;
   margin-left: 0px;
   margin-right: 10px;
@@ -119,7 +123,7 @@ tooltip * {
 }
 
 #custom-launcher {
-  color: @peach;
+  color: @color15;
   border-radius: 10px 10px 10px 10px;
   padding: 0px 20px 0px 15px;
   margin-left: 10px;
@@ -128,13 +132,21 @@ tooltip * {
 }
 
 #network {
-  color: @overlay;
+  color: @color2;
   border-left: 0px;
   border-right: 0px;
 }
 
+#network-down {
+  color: @color11;
+}
+
+#network-up {
+  color: @color5;
+}
+
 #bluetooth {
-  color: @overlay;
+  color: @color2;
   border-radius: 0 10px 10px 0;
   margin-right: 10px;
   border-left: 0px;
@@ -142,24 +154,24 @@ tooltip * {
 }
 
 #wireplumber {
-  color: @blue;
+  color: @color1;
   border-radius: 10px 0 0 10px;
   border-left: 0px;
   border-right: 0px;
 }
 
 #custom-notification {
-  color: @blue;
+  color: @color1;
 }
 
 #cpu {
-  color: @purple;
+  color: @color13;
   border-left: 0px;
   border-right: 0px;
 }
 
 #custom-gpu-usage {
-  color: @purple;
+  color: @color13;
   border-radius: 10px 0 0 10px;
   margin-right: 0px;
   border-left: 0px;
@@ -167,20 +179,20 @@ tooltip * {
 }
 
 #custom-updates {
-  color: @purple;
+  color: @color13;
   border-radius: 10px 10px 10px 10px;
   margin-left: 5px;
   margin-right: 10px;
 }
 
 #temperature {
-  color: @purple;
+  color: @color13;
   border-left: 0px;
   border-right: 0px;
 }
 
 #memory {
-  color: @purple;
+  color: @color13;
   border-radius: 0 10px 10px 0;
   margin-right: 10px;
   border-left: 0px;
@@ -188,7 +200,7 @@ tooltip * {
 }
 
 #custom-clipboard {
-  color: @purple;
+  color: @color13;
   border-radius: 10px 0 0 10px;
   margin-right: 0px;
   border-left: 0px;
@@ -196,15 +208,15 @@ tooltip * {
 }
 
 #custom-recorder {
-  color: @green;
+  color: @color10;
 }
 
 #custom-recorder.enabled {
-  color: @red;
+  color: @color6;
 }
 
 #custom-hyprpicker {
-  color: @purple;
+  color: @color13;
   border-radius: 0 10px 10px 0;
   margin-right: 10px;
   border-left: 0px;

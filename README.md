@@ -50,38 +50,38 @@ ln -s ~/.dotfiles/config/waybar ~/.config/waybar
 ln -s ~/.dotfiles/config/dunst ~/.config/dunst
 ln -s ~/.dotfiles/config/rofi ~/.config/rofi
 ln -s ~/.dotfiles/config/superfile ~/.config/superfile
+ln -s ~/.dotfiles/config/wallust ~/.config/wallust
 ```
-
 
 4.  Installing a few things...
 
 Hypr
 ```zsh
-yay -S hyprland-git hyprlock-git hypridle-git hyprutils-git hyprgraphics-git hyprcursor-git hyprwayland-scanner-git hyprpicker-git xdg-desktop-portal-hyprland-git hyprland-qtutils-git hyprland-protocols-git hyprsunset ninja gcc cmake meson libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite libxrender pixman wayland-protocols cairo pango seatd libxkbcommon xcb-util-wm glaze xorg-xwayland libinput libliftoff libdisplay-info cpio tomlplusplus xcb-util-errors qt6ct
+yay -S hyprland-git hyprlock-git hypridle-git hyprutils-git hyprgraphics-git hyprcursor-git hyprland-qt-support-git hyprwayland-scanner-git hyprpicker-git xdg-desktop-portal-hyprland-git hyprland-qtutils-git hyprland-protocols-git hyprsunset-git aquamarine-git hyprsysteminfo-git hyprpolkitagent-git ninja gcc cmake meson libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite libxrender pixman wayland-protocols cairo pango seatd libxkbcommon xcb-util-wm glaze xorg-xwayland libinput libliftoff libdisplay-info cpio tomlplusplus xcb-util-errors qt6ct
 ```
 Xdg
 ```zsh 
-yay -S xdg-desktop-portal-gtk xdg-desktop-portal-wlr-git
+yay -S xdg-desktop-portal-gtk xdg-desktop-portal-wlr
 ```
 Wallpaper stuff
 ```zsh
-yay -S hyprpaper-git ffmpegthumbnailer fd mpv fzf
+yay -S hyprpaper-git mpv 
 ```
 Bar, launcher, volume, notifications, clip & record
 ```zsh 
-yay -S waybar waybar-module-pacman-updates-git dunst jq rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grim slurp grimblast-git wf-recorder pavucontrol
+yay -S waybar waybar-module-pacman-updates-git dunst rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grim slurp grimblast-git wf-recorder pavucontrol
 ```
 Terminal
 ```zsh 
-yay -S kitty zsh nvtop fastfetch imagemagick superfile ghostty fish eza
-```
-Theme stuff
-```zsh 
-yay -S sddm catppuccin-cursors-mocha catppuccin-gtk-theme-mocha dracula-icons-git
+yay -S kitty zsh eza nvtop fastfetch ghostty fish
 ```
 Filemanagement
 ```zsh 
 yay -S nemo nemo-fileroller superfile pinta gimp libreoffice-still vscodium
+```
+Dependencies & Scripts need
+```zsh
+yay -S jq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd
 ```
 
 5. Installing some plugins

@@ -63,8 +63,8 @@ case $1 in
     mute)
     	# Toggle mute
 	wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle > /dev/null
-	if get_mute ; then
-    dunstify -i "/usr/share/icons/Dracula/symbolic/status/status/microphone-sensitivity-none-symbolic.svg" "Mute" --replace=340716
+	if [ "$(get_mute)" = "[MUTED]" ] ; then
+    dunstify -i "/usr/share/icons/Dracula/symbolic/status/microphone-sensitivity-none-symbolic.svg" "Mute" --replace=340716
 	else
 	send_notification
 	fi

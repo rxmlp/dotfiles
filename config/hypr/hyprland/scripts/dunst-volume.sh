@@ -63,7 +63,7 @@ case $1 in
     mute)
     	# Toggle mute
 	wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle > /dev/null
-	if get_mute ; then
+	if [ "$(get_mute)" = "[MUTED]" ] ; then
     dunstify -i "/usr/share/icons/Dracula/symbolic/status/audio-volume-muted-symbolic.svg" "Mute" --replace=340716
 	else
 	send_notification

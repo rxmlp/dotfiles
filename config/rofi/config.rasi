@@ -19,7 +19,7 @@ configuration{
 window {
     height:                      360px;
     width:                       600;
-    border:                      3px;
+    border:                      2px;
     border-radius:               12px;
     enabled:                     true;
     margin:                      0px;

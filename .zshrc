@@ -111,10 +111,8 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 #-------KITTY-------#
 alias kssh="kitty +kitten ssh"
 # KITTY - alias to be able to use kitty features when connecting to remote servers(e.g use tmux on remote server)
-alias pi="kitty +kitten ssh pi"
 # Alias's for SSH
 # alias SERVERNAME='ssh YOURWEBSITE.com -l USERNAME -p PORTNUMBERHERE'
-
 
 #-------Files-------#
 export EDITOR=nvim
@@ -145,7 +143,7 @@ ex () {
 			case $archive in
 				*.tar.bz2)   tar xvjf $archive    ;;
 				*.tar.gz)    tar xvzf $archive    ;;
-        *.tar.xz)    tar xf $archive      ;;				
+        		*.tar.xz)    tar xf $archive      ;;				
 				*.bz2)       bunzip2 $archive     ;;
 				*.rar)       rar x $archive       ;;
 				*.gz)        gunzip $archive      ;;

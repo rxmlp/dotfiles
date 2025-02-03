@@ -1,7 +1,7 @@
 * {
     background:          #1e1e2e;
     background-alt:      #101019;
-    border:              #1e1e2e;
+    border:              #587ebb;
     default:             #89b4fa;
     default-alt:         #6c7086;
     text:                #cdd6f4;

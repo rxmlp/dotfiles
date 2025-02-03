@@ -108,7 +108,7 @@
         "tooltip-format-ethernet": "Interface: <b>{ifname}</b>\nLocal ip: <b>{ipaddr}</b> \n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> \n<span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "󰖪 ",
-        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "format-alt": "<span> {bandwidthDownBytes}</span> <span> {bandwidthUpBytes}</span>",
         "rotate": 0,
         "interval": 2
     },
