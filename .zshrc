@@ -65,6 +65,12 @@ source $ZSH/oh-my-zsh.sh
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
+#-------Hypr-------#
+alias hyprfix-lock='hyprctl --instance 0 'dispatch exec hyprlock''
+alias hyprfix-paper='pkill hyprpaper || hyprpaper > /dev/null 2>&1 & disown'
+alias hyprfix-idle='pkill hypridle || hypridle > /dev/null 2>&1 & disown'
+alias hyprfix-polkit='systemctl --user restart hyprpolkitagent'
+alias hyprfix-cursor='hyprctl setcursor "catppuccin-mocha-dark-cursors" 24 & gsettings set org.gnome.desktop.interface cursor-size 18 & gsettings set org.gnome.desktop.interface cursor-theme "catppuccin-mocha-dark-cursors"'
 
 #-------Bindkeys-------#
 
@@ -87,7 +93,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # Show all logs in /var/log
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 alias plog="grep -Ei '(removed|installed|upgraded)' /var/log/pacman.log"
-
 
 #-------Colors-------#
 alias yay="yay --color=always" # Yay always color
