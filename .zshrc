@@ -67,8 +67,8 @@ source $ZSH/oh-my-zsh.sh
 
 #-------Hypr-------#
 alias hyprfix-lock='hyprctl --instance 0 'dispatch exec hyprlock''
-alias hyprfix-paper='pkill hyprpaper || hyprpaper > /dev/null 2>&1 & disown'
-alias hyprfix-idle='pkill hypridle || hypridle > /dev/null 2>&1 & disown'
+alias hyprfix-paper='pkill hyprpaper; sleep 2; hyprpaper > /dev/null 2>&1 & disown'
+alias hyprfix-idle='pkill hypridle; sleep 2; hypridle > /dev/null 2>&1 & disown'
 alias hyprfix-polkit='systemctl --user restart hyprpolkitagent'
 alias hyprfix-cursor='hyprctl setcursor "catppuccin-mocha-dark-cursors" 24 & gsettings set org.gnome.desktop.interface cursor-size 18 & gsettings set org.gnome.desktop.interface cursor-theme "catppuccin-mocha-dark-cursors"'
 
