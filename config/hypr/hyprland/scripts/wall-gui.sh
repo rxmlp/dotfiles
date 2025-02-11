@@ -17,5 +17,6 @@ if [ -n "$choice" ] && [ -f "$choice" ]; then
     hyprctl -q hyprpaper reload "$monitor,$choice"
     hyprctl -q hyprpaper unload unused
     kill $old_mpv
+    pkill -f hyprpaper-random.sh
   fi
 fi
