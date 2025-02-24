@@ -62,13 +62,17 @@ Xdg
 ```zsh 
 yay -S xdg-desktop-portal-gtk xdg-desktop-portal-wlr
 ```
+qt
+```zsh 
+yay -S papirus-icon-theme kvantum
+```
 Wallpaper stuff
 ```zsh
-yay -S hyprpaper-git mpv 
+yay -S hyprpaper-git mpv matugen-bin
 ```
 Bar, launcher, volume, notifications, clip & record
 ```zsh 
-yay -S waybar waybar-module-pacman-updates-git dunst rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grim slurp grimblast-git wf-recorder pavucontrol
+yay -S waybar waybar-module-pacman-updates-git dunst rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder pavucontrol
 ```
 Terminal
 ```zsh 
@@ -76,11 +80,11 @@ yay -S kitty zsh eza nvtop fastfetch ghostty fish
 ```
 Filemanagement
 ```zsh 
-yay -S nemo nemo-fileroller superfile pinta gimp libreoffice-still vscodium
+yay -S pcmanfm-qt superfile pinta gimp libreoffice-still vscodium
 ```
 Dependencies & Scripts need
 ```zsh
-yay -S jq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd
+yay -S jq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd socat
 ```
 
 5. Installing some plugins

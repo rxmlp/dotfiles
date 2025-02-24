@@ -1,13 +1,4 @@
-* {
-    background:          #1e1e2e;
-    background-alt:      #101019;
-    border:              #587ebb;
-    default:             #89b4fa;
-    default-alt:         #6c7086;
-    text:                #cdd6f4;
-    selected-text:       #f38ba8;
-    selected-background: #16161f;
-}
+@theme "matugen"
 
 configuration{
     font: "JetBrainsMono Nerd Font 12";

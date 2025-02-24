@@ -1,0 +1,231 @@
+[{
+    "layer": "top",
+        "output": "DP-1",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 0,
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces",
+        "tray"
+    ],
+    "modules-center": [
+    "clock"
+    ],
+    "modules-right": [
+        "custom/clipboard",
+        "custom/hyprpicker",
+        "wireplumber",
+        "custom/notification",
+        "network",
+        "bluetooth"
+    ],
+
+    "custom/hyprpicker": {
+        "format": "󰌁",
+        "on-click": "hyprpicker -a",
+        "tooltip": false
+    },
+
+    "custom/clipboard": {
+        "format": "",
+        "on-click": "clipman pick -t rofi",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace m+1",
+        "on-scroll-down": "hyprctl dispatch workspace m-1",
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": []
+        },
+        "format-icons": {
+          "active": "󰮯",
+          "empty": "",
+          "default": ""
+        }
+    },
+
+    "custom/launcher": {
+        "interval": "once",
+        "format": "",
+        "on-click": "pkill rofi || rofi -show drun",
+        "on-click-right": "$HOME/.config/rofi/power-menu.sh",
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+    "clock": {
+        "format": " {:%H:%M}",
+        "format-alt": "󰃭 {:%d·%m·%y}",
+        "on-click-right": "mode",
+        "tooltip": false
+    },
+
+    "wireplumber": {
+        "format": "{icon}  {volume}%",
+      	"on-scroll-up": "$HOME/.config/hypr/hyprland/scripts/dunst-volume.sh up",
+      	"on-scroll-down": "$HOME/.config/hypr/hyprland/scripts/dunst-volume.sh down",
+        "tooltip": false,
+        "format-muted": " Muted",
+	    "on-click": "$HOME/.config/hypr/hyprland/scripts/dunst-volume.sh mute",
+        "on-click-right": "pavucontrol",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "network": {
+        "tooltip": true,
+        "format-wifi": " ",
+        "on-click-right": "$HOME/.config/rofi/wifi-menu.sh",
+        "format-ethernet": "󰈀 ",
+        "tooltip-format-wifi": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b> \n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> \n<span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "tooltip-format-ethernet": "Interface: <b>{ifname}</b>\nLocal ip: <b>{ipaddr}</b> \n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> \n<span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "format-alt": "<span> {bandwidthDownBytes}</span> <span> {bandwidthUpBytes}</span>",
+        "rotate": 0,
+        "interval": 2
+    },
+    
+	"bluetooth": {
+		"format": " {status}",
+		"format-disabled": " off",
+		"format-connected": " {num_connections}",
+        "format-alt": " {device_alias}",
+		"tooltip-format": "{device_alias}",
+		"tooltip-format-connected": " {device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip": false,
+        "on-click-right": "$HOME/.config/rofi/bluetooth-menu.sh"
+	},
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "",
+        "return-type": "json",
+        "on-click": "dunstctl history-pop",
+        "on-click-right": "$HOME/.config/rofi/notifications.sh",
+        "escape": true,
+    }
+},
+
+{
+    "layer": "top",
+        "output": "DP-2",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 0,
+    "modules-left": [
+    ],
+    "modules-center": [
+	"hyprland/workspaces",
+    "tray"
+    ],
+    "modules-right": [
+        "custom/gpu-usage",
+        "cpu",
+        "temperature",
+        "memory",
+        "custom/updates"
+    ],
+    
+    "custom/updates": {
+    "format": "{} {icon}",
+    "return-type": "json",
+    "format-icons": {
+        "has-updates": "󱍷",
+        "updated": "󰂪"
+    },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300",
+    "on-click": "hyprctl dispatch exec '[monitor DP-1; workspace special:update; float; size 750 500; bordercolor 0xFFF6D56A 0xFFe33131 90deg]' kitty yay"
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace m+1",
+        "on-scroll-down": "hyprctl dispatch workspace m-1",
+        "persistent-workspaces": {
+            "10": [],
+            "11": [],
+            "12": []
+        },
+        "format-icons": {
+          "active": "󰮯",
+          "empty": "",
+          "default": ""
+        }
+    },
+
+    "custom/gpu-usage": {
+        "exec": "cat /sys/class/hwmon/hwmon5/device/gpu_busy_percent",
+        "format": "󰾲 {}%",
+        "return-type": "",
+        "interval": 1,
+        "on-click": "kitty nvtop"
+    },
+
+    "cpu": {
+        "interval": 15,
+        "format": " {usage}%",
+        "states": {
+          "warning": 70,
+          "critical": 90
+        },
+        "on-click": "kitty btop"
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": " {}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "kitty btop"
+    },
+
+      "temperature": {
+        "critical-threshold": 60,
+        "format-critical": " {temperatureC}°C",
+        "format": " {temperatureC}°C",
+        "interval": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp2_input"
+    },
+    
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    }
+}]

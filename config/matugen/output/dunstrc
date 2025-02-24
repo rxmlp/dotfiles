@@ -1,0 +1,30 @@
+[global]
+    frame_color = "#e3c46d"
+    separator_color= frame
+    highlight = "#e3c46d"
+    corner_radius = 10
+    monitor = 0
+    font = "JetBrains Mono Nerd Font"
+    dmenu = /usr/bin/rofi -dmenu dunst:
+    browser = /usr/bin/librewolf -new-tab
+    icon_position = left
+
+    icon_path = /usr/share/icons/Dracula/scalable/devices/:/usr/share/icons/Dracula/scalable/apps/
+
+
+[urgency_low]
+    background = "#16130b"
+    foreground = "#eae1d4"
+    highlight = "#584400"
+
+
+[urgency_normal]
+    background = "#16130b"
+    foreground = "#eae1d4"
+    highlight = "#584400"
+
+
+[urgency_critical]
+    background = "#16130b"
+    foreground = "#eae1d4"
+    highlight = "#ffb4ab"

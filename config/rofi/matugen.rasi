@@ -1,0 +1,10 @@
+* {
+    background: #111418;
+    background-alt: #0b0e13;
+    selected-background: #111418;
+    border: #a2c9fe;
+    default: #a2c9fe;
+    default-alt: #1c4875;
+    text: #e1e2e8;
+    selected-text: #38608f;
+}

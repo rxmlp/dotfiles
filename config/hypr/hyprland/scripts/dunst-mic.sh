@@ -4,7 +4,7 @@
 # $./volume.sh up
 # $./volume.sh down
 # $./volume.sh mute
-theme=dracula-icons
+theme=Papirus-Dark
 
 function get_volume {
     wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '{print $2*100}'

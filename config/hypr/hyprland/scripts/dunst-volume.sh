@@ -4,7 +4,7 @@
 # $./volume.sh up
 # $./volume.sh down
 # $./volume.sh mute
-theme=dracula-icons
+theme=Papirus-Dark
 
 function get_volume {
     wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2*100}'
@@ -43,6 +43,12 @@ if [ "$volume" = "0" ]; then
 fi
 
 bar=$(seq -s "─" $(($volume/5)) | sed 's/[0-9]//g')
+
+    # Debugging statements
+    echo "Volume: $volume"
+    echo "Bar: $bar"
+    echo "Icon Name: $icon_name"
+
 # Send the notification
 dunstify "$volume"" ""$bar" -i "$icon_name" --replace=340716
 

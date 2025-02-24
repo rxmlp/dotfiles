@@ -86,11 +86,10 @@ bindkey "^[[57438;5u" backward-word
 
 #-------My cute lil random alias-------#
 alias ai='sh ~/.sh/ai.sh' # Start and stop ai
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"' #   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias ffshare='~/.dotfiles/scripts/Random/ffshare.sh'
 
-
-#-------Techy-------#
-# Show all logs in /var/log
+#-------Logs-------#
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 alias plog="grep -Ei '(removed|installed|upgraded)' /var/log/pacman.log"
 
@@ -98,10 +97,11 @@ alias plog="grep -Ei '(removed|installed|upgraded)' /var/log/pacman.log"
 alias yay="yay --color=always" # Yay always color
 
 # Alias's for multiple directory listing commands
-alias ls='eza --icons --color=always' # Use lsd insead of ls
-alias la='eza --icons --color=always -Alh' # show hidden files
-alias lk='eza --icons --color=always -lSrh' # sort by size
-alias lka='eza --icons --color=always -AlSrh' # sort by size | show hidden files
+alias ls='eza --icons --color=always' # Use eza insead of ls
+alias ld='eza --icons --color=always -d */' # Show dirs only
+alias la='eza --icons --color=always -Alh' # Show hidden files
+alias lk='eza --icons --color=always -lSrh' # Sort by size
+alias lka='eza --icons --color=always -AlSrh' # Sort by size | show hidden files
 
 # Color for manpages in less makes manpages a little easier to read
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -133,15 +133,14 @@ alias bd='cd "$OLDPWD"' # Where was I?
 
 
 # Alias's for archives
-alias mktar='tar -cvf'
-alias mkbz2='tar -cvjf'
-alias mkgz='tar -cvzf'
-alias untar='tar -xvf'
-alias unbz2='tar -xvjf'
-alias ungz='tar -xvzf'
+mkbz2() {
+  if [ -d "$1" ]; then
+    tar -cvjf "${1}.tar.bz2" "$1"
+  else
+    echo "Directory '$1' does not exist."
+  fi
+}
 
-
-# Extracts any archive(s) (if unp isn't installed)
 ex () {
 	for archive in "$@"; do
 		if [ -f "$archive" ] ; then

@@ -1,9 +1,9 @@
 [global]
-    frame_color = "#90919acc"
+    frame_color = "#a2c9fe"
     separator_color= frame
-    highlight = "#89b4fa"
-    monitor = 1
+    highlight = "#a2c9fe"
     corner_radius = 10
+    monitor = 1
     font = "JetBrains Mono Nerd Font"
     dmenu = /usr/bin/rofi -dmenu dunst:
     browser = /usr/bin/librewolf -new-tab
@@ -13,16 +13,18 @@
 
 
 [urgency_low]
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
+    background = "#111418"
+    foreground = "#e1e2e8"
+    highlight = "#1c4875"
 
 
 [urgency_normal]
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
+    background = "#111418"
+    foreground = "#e1e2e8"
+    highlight = "#1c4875"
 
 
 [urgency_critical]
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
-    frame_color = "#fab387"
+    background = "#111418"
+    foreground = "#e1e2e8"
+    highlight = "#ffb4ab"
