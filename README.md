@@ -68,7 +68,7 @@ yay -S papirus-icon-theme kvantum
 ```
 Wallpaper stuff
 ```zsh
-yay -S hyprpaper-git mpv matugen-bin
+yay -S swww mpv matugen-bin
 ```
 Bar, launcher, volume, notifications, clip & record
 ```zsh 

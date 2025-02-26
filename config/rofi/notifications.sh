@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Extract notification summaries
 summaries=$(dunstctl history | jq -r '.data[][] | .appname.data + " : " + .body.data')

@@ -10,7 +10,6 @@ post_hook = 'hyprctl reload'
 input_path = '~/.config/matugen/templates/waybar-colors.css'
 output_path = '~/.config/waybar/matugen.css'
 post_hook = 'pkill -SIGUSR2 waybar'
-# post_hook = '~/.config/hypr/hyprland/scripts/waybar.sh'
 
 [templates.dunst]
 input_path = '~/.config/matugen/templates/dunstrc'
@@ -30,9 +29,13 @@ input_path = '~/.config/matugen/templates/pywalfox-colors.json'
 output_path = '~/.cache/wal/colors.json'
 post_hook = 'pywalfox update'
 
-[templates.discord]
-input_path = '~/.config/matugen/templates/midnight-discord.css'
-output_path = '~/.config/vesktop/themes/midnight-discord.css'
+[templates.librewolf]
+input_path = '~/.config/matugen/templates/librewolf-colors.css'
+output_path = '~/.dotfiles/extra/darkreader/matugen.css'
+
+[templates.vesktop]
+input_path = '~/.config/matugen/templates/vesktop-colors.css'
+output_path = '~/.config/vesktop/themes/matugen.css'
 
 [templates.signal]
 input_path = '~/.config/matugen/templates/signal-colors.css'

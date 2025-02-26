@@ -1,7 +1,7 @@
 [global]
-    frame_color = "#ffb878"
+    frame_color = "#adc6ff"
     separator_color= frame
-    highlight = "#ffb878"
+    highlight = "#adc6ff"
     corner_radius = 10
     monitor = 1
     font = "JetBrains Mono Nerd Font"
@@ -13,18 +13,18 @@
 
 
 [urgency_low]
-    background = "#19120c"
-    foreground = "#efe0d5"
-    highlight = "#6b3b03"
+    background = "#111318"
+    foreground = "#e2e2e9"
+    highlight = "#2b4678"
 
 
 [urgency_normal]
-    background = "#19120c"
-    foreground = "#efe0d5"
-    highlight = "#6b3b03"
+    background = "#111318"
+    foreground = "#e2e2e9"
+    highlight = "#2b4678"
 
 
 [urgency_critical]
-    background = "#19120c"
-    foreground = "#efe0d5"
+    background = "#111318"
+    foreground = "#e2e2e9"
     highlight = "#ffb4ab"

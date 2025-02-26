@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 pause() {
 if pgrep -f mpv > /dev/null; then 

@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Ask for confirmations
 read -p "Get Dracula icons?? (y/n) " dracula_icons_confirmation

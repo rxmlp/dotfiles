@@ -1,0 +1,3 @@
+
+    @define-color color1 {{colors.primary.default.hex}};
+    @define-color color2 {{colors.on_secondary.default.hex}};

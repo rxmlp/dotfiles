@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Ask for confirmations
 read -p "Apply Catppuccin mocha theme to Signal? (y/n) " signal_confirmation

@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 
 toggle() {
@@ -27,7 +27,7 @@ fi
 }
 
 on(){
-    #!/usr/bin/env sh
+    #!/usr/bin/env bash
 
 HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
 if [ "$HYPRGAMEMODE" = 1 ] ; then

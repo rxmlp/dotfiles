@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 theme='power-menu'
 uptime="$(uptime -p | sed -e 's/up //g')"
