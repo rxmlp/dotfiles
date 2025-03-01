@@ -49,7 +49,8 @@ ln -s ~/.dotfiles/config/waybar ~/.config/waybar
 ln -s ~/.dotfiles/config/dunst ~/.config/dunst
 ln -s ~/.dotfiles/config/rofi ~/.config/rofi
 ln -s ~/.dotfiles/config/superfile ~/.config/superfile
-ln -s ~/.dotfiles/config/wallust ~/.config/wallust
+ln -s ~/.dotfiles/config/matugen ~/.config/matugen
+ln -s ~/.dotfiles/config/qt6ct ~/.config/qt6ct
 ```
 
 4.  Installing a few things...

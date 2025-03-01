@@ -29,10 +29,6 @@ input_path = '~/.config/matugen/templates/pywalfox-colors.json'
 output_path = '~/.cache/wal/colors.json'
 post_hook = 'pywalfox update'
 
-[templates.librewolf]
-input_path = '~/.config/matugen/templates/librewolf-colors.css'
-output_path = '~/.dotfiles/extra/darkreader/matugen.css'
-
 [templates.vesktop]
 input_path = '~/.config/matugen/templates/vesktop-colors.css'
 output_path = '~/.config/vesktop/themes/matugen.css'
@@ -44,11 +40,3 @@ output_path = '~/.config/matugen/output/signal-colors.css'
 [templates.qt6ct]
 input_path = '~/.config/matugen/templates/qtct-colors.conf'
 output_path = '~/.config/qt6ct/colors/matugen.conf'
-
-[templates.gtk3] # ???
-input_path = '~/.config/matugen/templates/gtk-colors.css'
-output_path = '~/.config/gtk-3.0/matugen.css'
-
-[templates.gtk4] # ???
-input_path = '~/.config/matugen/templates/gtk-colors.css'
-output_path = '~/.config/gtk-4.0/matugen.css'

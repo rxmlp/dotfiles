@@ -66,6 +66,7 @@ source $ZSH/oh-my-zsh.sh
 # HIST_STAMPS="mm/dd/yyyy"
 
 #-------Hypr-------#
+alias hypr-update='yay -S hyprland-git hyprlock-git hypridle-git hyprutils-git hyprgraphics-git hyprcursor-git hyprland-qt-support-git hyprwayland-scanner-git hyprpicker-git xdg-desktop-portal-hyprland-git hyprland-qtutils-git hyprland-protocols-git hyprsunset-git aquamarine-git hyprsysteminfo-git hyprpolkitagent-git'
 alias hyprfix-lock='hyprctl --instance 0 'dispatch exec hyprlock''
 alias hyprfix-paper='pkill hyprpaper; sleep 2; hyprpaper > /dev/null 2>&1 & disown'
 alias hyprfix-idle='pkill hypridle; sleep 2; hypridle > /dev/null 2>&1 & disown'
@@ -192,11 +193,6 @@ spf() {
     # Linux
     if [[ "$os" == "Linux" ]]; then
         export SPF_LAST_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/superfile/lastdir"
-    fi
-
-    # macOS
-    if [[ "$os" == "Darwin" ]]; then
-        export SPF_LAST_DIR="$HOME/Library/Application Support/superfile/lastdir"
     fi
 
     command spf "$@"
