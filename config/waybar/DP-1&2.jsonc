@@ -19,7 +19,6 @@
         "custom/clipboard",
         "custom/hyprpicker",
         "wireplumber",
-        "custom/notification",
         "network",
         "bluetooth"
     ],
@@ -82,11 +81,11 @@
 
     "wireplumber": {
         "format": "{icon}  {volume}%",
-      	"on-scroll-up": "$HOME/.config/hypr/hyprland/scripts/dunst-volume.sh up",
-      	"on-scroll-down": "$HOME/.config/hypr/hyprland/scripts/dunst-volume.sh down",
+      	"on-scroll-up": "$HOME/.config/hypr/hyprland/scripts/volume/mako-volume.sh up",
+      	"on-scroll-down": "$HOME/.config/hypr/hyprland/scripts/volume/mako-volume.sh down",
         "tooltip": false,
         "format-muted": " Muted",
-	    "on-click": "$HOME/.config/hypr/hyprland/scripts/dunst-volume.sh mute",
+	    "on-click": "$HOME/.config/hypr/hyprland/scripts/volume/mako-volume.sh mute",
         "on-click-right": "pavucontrol",
         "format-icons": {
             "headphone": "",
@@ -101,6 +100,7 @@
 
     "network": {
         "tooltip": true,
+        "format": "󰖪 ",
         "format-wifi": " ",
         "on-click-right": "$HOME/.config/rofi/wifi-menu.sh",
         "format-ethernet": "󰈀 ",
@@ -129,7 +129,6 @@
         "tooltip": false,
         "format": "",
         "return-type": "json",
-        "on-click": "dunstctl history-pop",
         "on-click-right": "$HOME/.config/rofi/notifications.sh",
         "escape": true,
     }

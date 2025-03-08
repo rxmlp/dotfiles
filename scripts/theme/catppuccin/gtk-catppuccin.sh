@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Ask for confirmations
-read -p "Get Dracula icons?? (y/n) " dracula_icons_confirmation
-dracula_icons_confirmation=${dracula_icons_confirmation,,}
+read -p "Get Papirus icons?? (y/n) " papirus_icons_confirmation
+papirus_icons_confirmation=${papirus_icons_confirmation,,}
 
 read -p "Get GTK theme?? (y/n) " gtk_confirmation
 gtk_confirmation=${gtk_confirmation,,}
@@ -11,18 +11,14 @@ read -p "Get Cursor?? (y/n) " cursor_confirmation
 cursor_confirmation=${cursor_confirmation,,}
 
 
-# Get Dracula Icons
-if [ "$dracula_icons_confirmation" = 'y' ]; then
-    if [ ! -d "$HOME/.icons" ]; then
-        echo "Creating $HOME/.icons directory..."
-        mkdir "$HOME/.icons"
-    fi
-    echo "Downloading GTK Dracula icons"
-    git clone https://github.com/m4thewz/dracula-icons $HOME/.icons/dracula-icons
-    echo "Applied Dracula icons"
-    gsettings set org.gnome.desktop.interface icon-theme dracula-icons
+# Get Papirus Icons
+if [ "$papirus_icons_confirmation" = 'y' ]; then
+    echo "Downloading Papirus icons"
+    yay -S papirus-icon-theme
+    gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
+    echo "Applied Papirus icons"
 else
-    echo "Dracula icons skipped"
+    echo "Papirus icons skipped"
 fi
 
 # Get GTK theme

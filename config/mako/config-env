@@ -1,0 +1,41 @@
+# Take a look at the mako manpage with the command:
+#   man 5 mako
+# To view all configuration options.
+
+font=Cozette 11
+format=<b>%a ⏵</b> %s\n%b
+sort=-time
+output=DP-1
+layer=overlay
+anchor=top-right
+background-color={{colors.background.default.hex}}
+width=300
+height=110
+margin=5
+padding=0,5,10
+border-size=2
+border-color={{colors.on_primary_fixed.default.hex}}
+border-radius=15
+icons=1
+max-icon-size=64
+default-timeout=4000
+ignore-timeout=1
+
+[urgency=normal]
+border-color={{colors.tertiary.default.hex}}
+
+[urgency=high]
+border-color={{colors.error.default.hex}}
+default-timeout=0
+
+[app-name=volume]
+border-color={{colors.primary.default.hex}}
+anchor=bottom-center
+default-timeout=2000
+outer-margin=20
+
+[app-name=betterbird]
+border-color={{colors.primary.default.hex}}
+anchor=top-center
+default-timeout=3000
+outer-margin=20

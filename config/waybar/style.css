@@ -39,7 +39,7 @@ tooltip * {
 }
 
 #workspaces button.active {
-  color: @surface_container_highest;
+  color: @secondary;
 }
 
 #workspaces button.focused {
@@ -61,7 +61,6 @@ tooltip * {
 }
 
 #window,
-#custom-killactive,
 #custom-launcher,
 #clock,
 #wireplumber,
@@ -75,8 +74,6 @@ tooltip * {
 #temperature,
 #memory,
 #custom-clipboard,
-#custom-recorder,
-#custom-recorder.enabled,
 #custom-hyprpicker,
 #custom-notification,
 #backlight {
@@ -98,13 +95,6 @@ tooltip * {
   margin-left: 10px;
   padding-right: 0px;
   padding-left: 5px;
-}
-
-#custom-killactive {
-  color: @on_error;
-  border-radius: 10px 0 0 10px;
-  border-left: 60px;
-  border-right: 0px;
 }
 
 #window {
@@ -151,18 +141,14 @@ tooltip * {
   border-right: 0px;
 }
 
-#custom-notification {
-  color: @tertiary;
-}
-
 #cpu {
-  color: @source_color;
+  color: @on_tertiary_container;
   border-left: 0px;
   border-right: 0px;
 }
 
 #custom-gpu-usage {
-  color: @source_color;
+  color: @on_tertiary_container;
   border-radius: 10px 0 0 10px;
   margin-right: 0px;
   border-left: 0px;
@@ -170,20 +156,20 @@ tooltip * {
 }
 
 #custom-updates {
-  color: @source_color;
+  color: @error;
   border-radius: 10px 10px 10px 10px;
   margin-left: 5px;
   margin-right: 10px;
 }
 
 #temperature {
-  color: @source_color;
+  color: @on_tertiary_container;
   border-left: 0px;
   border-right: 0px;
 }
 
 #memory {
-  color: @source_color;
+  color: @on_tertiary_container;
   border-radius: 0 10px 10px 0;
   margin-right: 10px;
   border-left: 0px;
@@ -191,23 +177,15 @@ tooltip * {
 }
 
 #custom-clipboard {
-  color: @source_color;
+  color: @surface_tint;
   border-radius: 10px 0 0 10px;
   margin-right: 0px;
   border-left: 0px;
   border-right: 0px;
 }
 
-#custom-recorder {
-  color: @on_primary;
-}
-
-#custom-recorder.enabled {
-  color: @on_error;
-}
-
 #custom-hyprpicker {
-  color: @source_color;
+  color: @surface_tint;
   border-radius: 0 10px 10px 0;
   margin-right: 10px;
   border-left: 0px;

@@ -1,0 +1,58 @@
+code_syntax_highlight = "matugen"
+
+# ========= Border =========
+file_panel_border = "{{colors.outline_variant.default.hex}}"
+sidebar_border = "{{colors.background.default.hex}}"
+footer_border = "{{colors.outline_variant.default.hex}}"
+
+# ========= Border Active =========
+file_panel_border_active = "{{colors.source_color.default.hex}}"
+sidebar_border_active = "{{colors.error_container.default.hex}}"
+footer_border_active = "{{colors.inverse_primary.default.hex}}"
+modal_border_active = "{{colors.surface_variant.default.hex}}"
+
+# ========= Background (bg) =========
+full_screen_bg = "{{colors.background.default.hex}}"
+file_panel_bg = "{{colors.background.default.hex}}"
+sidebar_bg = "{{colors.background.default.hex}}"
+footer_bg = "{{colors.background.default.hex}}"
+modal_bg = "{{colors.background.default.hex}}"
+
+# ========= Foreground (fg) =========
+full_screen_fg = "{{colors.outline.default.hex}}"
+file_panel_fg = "{{colors.outline.default.hex}}"
+sidebar_fg = "{{colors.outline.default.hex}}"
+footer_fg = "{{colors.outline.default.hex}}"
+modal_fg = "{{colors.outline.default.hex}}"
+
+# ========= Special Color =========
+cursor = "{{colors.on_error_container.default.hex}}"
+correct = "{{colors.inverse_primary.default.hex}}"
+error = "{{colors.error_container.default.hex}}"
+hint = "{{colors.tertiary_container.default.hex}}"
+cancel = "{{colors.error.default.hex}}"
+# Gradient color can only have two color!
+gradient_color = ["{{colors.on_tertiary_fixed.default.hex}}", "{{colors.surface_tint.default.hex}}"]
+
+# ========= File Panel Special Items =========
+file_panel_top_directory_icon = "{{colors.inverse_primary.default.hex}}"
+file_panel_top_path = "{{colors.tertiary_fixed_dim.default.hex}}" 
+file_panel_item_selected_fg = "{{colors.tertiary_fixed_dim.default.hex}}"
+file_panel_item_selected_bg = "{{colors.background.default.hex}}"
+
+# ========= Sidebar Special Items =========
+sidebar_title = "{{colors.primary_fixed_dim.default.hex}}"
+sidebar_item_selected_fg = "{{colors.tertiary_fixed.default.hex}}"
+sidebar_item_selected_bg = "{{colors.background.default.hex}}"
+sidebar_divider = "{{colors.surface_variant.default.hex}}"
+
+# ========= Modal Special Items =========
+modal_cancel_fg = "{{colors.surface_container_highest.default.hex}}"
+modal_cancel_bg = "{{colors.error.default.hex}}"
+
+modal_confirm_fg = "{{colors.surface_container_highest.default.hex}}"
+modal_confirm_bg = "{{colors.tertiary_fixed.default.hex}}"
+
+# ========= Help Menu =========
+help_menu_hotkey = "{{colors.tertiary_fixed.default.hex}}"
+help_menu_title = "{{colors.error.default.hex}}"

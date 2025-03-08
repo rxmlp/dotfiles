@@ -50,9 +50,7 @@ dunstify "$volume"" ""$bar" -i "$icon_name" --replace=340716
 
 case $1 in
     up)
-	# Set the volume on (if it was muted)
 	wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0 > /dev/null
-	# Up the volume (+ 5%)
 	wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+ > /dev/null
 	send_notification
 	;;
@@ -62,10 +60,9 @@ case $1 in
 	send_notification
 	;;
     mute)
-    	# Toggle mute
 	wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle > /dev/null
 	if [ "$(get_mute)" = "[MUTED]" ] ; then
-    dunstify -i "/usr/share/icons/$theme/symbolic/status/microphone-sensitivity-none-symbolic.svg" "Mute" --replace=340716
+    dunstify "/usr/share/icons/$theme/symbolic/status/microphone-sensitivity-none-symbolic.svg" "Mute" --replace=340716
 	else
 	send_notification
 	fi

@@ -9,7 +9,7 @@ old_mpv=$(pgrep -f "mpv --wayland-app-id=mpv-bg")
 if [ -n "$choice" ] && [ -f "$choice" ]; then
   if [[ "$choice" =~ \.(mp4)$ ]]; then
     hyprctl dispatch movetoworkspacesilent special:load
-    matugen -c ~/.config/matugen/matugen.toml image $(fd "$choice"-mpv.png .thumbnails)
+    matugen -c ~/.config/matugen/matugen.toml image $(fd "$choices"-mpv.png .thumbnails)
     kill $old_mpv
     mpv --wayland-app-id="mpv-bg" --loop --mute --load-scripts=no "$choice" --input-ipc-server=/tmp/mpv-socket-$monitor
   fi
