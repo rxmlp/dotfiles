@@ -19,4 +19,4 @@ sed -i "1i @import \"matugen.css\";" "${TEMP}/stylesheets/manifest.css"
 
 sudo asar p ${TEMP} "${SIGNAL_DIR}/app.asar"
 
-hyprctl dispatch exec [workspace 10 silent]; signal-desktop --use-tray-icon --enable-features=UseOzonePlatform --ozone-platform=wayland > /dev/null 2>&1 & exit
+hyprctl dispatch exec [workspace 20 silent]; signal-desktop --use-tray-icon --enable-features=UseOzonePlatform --ozone-platform=wayland > /dev/null 2>&1 & exit

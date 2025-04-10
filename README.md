@@ -55,7 +55,7 @@ ln -s ~/.dotfiles/config/qt6ct ~/.config/qt6ct
 
 Hypr
 ```zsh
-yay -S hyprland-git hyprlock-git hypridle-git hyprutils-git hyprgraphics-git hyprcursor-git hyprland-qt-support-git hyprwayland-scanner-git hyprpicker-git xdg-desktop-portal-hyprland-git hyprland-qtutils-git hyprland-protocols-git hyprsunset-git aquamarine-git hyprsysteminfo-git hyprpolkitagent-git ninja gcc cmake meson libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite libxrender pixman wayland-protocols cairo pango seatd libxkbcommon xcb-util-wm glaze xorg-xwayland libinput libliftoff libdisplay-info cpio tomlplusplus xcb-util-errors qt6ct
+yay -S hyprland hyprlock hypridle hyprutils hyprgraphics hyprcursor hyprland-qt-support hyprwayland-scanner hyprpicker xdg-desktop-portal-hyprland hyprland-qtutils hyprland-protocols hyprsunset aquamarine hyprpolkitagent wayland-protocols qt6ct
 ```
 Xdg
 ```zsh 
@@ -71,11 +71,11 @@ Get pywalfox
 https://github.com/Frewacom/pywalfox/issues/68#issuecomment-873381669
 ```
 ```zsh
-yay -S swww mpv matugen-bin
+yay -S swww mpvpaper matugen-bin
 ```
 Bar, launcher, volume, notifications, clip & record
 ```zsh 
-yay -S waybar waybar-module-pacman-updates-git mako rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder pavucontrol
+yay -S waybar waybar-module-pacman-updates-git mako rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder better-control-git
 ```
 Terminal
 ```zsh 
@@ -83,11 +83,11 @@ yay -S kitty zsh eza nvtop fastfetch
 ```
 Filemanagement
 ```zsh 
-yay -S pcmanfm-qt superfile pinta gimp libreoffice-still vscodium
+yay -S pcmanfm-qt superfile pinta gimp libreoffice-still vscodium-bin
 ```
 Dependencies & Scripts need
 ```zsh
-yay -S jq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd socat
+yay -S jq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd socat sed
 ```
 
 5. Installing some plugins
@@ -100,5 +100,4 @@ Enable used plugins
 ```zsh
 hyprpm enable xtra-dispatchers
 hyprpm enable hyprexpo
-hyprpm enable hyprwinwrap
 ```

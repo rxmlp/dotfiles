@@ -1,6 +1,10 @@
 [config]
 # ...
 
+[templates.example]
+input_path = '~/.config/matugen/templates/example.conf'
+output_path = '~/.config/matugen/output/example.conf'
+
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.conf'
 output_path = '~/.config/matugen/output/hyprland-colors.conf'
@@ -33,9 +37,17 @@ post_hook = 'source ~/.pywalfox/bin/activate; pywalfox install --browser librewo
 input_path = '~/.config/matugen/templates/vesktop-colors.css'
 output_path = '~/.config/vesktop/themes/matugen.css'
 
+[templates.spicetify]
+input_path = '~/.config/matugen/templates/spicetify-colors.ini'
+output_path = '~/.config/spicetify/Themes/matugen/color.ini'
+
 [templates.heroic]
 input_path = '~/.config/matugen/templates/heroic-colors.css'
 output_path = '~/.config/heroic/themes/matugen-dark.css'
+
+[templates.steam]
+input_path = '~/.config/matugen/templates/steam-colors.css'
+output_path = '~/.config/matugen/output/steam-colors.css'
 
 [templates.signal]
 input_path = '~/.config/matugen/templates/signal-colors.css'

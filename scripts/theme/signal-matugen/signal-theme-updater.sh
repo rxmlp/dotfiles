@@ -15,5 +15,5 @@ if pkexec asar p ${TEMP} "${SIGNAL_DIR}/app.asar"; then
       echo "Signal is running, killing process..."
       pkill signal-desktop
     fi
-    hyprctl dispatch exec [workspace 10 silent]; signal-desktop --use-tray-icon --enable-features=UseOzonePlatform --ozone-platform=wayland > /dev/null 2>&1 & exit
+    hyprctl dispatch exec [workspace 20 silent]; signal-desktop --use-tray-icon --enable-features=UseOzonePlatform --ozone-platform=wayland > /dev/null 2>&1 & exit
 fi
