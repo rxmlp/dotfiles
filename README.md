@@ -5,8 +5,8 @@ Don't come crying if these dotfiles are shit, I made it so it works for my day t
 This setup was made for dual monitor, so if you want to use only one monitor this might not work perfectly. It for sure won't work as intended.
 As I am also changing the setup a lot if you don't read changes before applying they might not work. Missing apps ect. That is usually not a problem but you have been warned.
 
-![DP-1](DP-1.jpg)
-![DP-2](DP-2.jpg)
+![DP-1](DP-1.png)
+![DP-2](DP-2.png)
 
 
 1. Kinda need git for to clone and yay for last
