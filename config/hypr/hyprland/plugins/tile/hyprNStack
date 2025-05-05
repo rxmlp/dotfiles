@@ -1,0 +1,16 @@
+plugin {
+  nstack {
+    layout {
+      orientation=left
+      new_on_top=0
+      new_is_master=1
+      no_gaps_when_only=0
+      special_scale_factor=0.8
+      inherit_fullscreen=1
+      stacks=2
+      center_single_master=0
+      mfact=0.4
+      single_mfact=0.4
+    }
+  }
+}

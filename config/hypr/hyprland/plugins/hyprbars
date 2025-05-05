@@ -1,0 +1,19 @@
+plugin {
+    hyprbars {
+        # Honestly idk if it works like css, but well, why not
+        bar_text_font = Rubik, Geist, AR One Sans, Reddit Sans, Inter, Roboto, Ubuntu, Noto Sans, sans-serif
+        bar_height = 30
+        bar_padding = 10
+        bar_button_padding = 5
+        bar_precedence_over_border = true
+        bar_part_of_window = true
+
+        bar_color = $background
+        col.text = $text
+
+
+        # example buttons (R -> L)
+        # hyprbars-button = color, size, on-click
+        hyprbars-button = rgb(F7DCDE), 13, 󰖭, hyprctl dispatch killactive
+    }
+}

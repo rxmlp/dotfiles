@@ -1,0 +1,193 @@
+
+
+@import "matugen.css";
+
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family:
+  JetBrains Mono Nerd Font;
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 0;
+}
+
+modules-right {
+  border-radius: 10px;
+}
+
+window#waybar {
+  background: rgba(21, 18, 27, 0);
+  color: @on_background;
+}
+
+tooltip {
+  background: @background;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: @surface_container_lowest;
+}
+
+tooltip * {
+  border-radius: 10px
+}
+
+#workspaces button {
+  color: @surface_container;
+}
+
+#workspaces button.active {
+  color: @secondary;
+}
+
+#workspaces button.focused {
+  color: @surface_container_high;
+  background: @on_tertiary_fixed_variant;
+  border-radius: 10px;
+}
+
+#workspaces button.urgent {
+  color: @surface_container_lowest;
+  background: @on_primary;
+  border-radius: 10px;
+}
+
+#workspaces button:hover {
+  background: @surface_container_lowest;
+  color: @on_background;
+  border-radius: 10px;
+}
+
+#window,
+#custom-launcher,
+#clock,
+#wireplumber,
+#network,
+#bluetooth,
+#workspaces,
+#tray,
+#cpu,
+#custom-gpu-usage,
+#custom-updates,
+#temperature,
+#memory,
+#custom-clipboard,
+#custom-hyprpicker,
+#custom-notification,
+#backlight {
+  background: @background;
+  padding: 0px 10px;
+  margin: 3px 0px;
+  margin-top: 10px;
+  border: 1px solid @surface;
+}
+
+#tray {
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+#workspaces {
+  background: @background;
+  border-radius: 10px;
+  margin-left: 10px;
+  padding-right: 0px;
+  padding-left: 5px;
+}
+
+#window {
+  border-radius: 0 10px 10px 0;
+  margin-left: 0px;
+  margin-right: 60px;
+}
+
+#clock {
+  color: @surface_tint;
+  border-radius: 10px 10px 10px 10px;
+  margin-left: 0px;
+  margin-right: 10px;
+  border-right: 0px;
+}
+
+#custom-launcher {
+  color: @surface_tint;
+  border-radius: 10px 10px 10px 10px;
+  padding: 0px 20px 0px 15px;
+  margin-left: 10px;
+  margin-right: 0px;
+  border-right: 0px;
+}
+
+#network {
+  color: @surface_bright;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#bluetooth {
+  color: @surface_bright;
+  border-radius: 0 10px 10px 0;
+  margin-right: 10px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#wireplumber {
+  color: @tertiary;
+  border-radius: 10px 0 0 10px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#cpu {
+  color: @on_tertiary_container;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#custom-gpu-usage {
+  color: @on_tertiary_container;
+  border-radius: 10px 0 0 10px;
+  margin-right: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#custom-updates {
+  color: @error;
+  border-radius: 10px 10px 10px 10px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+#temperature {
+  color: @on_tertiary_container;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#memory {
+  color: @on_tertiary_container;
+  border-radius: 0 10px 10px 0;
+  margin-right: 10px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#custom-clipboard {
+  color: @surface_tint;
+  border-radius: 10px 0 0 10px;
+  margin-right: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#custom-hyprpicker {
+  color: @surface_tint;
+  border-radius: 0 10px 10px 0;
+  margin-right: 10px;
+  border-left: 0px;
+  border-right: 0px;
+}

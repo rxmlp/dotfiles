@@ -1,0 +1,10 @@
+* {
+    background: {{colors.background.default.hex}};
+    background-alt: {{colors.surface_container_lowest.default.hex}};
+    selected-background: {{colors.surface.default.hex}};
+    border: {{colors.primary_fixed_dim.default.hex}};
+    default: {{colors.primary.default.hex}};
+    default-alt: {{colors.primary_container.default.hex}};
+    text: {{colors.inverse_surface.default.hex}};
+    selected-text: {{colors.inverse_primary.default.hex}};
+}

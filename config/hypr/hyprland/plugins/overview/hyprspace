@@ -1,0 +1,14 @@
+
+bind = SUPER, TAB, overview:toggle
+
+plugin {
+    overview {
+        showNewWorkspace = false
+        affectStrut = false
+        hideOverlayLayers = true
+        hideRealLayers = true
+        exitOnSwitch = true
+        centerAligned = true
+        
+    }
+}

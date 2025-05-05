@@ -1,0 +1,95 @@
+
+@theme "theme"
+
+configuration{
+    modi: "drun,window,ssh";
+    icon-theme: "Dracula";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: " 󰌧  Apps ";
+    display-window: " 󰕰  Window";
+    display-ssh: " 󰒋  SSH";
+    sidebar-mode: true;
+}
+
+window {
+    height:                      360px;
+    width:                       600;
+    border:                      2px;
+    border-radius:               12px;
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+}
+
+element-text, element-icon , mode-switcher { 
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+inputbar {
+    children: [prompt,entry];
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    padding: 6px;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 2;
+    lines: 5;
+}
+
+element {
+    padding: 5px;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    border-radius: 10px;
+}
+
+mode-switcher {
+    spacing: 0;
+}
+
+button {
+    padding: 10px;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+message {
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+}

@@ -1,0 +1,83 @@
+[config]
+# ...
+
+[templates.example]
+input_path = '~/.config/matugen/templates/example.conf'
+output_path = '~/.config/matugen/output/example.conf'
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/matugen/output/hyprland-colors.conf'
+post_hook = 'hyprctl reload'
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/waybar-colors.css'
+output_path = '~/.config/waybar/matugen.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.mako]
+input_path = '~/.dotfiles/config/mako/config-env'
+output_path = '~/.dotfiles/config/mako/config'
+post_hook = 'pkill mako; mako & disown'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/matugen.rasi'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/matugen.conf'
+
+[templates.pywalfox] # https://github.com/Frewacom/pywalfox/issues/68#issuecomment-873381669
+input_path = '~/.config/matugen/templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'source ~/.pywalfox/bin/activate; pywalfox install'
+
+#[templates.vesktop]
+#input_path = '~/.config/matugen/templates/vesktop-colors.css'
+#output_path = '~/.config/vesktop/themes/matugen.css'
+
+[templates.spicetify]
+input_path = '~/.config/matugen/templates/spicetify-colors.ini'
+output_path = '~/.config/spicetify/Themes/matugen/color.ini'
+
+[templates.heroic]
+input_path = '~/.config/matugen/templates/heroic-colors.css'
+output_path = '~/.config/heroic/themes/matugen-dark.css'
+
+[templates.steam]
+input_path = '~/.config/matugen/templates/steam-colors.css'
+output_path = '~/.config/matugen/output/steam-colors.css'
+post_hook = '$HOME/.config/matugen/steam-theme.sh'
+
+[templates.signal]
+input_path = '~/.config/matugen/templates/signal-colors.css'
+output_path = '~/.config/matugen/output/signal-colors.css'
+
+[templates.qt6ct]
+input_path = '~/.config/matugen/templates/qtct-colors.conf'
+output_path = '~/.config/qt6ct/colors/matugen.conf'
+
+[templates.superfile]
+input_path = '~/.config/matugen/templates/superfile-colors.toml'
+output_path = '~/.config/superfile/theme/matugen.toml'
+
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/GTK-colors/gtk-3.0/gtk.css'
+output_path = '~/.themes/Matugen-Red-Dark/gtk-3.0/gtk.css'
+[templates.gtk3-dark]
+input_path = '~/.config/matugen/templates/GTK-colors/gtk-3.0/gtk-dark.css'
+output_path = '~/.themes/Matugen-Red-Dark/gtk-3.0/gtk-dark.css'
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/GTK-colors/gtk-4.0/gtk.css'
+output_path = '~/.themes/Matugen-Red-Dark/gtk-4.0/gtk.css'
+[templates.gtk4-dark]
+input_path = '~/.config/matugen/templates/GTK-colors/gtk-4.0/gtk-dark.css'
+output_path = '~/.themes/Matugen-Red-Dark/gtk-4.0/gtk-dark.css'
+[templates.gtk-cinnamon]
+input_path = '~/.config/matugen/templates/GTK-colors/cinnamon/cinnamon.css'
+output_path = '~/.themes/Matugen-Red-Dark/cinnamon/cinnamon.css'
+[templates.gtk-gnome]
+input_path = '~/.config/matugen/templates/GTK-colors/gnome-shell/gnome-shell.css'
+output_path = '~/.themes/Matugen-Red-Dark/gnome-shell/pad-osd.css'
