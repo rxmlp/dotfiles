@@ -65,6 +65,9 @@ source $ZSH/oh-my-zsh.sh
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
+#-------SSH Keys-------#
+export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
+
 #-------Hypr-------#
 alias hyprfix-lock='hyprctl --instance 0 "dispatch exec hyprlock"'
 alias hyprfix-paper='pkill hyprpaper; sleep 2; hyprpaper > /dev/null 2>&1 & disown'
@@ -86,19 +89,16 @@ bindkey "^[[57438;5u" backward-word
 
 
 #-------My cute lil random alias-------#
-alias update-clean='\
-  echo "Updating system with yay..." && \
-  yay -Syu && \
-  echo "Updating Flatpak applications..." && \
-  flatpak update && \
+alias flathub='flatpak install flathub --user'
+alias pk-clean='\
   echo "Removing orphaned packages..." && \
-  sudo pacman -Qdtq | sudo pacman -Rns - && \
+  yay -Yc --noconfirm && \
   echo "Cleaning up package cache..." && \
-  sudo paccache -r && \
+  doas pacman -Sc --noconfirm && \
   echo "Cleaning up Flatpak cache..." && \
-  flatpak uninstall --unused && \
+  flatpak uninstall --unused --noninteractive && \
   echo "System maintenance complete!"'
-alias update='yay -Syu --noconfirm && flatpak update --noninteractive'
+alias pk-update='yay -Syu --noconfirm && flatpak update --noninteractive'
 alias ai='sh ~/.sh/ai.sh' # Start and stop ai
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias ffshare='~/.dotfiles/scripts/Random/ffshare.sh'
@@ -107,9 +107,6 @@ alias ffshare='~/.dotfiles/scripts/Random/ffshare.sh'
 #-------Logs-------#
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 alias plog="grep -Ei '(removed|installed|upgraded)' /var/log/pacman.log"
-
-#-------Colors-------#
-alias yay="yay --color=always" # Yay always color
 
 # Alias's for multiple directory listing commands
 alias ls='eza --icons --color=always' # Use eza insead of ls
@@ -129,7 +126,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 
 #-------KITTY-------#
-alias kssh="kitty +kitten ssh"
+alias ssh="kitty +kitten ssh"
 # KITTY - alias to be able to use kitty features when connecting to remote servers(e.g use tmux on remote server)
 # Alias's for SSH
 # alias SERVERNAME='ssh YOURWEBSITE.com -l USERNAME -p PORTNUMBERHERE'
@@ -216,3 +213,7 @@ spf() {
         rm -f -- "$SPF_LAST_DIR" > /dev/null
     }
 }
+
+# Added by zap installation script
+PATH=$PATH:$HOME/.local/bin/
+alias zap-git='zap install --github --from'

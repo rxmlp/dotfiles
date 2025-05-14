@@ -27,6 +27,7 @@ border-color=#c3cb98
 [urgency=high]
 border-color=#ffb4ab
 default-timeout=0
+anchor=bottom-center
 
 [app-name=volume]
 border-color=#ffb878
@@ -34,8 +35,15 @@ anchor=bottom-center
 default-timeout=2000
 outer-margin=20
 
-[app-name=betterbird]
+[app-name=Betterbird]
 border-color=#ffb878
 anchor=top-center
 default-timeout=3000
 outer-margin=20
+
+[app-name=Spotify]
+border-color=#ffb878
+anchor=top-center
+default-timeout=3000
+outer-margin=20
+format=<b>%a</b>\n%b

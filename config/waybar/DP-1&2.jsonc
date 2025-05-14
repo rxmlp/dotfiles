@@ -168,9 +168,9 @@
         "on-scroll-up": "hyprctl dispatch workspace m+1",
         "on-scroll-down": "hyprctl dispatch workspace m-1",
         "persistent-workspaces": {
-            "20": [],
-            "21": [],
-            "22": []
+            "10": [],
+            "11": [],
+            "12": []
         },
         "format-icons": {
           "active": "󰮯",
@@ -194,17 +194,17 @@
           "warning": 70,
           "critical": 90
         },
-        "on-click": "kitty btop"
+        "on-click": "kitty htop"
     },
 
     "memory": {
         "interval": 5,
-        "format": " {}%",
+        "format": " {}%",
         "states": {
             "warning": 70,
             "critical": 90
         },
-        "on-click": "kitty btop"
+        "on-click": "kitty htop"
     },
 
       "temperature": {

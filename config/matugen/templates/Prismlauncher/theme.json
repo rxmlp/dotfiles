@@ -1,0 +1,30 @@
+{
+  "colors": {
+    "AlternateBase": "{{colors.surface_container_high.dark.hex}}",
+    "Base": "{{colors.surface_container.dark.hex}}",
+    "BrightText": "#cdd6f4",
+    "Button": "{{colors.surface_container.dark.hex}}",
+    "ButtonText": "#cdd6f4",
+    "Highlight": "{{colors.on_primary_fixed_variant.dark.hex}}",
+    "HighlightedText": "#cdd6f4",
+    "Link": "#bac2de",
+    "Text": "#cdd6f4",
+    "ToolTipBase": "{{colors.on_secondary_fixed_variant.dark.hex}}",
+    "ToolTipText": "#c0caf5",
+    "Window": "{{colors.background.dark.hex}}",
+    "WindowText": "#c0caf5",
+    "fadeAmount": 0.5,
+    "fadeColor": "{{colors.source_color.dark.hex}}"
+  },
+  "logColors": {
+    "Launcher": "#bb9af7",
+    "Error": "#f7768e",
+    "Warning": "#e0af68",
+    "Debug": "#9ece6a",
+    "FatalHighlight": "#f7768e",
+    "Fatal": "{{colors.surface_container.dark.hex}}"
+  },
+  "name": "Matugen",
+  "qssFilePath": "Style.css",
+  "widgets": "Fusion"
+}

@@ -1,0 +1,7 @@
+{
+  "QToolTip": {
+    "color": "#cdd6f4",
+    "background-color": "{{colors.background.dark.rgba}}",
+    "border": "1px solid {{colors.inverse_primary.dark.rgba}}"
+  }
+}

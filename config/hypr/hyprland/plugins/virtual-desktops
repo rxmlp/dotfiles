@@ -1,0 +1,39 @@
+# https://github.com/levnikmyskin/hyprland-virtual-desktops
+
+
+plugin {
+    virtual-desktops {
+        names = 1:coding, 2:internet, 3:mail, 4:gaming 
+        cycleworkspaces = 1
+        rememberlayout = size
+        notifyinit = 0
+        verbose_logging = 0
+    }
+}
+
+# Coding
+stickyrule = title:com.vscodium.codium-url-handler,coding
+
+# internet
+
+# mail
+stickyrule = title:Betterbird,mail
+
+# Gaming
+
+
+stickyrule = class:^(kittysticky)$,3
+
+
+
+# Keybinds
+
+bind = $mainMod, 1, vdesk coding
+bind = $mainMod, 2, vdesk internet
+bind = $mainMod, 3, vdesk main
+#bind = $mainMod, 4, vdesk gaming
+#bind = $mainMod, 5, vdesk gaming
+#bind = $mainMod, 6, vdesk gaming
+#bind = $mainMod, 7, vdesk gaming
+#bind = $mainMod, 8, vdesk gaming
+bind = $mainMod, 9, vdesk gaming

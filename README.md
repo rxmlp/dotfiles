@@ -60,7 +60,7 @@ yay -S hyprland hyprlock hypridle hyprutils hyprgraphics hyprcursor hyprland-qt-
 ```
 qt
 ```zsh 
-yay -S papirus-icon-theme kvantum
+yay -S papirus-icon-theme
 ```
 Wallpaper stuff
 ```zsh
@@ -74,17 +74,9 @@ Bar, launcher, volume, notifications, clip & record
 ```zsh 
 yay -S waybar waybar-module-pacman-updates-git mako rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder better-control-git
 ```
-Terminal
-```zsh 
-yay -S kitty zsh eza nvtop fastfetch
-```
-Filemanagement
-```zsh 
-yay -S pcmanfm-qt superfile pinta gimp libreoffice-still vscodium-bin
-```
-Dependencies & Scripts need
+Dependencies & Scripts etc
 ```zsh
-yay -S jq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd socat sed
+yay -S fajq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd noto-fonts-emoji kitty zsh fastfetch socat sed nvtop btop eza
 ```
 
 

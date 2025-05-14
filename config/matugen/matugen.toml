@@ -43,7 +43,7 @@ output_path = '~/.config/spicetify/Themes/matugen/color.ini'
 
 [templates.heroic]
 input_path = '~/.config/matugen/templates/heroic-colors.css'
-output_path = '~/.config/heroic/themes/matugen-dark.css'
+output_path = '~/.config/matugen/output/matugen-dark.css'
 
 [templates.steam]
 input_path = '~/.config/matugen/templates/steam-colors.css'
@@ -65,19 +65,30 @@ output_path = '~/.config/superfile/theme/matugen.toml'
 
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/GTK-colors/gtk-3.0/gtk.css'
-output_path = '~/.themes/Matugen-Red-Dark/gtk-3.0/gtk.css'
+output_path = '~/.themes/Matugen/gtk-3.0/gtk.css'
 [templates.gtk3-dark]
 input_path = '~/.config/matugen/templates/GTK-colors/gtk-3.0/gtk-dark.css'
-output_path = '~/.themes/Matugen-Red-Dark/gtk-3.0/gtk-dark.css'
+output_path = '~/.themes/Matugen/gtk-3.0/gtk-dark.css'
 [templates.gtk4]
 input_path = '~/.config/matugen/templates/GTK-colors/gtk-4.0/gtk.css'
-output_path = '~/.themes/Matugen-Red-Dark/gtk-4.0/gtk.css'
+output_path = '~/.themes/Matugen/gtk-4.0/gtk.css'
 [templates.gtk4-dark]
 input_path = '~/.config/matugen/templates/GTK-colors/gtk-4.0/gtk-dark.css'
-output_path = '~/.themes/Matugen-Red-Dark/gtk-4.0/gtk-dark.css'
+output_path = '~/.themes/Matugen/gtk-4.0/gtk-dark.css'
 [templates.gtk-cinnamon]
 input_path = '~/.config/matugen/templates/GTK-colors/cinnamon/cinnamon.css'
-output_path = '~/.themes/Matugen-Red-Dark/cinnamon/cinnamon.css'
+output_path = '~/.themes/Matugen/cinnamon/cinnamon.css'
 [templates.gtk-gnome]
 input_path = '~/.config/matugen/templates/GTK-colors/gnome-shell/gnome-shell.css'
-output_path = '~/.themes/Matugen-Red-Dark/gnome-shell/pad-osd.css'
+output_path = '~/.themes/Matugen/gnome-shell/pad-osd.css'
+
+
+### PrismLauncher flatpak
+
+#[templates.prismjson]
+#input_path = '~/.config/matugen/templates/Prismlauncher/theme.json'
+#output_path = '~/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/themes/Matugen/theme.json'
+
+#[templates.prismcss]
+#input_path = '~/.config/matugen/templates/Prismlauncher/Style.css'
+#output_path = '~/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/themes/Matugen/Style.css'
