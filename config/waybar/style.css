@@ -143,6 +143,7 @@ tooltip * {
 
 #cpu {
   color: @on_tertiary_container;
+  border-radius: 10px 0 0 10px;
   border-left: 0px;
   border-right: 0px;
 }

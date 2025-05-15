@@ -72,7 +72,7 @@ yay -S swww mpvpaper matugen-bin
 ```
 Bar, launcher, volume, notifications, clip & record
 ```zsh 
-yay -S waybar waybar-module-pacman-updates-git mako rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder better-control-git
+yay -S waybar waybar-module-pacman-updates-git mako rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder better-control-git swappy
 ```
 Dependencies & Scripts etc
 ```zsh
