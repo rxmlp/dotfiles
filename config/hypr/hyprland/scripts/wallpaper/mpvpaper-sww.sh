@@ -37,14 +37,22 @@ if [ -n "$choice" ] && [ -f "$choice" ]; then
   if [[ "$choice" =~ \.(mp4)$ ]]; then
     hyprctl dispatch movetoworkspacesilent special:load
     matugen -c ~/.config/matugen/matugen.toml image $(fd "$choices"-mpv.png .thumbnails)
+    if [[ "$monitor" =~ DP-1 ]]; then
+      matugen -c ~/.config/matugen/matugen.toml image $(fd "$choices"-mpv.png .thumbnails)
+    fi
     kill $old_mpv
     save_to_cache "$monitor" "$choice"
-    mpvpaper $monitor $choice -o "input-ipc-server=/tmp/mpv-socket-$monitor --loop --mute"
+    # mpvpaper $monitor $choice -o "input-ipc-server=/tmp/mpv-socket-$monitor --loop --mute"
   fi
   if [[ "$choice" =~ \.(png|jpg)$ ]]; then
     save_to_cache "$monitor" "$choice"
     swww img -o $monitor "$choice"
-    matugen -c ~/.config/matugen/matugen.toml image "$choice"
+    if [[ "$monitor" =~ DP-1 ]]; then
+      matugen -c ~/.config/matugen/matugen.toml image "$choice"
+    fi
+    # matugen -c ~/.config/matugen/matugen.toml image "$choice"
     kill $old_mpv
   fi
 fi
+
+

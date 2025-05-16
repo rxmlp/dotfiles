@@ -8,13 +8,13 @@ sort=-time
 output=DP-1
 layer=overlay
 anchor=top-right
-background-color=#19120c
+background-color=#131318
 width=300
 height=110
 margin=5
 padding=0,5,10
 border-size=2
-border-color=#2e1500
+border-color=#0f154b
 border-radius=15
 icons=1
 max-icon-size=64
@@ -22,7 +22,7 @@ default-timeout=4000
 ignore-timeout=1
 
 [urgency=normal]
-border-color=#c3cb98
+border-color=#e7b9d6
 
 [urgency=high]
 border-color=#ffb4ab
@@ -30,19 +30,19 @@ default-timeout=0
 anchor=bottom-center
 
 [app-name=volume]
-border-color=#ffb878
+border-color=#bdc2ff
 anchor=bottom-center
 default-timeout=2000
 outer-margin=20
 
 [app-name=Betterbird]
-border-color=#ffb878
+border-color=#bdc2ff
 anchor=top-center
 default-timeout=3000
 outer-margin=20
 
 [app-name=Spotify]
-border-color=#ffb878
+border-color=#bdc2ff
 anchor=top-center
 default-timeout=3000
 outer-margin=20
