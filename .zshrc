@@ -65,8 +65,6 @@ source $ZSH/oh-my-zsh.sh
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
-#-------SSH Keys-------#
-export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
 
 #-------Hypr-------#
 alias hyprfix-lock='hyprctl --instance 0 "dispatch exec hyprlock"'
@@ -125,8 +123,8 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 
-#-------KITTY-------#
-alias ssh="kitty +kitten ssh"
+#-------SSH-------#
+alias kssh="kitty +kitten ssh"
 # KITTY - alias to be able to use kitty features when connecting to remote servers(e.g use tmux on remote server)
 # Alias's for SSH
 # alias SERVERNAME='ssh YOURWEBSITE.com -l USERNAME -p PORTNUMBERHERE'
