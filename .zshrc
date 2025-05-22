@@ -188,8 +188,6 @@ PATH=$PATH:$HOME/.local/bin/
 alias zap-git='zap install --github --from'
 
 #-------EXPORTS-------#
-export SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
-
 # Color for manpages in less makes manpages a little easier to read
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
