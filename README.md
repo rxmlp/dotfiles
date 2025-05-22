@@ -88,6 +88,5 @@ hyprpm add https://github.com/hyprwm/hyprland-plugins
 ```
 Enable used plugins
 ```zsh
-hyprpm enable xtra-dispatchers
 hyprpm enable hyprexpo
 ```

@@ -87,6 +87,7 @@ bindkey "^[[57438;5u" backward-word
 
 
 #-------My cute lil random alias-------#
+alias attack='doas hping3 -S -i u100'
 alias flathub='flatpak install flathub --user'
 alias pk-clean='\
   echo "Removing orphaned packages..." && \
@@ -113,15 +114,6 @@ alias la='eza --icons --color=always -Alh' # Show hidden files
 alias lk='eza --icons --color=always -lSrh' # Sort by size
 alias lka='eza --icons --color=always -AlSrh' # Sort by size | show hidden files
 
-# Color for manpages in less makes manpages a little easier to read
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
-
 
 #-------SSH-------#
 alias kssh="kitty +kitten ssh"
@@ -130,10 +122,6 @@ alias kssh="kitty +kitten ssh"
 # alias SERVERNAME='ssh YOURWEBSITE.com -l USERNAME -p PORTNUMBERHERE'
 
 #-------Files-------#
-export EDITOR=nvim
-export VISUAL=nvim
-alias vim='nvim'
-
 alias rmd='/bin/rm  --recursive --force --verbose' # Remove a directory and all files
 
 alias home='cd ~' # Go to home
@@ -195,23 +183,18 @@ mvg ()
 	fi
 }
 
-
-spf() {
-    os=$(uname -s)
-
-    # Linux
-    if [[ "$os" == "Linux" ]]; then
-        export SPF_LAST_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/superfile/lastdir"
-    fi
-
-    command spf "$@"
-
-    [ ! -f "$SPF_LAST_DIR" ] || {
-        . "$SPF_LAST_DIR"
-        rm -f -- "$SPF_LAST_DIR" > /dev/null
-    }
-}
-
 # Added by zap installation script
 PATH=$PATH:$HOME/.local/bin/
 alias zap-git='zap install --github --from'
+
+#-------EXPORTS-------#
+export SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
+
+# Color for manpages in less makes manpages a little easier to read
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'

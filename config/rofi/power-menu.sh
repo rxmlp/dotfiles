@@ -105,7 +105,7 @@ run_cmd() {
       hyprlock
     elif [[ $1 == '--suspend' ]]; then
       playerctl pause -a
-      hyprlock
+      hyprlock &
       sleep 1; systemctl suspend
     elif [[ $1 == '--logout' ]]; then
       if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
