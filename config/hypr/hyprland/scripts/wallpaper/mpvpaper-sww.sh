@@ -36,7 +36,7 @@ save_to_cache() {
 if [ -n "$choice" ] && [ -f "$choice" ]; then
   if [[ "$choice" =~ \.(mp4)$ ]]; then
     hyprctl dispatch movetoworkspacesilent special:load
-    matugen -c ~/.config/matugen/matugen.toml image $(fd "$choices"-mpv.png .thumbnails)
+    mpvpaper $monitor $choice
     if [[ "$monitor" =~ DP-1 ]]; then
       matugen -c ~/.config/matugen/matugen.toml image $(fd "$choices"-mpv.png .thumbnails)
     fi
