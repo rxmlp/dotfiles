@@ -1,14 +1,3 @@
-#-------Theming-------#
-
-# Install Starship - curl -sS https://starship.rs/install.sh | sh
-#eval "$(starship init zsh)"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 export ZSH="$HOME/.oh-my-zsh" # Where is $ZSH?
 ZSH_THEME="powerlevel10k/powerlevel10k" # Theme for typing area...
 
@@ -66,6 +55,19 @@ source $ZSH/oh-my-zsh.sh
 # HIST_STAMPS="mm/dd/yyyy"
 
 
+#-------Theming-------#
+
+# Install Starship - curl -sS https://starship.rs/install.sh | sh
+#eval "$(starship init zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
+
 #-------Hypr-------#
 alias hyprfix-lock='hyprctl --instance 0 "dispatch exec hyprlock"'
 alias hyprfix-paper='pkill hyprpaper; sleep 2; hyprpaper > /dev/null 2>&1 & disown'
@@ -87,6 +89,7 @@ bindkey "^[[57438;5u" backward-word
 
 
 #-------My cute lil random alias-------#
+alias sysu='systemctl --user'
 alias attack='doas hping3 -S -i u100'
 alias flathub='flatpak install flathub --user'
 alias pk-clean='\
@@ -187,13 +190,3 @@ mvg ()
 PATH=$PATH:$HOME/.local/bin/
 alias zap-git='zap install --github --from'
 
-#-------EXPORTS-------#
-
-# Color for manpages in less makes manpages a little easier to read
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'

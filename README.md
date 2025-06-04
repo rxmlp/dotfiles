@@ -49,6 +49,8 @@ ln -s ~/.dotfiles/config/rofi ~/.config/rofi
 ln -s ~/.dotfiles/config/superfile ~/.config/superfile
 ln -s ~/.dotfiles/config/matugen ~/.config/matugen
 ln -s ~/.dotfiles/config/qt6ct ~/.config/qt6ct
+ln -s ~/.dotfiles/config/uwsm ~/.config/uwsm
+ln -s ~/.dotfiles/config/xdg-desktop-portal ~/.config/xdg-desktop-portal
 ```
 
 
@@ -58,25 +60,21 @@ Hypr
 ```zsh
 yay -S hyprland hyprlock hypridle hyprutils hyprgraphics hyprcursor hyprland-qt-support hyprwayland-scanner hyprpicker xdg-desktop-portal-hyprland hyprland-qtutils hyprland-protocols aquamarine hyprpolkitagent wayland-protocols qt6ct xdg-desktop-portal-gtk xdg-desktop-portal-wlr
 ```
-qt
-```zsh 
-yay -S papirus-icon-theme
-```
-Wallpaper stuff
+Looks
 ```zsh
 Get pywalfox
-https://github.com/Frewacom/pywalfox/issues/68#issuecomment-873381669
+https://github.com/Frewacom/pywalfox
 ```
 ```zsh
-yay -S swww mpvpaper matugen-bin
+yay -S hyprpaper mpvpaper matugen-bin papirus-icon-theme
 ```
 Bar, launcher, volume, notifications, clip & record
 ```zsh 
-yay -S waybar waybar-module-pacman-updates-git mako rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder better-control-git swappy
+yay -S waybar mako rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder better-control-git swappy
 ```
 Dependencies & Scripts etc
 ```zsh
-yay -S fajq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd noto-fonts-emoji kitty zsh fastfetch socat sed nvtop btop eza
+yay -S fajq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd noto-fonts-emoji kitty zsh fastfetch socat sed nvtop btop eza uwsm xorg-xhost cpio cmake git meson and gcc make
 ```
 
 

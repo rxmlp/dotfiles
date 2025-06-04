@@ -145,21 +145,8 @@
         "custom/gpu-usage",
         "cpu",
         "temperature",
-        "memory",
-        "custom/updates"
+        "memory"
     ],
-    
-    "custom/updates": {
-    "format": "{} {icon}",
-    "return-type": "json",
-    "format-icons": {
-        "has-updates": "󱍷",
-        "updated": "󰂪"
-    },
-    "exec-if": "which waybar-module-pacman-updates",
-    "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300",
-    "on-click": "hyprctl dispatch exec '[monitor DP-1; workspace special:update; float; size 750 500; bordercolor 0xFFF6D56A 0xFFe33131 90deg]' kitty yay"
-    },
 
     "hyprland/workspaces": {
         "disable-scroll": true,

@@ -47,3 +47,10 @@ anchor=top-center
 default-timeout=3000
 outer-margin=20
 format=<b>%a</b>\n%b
+
+### SERVERS
+
+[app-name=Uptime]
+border-color=#d6bbfb
+default-timeout=5000
+anchor=top-left

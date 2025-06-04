@@ -18,7 +18,7 @@ post_hook = 'pkill -SIGUSR2 waybar'
 [templates.mako]
 input_path = '~/.dotfiles/config/mako/config-env'
 output_path = '~/.dotfiles/config/mako/config'
-post_hook = 'pkill mako; mako & disown'
+post_hook = 'makoctl reload'
 
 [templates.rofi]
 input_path = '~/.config/matugen/templates/rofi-colors.rasi'
@@ -47,8 +47,8 @@ output_path = '~/.config/matugen/output/matugen-dark.css'
 
 [templates.steam]
 input_path = '~/.config/matugen/templates/steam-colors.css'
-output_path = '~/.config/matugen/output/steam-colors.css'
-post_hook = '$HOME/.config/matugen/steam-theme.sh'
+output_path = '~/.config/matugen/scripts/steam/Adwaita-for-Steam/adwaita/colorthemes/matugen/matugen.css'
+#post_hook = '~/.config/matugen/scripts/steam/Steam-Adwaita.sh'
 
 [templates.signal]
 input_path = '~/.config/matugen/templates/signal-colors.css'

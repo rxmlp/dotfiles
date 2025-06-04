@@ -70,7 +70,6 @@ tooltip * {
 #tray,
 #cpu,
 #custom-gpu-usage,
-#custom-updates,
 #temperature,
 #memory,
 #custom-clipboard,
@@ -154,13 +153,6 @@ tooltip * {
   margin-right: 0px;
   border-left: 0px;
   border-right: 0px;
-}
-
-#custom-updates {
-  color: @error;
-  border-radius: 10px 10px 10px 10px;
-  margin-left: 5px;
-  margin-right: 10px;
 }
 
 #temperature {

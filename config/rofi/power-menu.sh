@@ -44,62 +44,14 @@ run_rofi() {
   echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
 }
 
-rofi_canceled() {
-  rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 500px;}' \
-    -theme-str 'mainbox {children: [ "message", "listview" ];}' \
-    -theme-str 'listview {columns: 1; lines: 1;}' \
-    -theme-str 'element-text {horizontal-align: 0.5;}' \
-    -theme-str 'textbox {horizontal-align: 0.5;}' \
-    -dmenu \
-    -p 'Cancelled' \
-    -mesg 'One or more applications are running, shutting down cancelled.' \
-    -theme "$dir/$theme".rasi
-  exit 1
-}
-
-rofi_killing_steam() {
-  rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 500px;}' \
-    -theme-str 'mainbox {children: [ "message", "listview" ];}' \
-    -theme-str 'listview {columns: 1; lines: 1;}' \
-    -theme-str 'element-text {horizontal-align: 0.5;}' \
-    -theme-str 'textbox {horizontal-align: 0.5;}' \
-    -dmenu \
-    -p 'Cancelled' \
-    -mesg 'Steam was running, try again in a few seconds. (Steam is being killed)' \
-    -theme "$dir/$theme".rasi
-  exit 1
-}
-
-ctloff() {
-  if pgrep -f "ollama" > /dev/null || pgrep -f "timeshift" > /dev/null; then
-    echo -e "Ohh ok" | rofi_canceled; else
-      if pgrep -f "steam" > /dev/null; then
-        pkill steam
-        echo -e "Ohh ok" | rofi_killing_steam; else
-        systemctl poweroff
-      fi
-  fi
-}
-
-ctlreboot() {
-  if pgrep -f "ollama" > /dev/null || pgrep -f "timeshift" > /dev/null; then
-    echo -e "Ohh ok" | rofi_canceled; else
-      if pgrep -f "steam" > /dev/null; then
-        pkill steam
-        echo -e "Ohh ok" | rofi_killing_steam; else
-        systemctl reboot
-      fi
-  fi
-}
-
 # Execute Command
 run_cmd() {
   selected="$(confirm_exit)"
   if [[ "$selected" == "$yes" ]]; then
     if [[ $1 == '--shutdown' ]]; then
-      ctloff
+      systemctl poweroff
     elif [[ $1 == '--reboot' ]]; then
-      ctlreboot
+      systemctl reboot
     elif [[ $1 == '--lock' ]]; then
       playerctl pause -a
       hyprlock
@@ -109,7 +61,7 @@ run_cmd() {
       sleep 1; systemctl suspend
     elif [[ $1 == '--logout' ]]; then
       if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
-        hyprctl dispatch exit 1
+        uwsm stop
       fi
     fi
   else

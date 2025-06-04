@@ -3,7 +3,7 @@
 
 configuration{
     modi: "drun,window,ssh";
-    icon-theme: "Dracula";
+    icon-theme: "Papirus-Dark"; 
     show-icons: true;
     terminal: "kitty";
     drun-display-format: "{icon} {name}";
