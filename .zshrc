@@ -66,8 +66,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
-
 #-------Hypr-------#
 alias hyprfix-lock='hyprctl --instance 0 "dispatch exec hyprlock"'
 alias hyprfix-paper='pkill hyprpaper; sleep 2; hyprpaper > /dev/null 2>&1 & disown'
@@ -75,6 +73,7 @@ alias hyprfix-idle='pkill hypridle; sleep 2; hypridle > /dev/null 2>&1 & disown'
 alias hyprfix-polkit='systemctl --user restart hyprpolkitagent'
 alias hyprfix-cursor='hyprctl setcursor "catppuccin-mocha-dark-cursors" 24 & gsettings set org.gnome.desktop.interface cursor-size 18 & gsettings set org.gnome.desktop.interface cursor-theme "catppuccin-mocha-dark-cursors"'
 alias hyprfix-cursor-Xresources='rm ~/.Xresources; echo "Xcursor.size: 18" >> ~/.Xresources && xrdb -merge ~/.Xresources'
+alias hyprfix-bar='pkill waybar; uwsm app -- waybar -c $HOME/.config/waybar/DP-1\&2.jsonc & disown'
 
 #-------Bindkeys-------#
 
@@ -89,6 +88,7 @@ bindkey "^[[57438;5u" backward-word
 
 
 #-------My cute lil random alias-------#
+alias mirror-fix='doas reflector --latest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 alias sysu='systemctl --user'
 alias attack='doas hping3 -S -i u100'
 alias flathub='flatpak install flathub --user'
@@ -185,8 +185,4 @@ mvg ()
 		mv "$1" "$2"
 	fi
 }
-
-# Added by zap installation script
-PATH=$PATH:$HOME/.local/bin/
-alias zap-git='zap install --github --from'
 
