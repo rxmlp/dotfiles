@@ -28,6 +28,10 @@ output_path = '~/.config/rofi/matugen.rasi'
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/matugen.conf'
 
+[templates.ghostty]
+input_path = '~/.config/matugen/templates/ghostty-colors.conf'
+output_path = '~/.config/ghostty/themes/matugen'
+
 [templates.pywalfox] # https://github.com/Frewacom/pywalfox/issues/68#issuecomment-873381669
 input_path = '~/.config/matugen/templates/pywalfox-colors.json'
 output_path = '~/.cache/wal/colors.json'
@@ -58,11 +62,6 @@ output_path = '~/.config/matugen/output/signal-colors.css'
 input_path = '~/.config/matugen/templates/qtct-colors.conf'
 output_path = '~/.config/qt6ct/colors/matugen.conf'
 
-[templates.superfile]
-input_path = '~/.config/matugen/templates/superfile-colors.toml'
-output_path = '~/.config/superfile/theme/matugen.toml'
-
-
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/GTK-colors/gtk-3.0/gtk.css'
 output_path = '~/.themes/Matugen/gtk-3.0/gtk.css'
@@ -82,6 +81,14 @@ output_path = '~/.themes/Matugen/cinnamon/cinnamon.css'
 input_path = '~/.config/matugen/templates/GTK-colors/gnome-shell/gnome-shell.css'
 output_path = '~/.themes/Matugen/gnome-shell/pad-osd.css'
 
+
+
+
+# Not in use
+
+#[templates.superfile]
+#input_path = '~/.config/matugen/templates/superfile-colors.toml'
+#output_path = '~/.config/superfile/theme/matugen.toml'
 
 ### PrismLauncher flatpak
 

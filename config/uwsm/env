@@ -1,25 +1,27 @@
-# QT
-export QT_QPA_PLATFORMTHEME=qt6ct
+# XDG Environment
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=Hyprland
+export XDG_SCALE=1   
+
+
+# Wayland / Display Configuration
+export GDK_BACKEND=wayland,x11,*
+export SDL_VIDEODRIVER=wayland
+export CLUTTER_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
+
+# Qt Settings
+export QT_QPA_PLATFORMTHEME=qt6ct
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
-# Cursor & GTK
+# Cursor/GTK Configuration
 export HYPRCURSOR_THEME=catppuccin-mocha-dark-cursors
 export HYPRCURSOR_SIZE=24
 export XCURSOR_THEME=catppuccin-mocha-dark-cursors
 export XCURSOR_SIZE=18
 export GTK_THEME=Matugen
 
-# GDK
-export GDK_BACKEND=wayland,x11,*
 
-# IDK TBH
-export SDL_VIDEODRIVER=wayland
-export CLUTTER_BACKEND=wayland
-
-# XDG
-export XDG_CURRENT_DESKTOP=Hyprland
-export XDG_SESSION_TYPE=wayland
-export XDG_SESSION_DESKTOP=Hyprland
-export XDG_SCALE=1

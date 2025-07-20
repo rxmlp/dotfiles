@@ -41,6 +41,8 @@ Include = /etc/pacman.d/chaotic-mirrorlist
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.nanorc ~/.nanorc
 ln -s ~/.dotfiles/config/kitty ~/.config/kitty
+ln -s ~/.dotfiles/config/ghostty ~/.config/ghostty
+ln -s ~/.dotfiles/config/helix ~/.config/helix
 ln -s ~/.dotfiles/config/fastfetch ~/.config/fastfetch
 ln -s ~/.dotfiles/config/hypr ~/.config/hypr
 ln -s ~/.dotfiles/config/waybar ~/.config/waybar
