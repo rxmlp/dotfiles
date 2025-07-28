@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh" # Where is $ZSH?
-ZSH_THEME="powerlevel10k/powerlevel10k" # Theme for typing area...
+#ZSH_THEME="powerlevel10k/powerlevel10k" # Theme for typing area...
 
 
 #-------oh-my-zsh-------#
@@ -56,9 +56,13 @@ source $ZSH/oh-my-zsh.sh
 
 
 #-------Theming-------#
+export PS1="%m+%d: "
 
 # Install Starship - curl -sS https://starship.rs/install.sh | sh
 #eval "$(starship init zsh)"
+if [ "$TERM" != "linux" ]; then
+  eval "$(starship init zsh)"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -88,6 +92,7 @@ bindkey "^[[57438;5u" backward-word
 
 
 #-------My cute lil random alias-------#
+alias doas='doas '
 alias hx='helix'
 alias mirror-fix='doas reflector --latest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 alias sysu='systemctl --user'

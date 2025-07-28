@@ -2,7 +2,7 @@
 command = /usr/bin/env zsh
 shell-integration = zsh
 confirm-close-surface = false
-
+shell-integration-features = sudo
 
 
 # Themeing

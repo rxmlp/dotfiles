@@ -76,7 +76,7 @@ yay -S waybar mako rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-
 ```
 Dependencies & Scripts etc
 ```zsh
-yay -S fajq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd noto-fonts-emoji kitty zsh fastfetch socat sed nvtop btop eza uwsm xorg-xhost cpio cmake git meson and gcc make
+yay -S jq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd noto-fonts-emoji kitty zsh fastfetch socat sed nvtop btop eza uwsm xorg-xhost cpio cmake git meson and gcc make
 ```
 
 

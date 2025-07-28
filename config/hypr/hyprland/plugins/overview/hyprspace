@@ -1,5 +1,5 @@
 
-bind = SUPER, TAB, overview:toggle
+bind = $mainMod, TAB, overview:toggle
 
 plugin {
     overview {

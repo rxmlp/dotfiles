@@ -32,14 +32,22 @@ output_path = '~/.config/kitty/matugen.conf'
 input_path = '~/.config/matugen/templates/ghostty-colors.conf'
 output_path = '~/.config/ghostty/themes/matugen'
 
+[templates.starship]
+input_path = '~/.config/matugen/templates/starship-colors.toml'
+output_path = '~/.config/starship.toml'
+
+[templates.helix]
+input_path = '~/.config/matugen/templates/helix-colors.toml'
+output_path = '~/.config/helix/themes/matugen.toml'
+
 [templates.pywalfox] # https://github.com/Frewacom/pywalfox/issues/68#issuecomment-873381669
 input_path = '~/.config/matugen/templates/pywalfox-colors.json'
 output_path = '~/.cache/wal/colors.json'
 post_hook = 'source ~/.pywalfox/bin/activate; pywalfox install'
 
-#[templates.vesktop]
-#input_path = '~/.config/matugen/templates/vesktop-colors.css'
-#output_path = '~/.config/vesktop/themes/matugen.css'
+[templates.vesktop]
+input_path = '~/.config/matugen/templates/vesktop-colors.css'
+output_path = '~/.var/app/dev.vencord.Vesktop/config/vesktop/themes/matugen.css'
 
 [templates.spicetify]
 input_path = '~/.config/matugen/templates/spicetify-colors.ini'
