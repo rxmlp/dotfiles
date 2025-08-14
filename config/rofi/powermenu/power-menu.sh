@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 theme='power-menu'
+dir='~/.config/rofi/powermenu'
 uptime="$(uptime -p | sed -e 's/up //g')"
 time=$(date '+%A, %d %B %Y • %H:%M')
 

@@ -4,7 +4,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "theme.rasi"
+@import                          "~/.config/rofi/theme.rasi"
 
 /*****----- Main Window -----*****/
 window {

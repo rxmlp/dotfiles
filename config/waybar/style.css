@@ -13,25 +13,14 @@
   min-height: 0;
 }
 
-modules-right {
-  border-radius: 10px;
-}
-
 window#waybar {
-  background: rgba(21, 18, 27, 0);
-  color: @on_background;
+  background: rgba(0, 0, 0, 0);
 }
 
 tooltip {
   background: @background;
   border-radius: 10px;
-  border-width: 2px;
-  border-style: solid;
   border-color: @surface_container_lowest;
-}
-
-tooltip * {
-  border-radius: 10px
 }
 
 #workspaces button {
@@ -61,7 +50,6 @@ tooltip * {
 }
 
 #window,
-#custom-launcher,
 #clock,
 #wireplumber,
 #network,
@@ -71,45 +59,37 @@ tooltip * {
 #custom-hyprpicker,
 #backlight {
   background: @background;
-  padding: 0px 10px;
-  margin: 3px 0px;
-  margin-top: 10px;
+  padding: 0px 7px;
+  margin-top: 5px;
   border: 1px solid @surface;
-}
-
-#tray {
-  border-radius: 10px;
-  margin-left: 10px;
 }
 
 #workspaces {
   background: @background;
-  border-radius: 10px;
+  border-radius: 10px 0px 10px 0px;
   margin-left: 10px;
   padding-right: 0px;
   padding-left: 5px;
 }
 
-#window {
-  border-radius: 0 10px 10px 0;
-  margin-left: 0px;
-  margin-right: 60px;
+#custom-hyprpicker {
+  color: @surface_tint;
+  border-radius: 10px 0px 10px 0px;
+  margin-left: 5px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#tray {
+  border-radius: 10px 0px 10px 0px;
+  margin-left: 5px;
 }
 
 #clock {
   color: @surface_tint;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 0px 10px 0px;
   margin-left: 0px;
   margin-right: 10px;
-  border-right: 0px;
-}
-
-#custom-launcher {
-  color: @surface_tint;
-  border-radius: 10px 10px 10px 10px;
-  padding: 0px 20px 0px 15px;
-  margin-left: 10px;
-  margin-right: 0px;
   border-right: 0px;
 }
 
@@ -121,7 +101,7 @@ tooltip * {
 
 #bluetooth {
   color: @surface_bright;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 0px 10px 0;
   margin-right: 10px;
   border-left: 0px;
   border-right: 0px;
@@ -129,51 +109,7 @@ tooltip * {
 
 #wireplumber {
   color: @tertiary;
-  border-radius: 10px 0 0 10px;
-  border-left: 0px;
-  border-right: 0px;
-}
-
-#cpu {
-  color: @on_tertiary_container;
-  border-left: 0px;
-  border-right: 0px;
-}
-
-#custom-gpu-usage {
-  color: @on_tertiary_container;
-  border-radius: 10px 0 0 10px;
-  margin-right: 0px;
-  border-left: 0px;
-  border-right: 0px;
-}
-
-#temperature {
-  color: @on_tertiary_container;
-  border-left: 0px;
-  border-right: 0px;
-}
-
-#memory {
-  color: @on_tertiary_container;
-  border-radius: 0 10px 10px 0;
-  margin-right: 10px;
-  border-left: 0px;
-  border-right: 0px;
-}
-
-#custom-clipboard {
-  color: @surface_tint;
-  border-radius: 10px 0 0 10px;
-  margin-right: 0px;
-  border-left: 0px;
-  border-right: 0px;
-}
-
-#custom-hyprpicker {
-  color: @surface_tint;
-  border-radius: 10px 10px 10px 10px;
-  margin-right: 10px;
+  border-radius: 10px 0 0 0px;
   border-left: 0px;
   border-right: 0px;
 }

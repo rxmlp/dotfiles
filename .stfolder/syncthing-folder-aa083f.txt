@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: pausq-rmrys
+created: 2025-08-14T15:15:14+02:00

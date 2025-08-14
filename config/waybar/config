@@ -1,22 +1,15 @@
-[{
+{
     "layer": "top",
         "output": "DP-1",
-    "position": "top",
-    "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "height": 0,
     "modules-left": [
-        "custom/launcher",
         "hyprland/workspaces",
+        "custom/hyprpicker",
         "tray"
     ],
     "modules-center": [
     "clock"
     ],
     "modules-right": [
-        "custom/hyprpicker",
         "wireplumber",
         "network",
         "bluetooth"
@@ -50,14 +43,6 @@
           "empty": "",
           "default": ""
         }
-    },
-
-    "custom/launcher": {
-        "interval": "once",
-        "format": "",
-        "on-click": "pkill rofi || rofi -show drun",
-        "on-click-right": "$HOME/.config/rofi/power-menu.sh",
-        "tooltip": false
     },
 
     "tray": {
@@ -117,4 +102,4 @@
         "tooltip": false,
         "on-click-right": "$HOME/.config/rofi/bluetoothmenu/scripts/bluetoothmenu"
 	},
-}]
+}
