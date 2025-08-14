@@ -15,6 +15,10 @@ input_path = '~/.config/matugen/templates/waybar-colors.css'
 output_path = '~/.config/waybar/matugen.css'
 post_hook = 'pkill -SIGUSR2 waybar'
 
+[templates.quickshell]
+input_path = '~/.config/matugen/templates/quickshell-template.json'
+output_path = '~/.config/quickshell/matugen.json'
+
 [templates.mako]
 input_path = '~/.dotfiles/config/mako/config-env'
 output_path = '~/.dotfiles/config/mako/config'

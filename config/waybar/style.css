@@ -68,13 +68,7 @@ tooltip * {
 #bluetooth,
 #workspaces,
 #tray,
-#cpu,
-#custom-gpu-usage,
-#temperature,
-#memory,
-#custom-clipboard,
 #custom-hyprpicker,
-#custom-notification,
 #backlight {
   background: @background;
   padding: 0px 10px;
@@ -178,7 +172,7 @@ tooltip * {
 
 #custom-hyprpicker {
   color: @surface_tint;
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px 10px 10px 10px;
   margin-right: 10px;
   border-left: 0px;
   border-right: 0px;

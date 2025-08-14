@@ -40,7 +40,7 @@ if [ -n "$choice" ] && [ -f "$choice" ]; then
     fi
     kill $old_mpv
     save_to_cache "$monitor" "$choice"
-    uwsm app -- mpvpaper $monitor $choice -o "input-ipc-server=/tmp/mpv-socket-$monitor --loop --mute"
+    mpvpaper $monitor $choice -o "input-ipc-server=/tmp/mpv-socket-$monitor --loop --mute"
   fi
   if [[ "$choice" =~ \.(png|jpg)$ ]]; then
     save_to_cache "$monitor" "$choice"

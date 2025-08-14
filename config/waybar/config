@@ -16,7 +16,6 @@
     "clock"
     ],
     "modules-right": [
-        "custom/clipboard",
         "custom/hyprpicker",
         "wireplumber",
         "network",
@@ -26,12 +25,6 @@
     "custom/hyprpicker": {
         "format": "󰌁",
         "on-click": "hyprpicker -a",
-        "tooltip": false
-    },
-
-    "custom/clipboard": {
-        "format": "",
-        "on-click": "clipman pick -t rofi",
         "tooltip": false
     },
 
@@ -102,7 +95,7 @@
         "tooltip": true,
         "format": "󰖪 ",
         "format-wifi": " ",
-        "on-click-right": "pkill better-control || better-control -m -w",
+        "on-click-right": "$HOME/.config/rofi/wifimenu/scripts/wifimenu",
         "format-ethernet": "󰈀 ",
         "tooltip-format-wifi": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b> \n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> \n<span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "tooltip-format-ethernet": "Interface: <b>{ifname}</b>\nLocal ip: <b>{ipaddr}</b> \n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> \n<span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
@@ -122,88 +115,6 @@
 		"tooltip-format-connected": " {device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}",
         "tooltip": false,
-        "on-click-right": "pkill better-control || better-control -m -b"
+        "on-click-right": "$HOME/.config/rofi/bluetoothmenu/scripts/bluetoothmenu"
 	},
-},
-
-{
-    "layer": "top",
-        "output": "DP-2",
-    "position": "top",
-    "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "height": 0,
-    "modules-left": [
-    ],
-    "modules-center": [
-	"hyprland/workspaces",
-    "tray"
-    ],
-    "modules-right": [
-        "custom/gpu-usage",
-        "cpu",
-        "temperature",
-        "memory"
-    ],
-
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "format": "{icon}",
-        "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace m+1",
-        "on-scroll-down": "hyprctl dispatch workspace m-1",
-        "persistent-workspaces": {
-            "10": [],
-            "11": [],
-            "12": []
-        },
-        "format-icons": {
-          "active": "󰮯",
-          "empty": "",
-          "default": ""
-        }
-    },
-
-    "custom/gpu-usage": {
-        "exec": "cat /sys/class/drm/card1/device/gpu_busy_percent",
-        "format": "󰾲 {}%",
-        "return-type": "",
-        "interval": 1,
-        "on-click": "kitty nvtop"
-    },
-
-    "cpu": {
-        "interval": 15,
-        "format": " {usage}%",
-        "states": {
-          "warning": 70,
-          "critical": 90
-        },
-        "on-click": "kitty htop"
-    },
-
-    "memory": {
-        "interval": 5,
-        "format": " {}%",
-        "states": {
-            "warning": 70,
-            "critical": 90
-        },
-        "on-click": "kitty htop"
-    },
-
-      "temperature": {
-        "critical-threshold": 60,
-        "format-critical": " {temperatureC}°C",
-        "format": " {temperatureC}°C",
-        "interval": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp2_input"
-    },
-    
-    "tray": {
-        "icon-size": 16,
-        "spacing": 10
-    }
 }]

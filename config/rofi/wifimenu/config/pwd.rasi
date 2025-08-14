@@ -1,0 +1,78 @@
+configuration {
+    show-icons:                     true;
+    display-drun: 		            "";
+    drun-display-format:            "{icon} {name}";
+    disable-history:                false;
+    click-to-exit: 		            true;
+    location:                       0;
+}
+
+@import "~/.config/rofi/matugen.rasi"
+
+window {
+    transparency:                   "real";
+    background-color:               @background;
+    text-color:                     @text;
+    border:                         2px;
+    border-color:                   @border;
+    border-radius:                  10px;
+    width:                          300px;
+    anchor:                         center;
+    x-offset:                       0;
+    y-offset:                       0;
+}
+
+prompt {
+    enabled: 			            true;
+    padding: 			            8px;
+    background-color: 		        @background;
+    text-color: 		            @selected-text;
+}
+
+textbox-prompt-colon {
+    enabled:                        false;
+}
+
+entry {
+    background-color:               @background;
+    text-color:                     @text;
+    placeholder-color:              @text;
+    expand:                         true;
+    horizontal-align:               0;
+    placeholder:                    "Enter password...";
+    blink:                          true;
+    border:                  	    0px 0px 2px 0px;
+    border-color:                   @border;
+    border-radius:                  10px;
+    padding:                        8px;
+}
+
+inputbar {
+	children: 		                [ textbox-prompt-colon, prompt, entry ];
+    background-color:               @background;
+    text-color:                     @text;
+    expand:                         false;
+    border:                  	    0px 0px 0px 0px;
+    border-radius:                  0px;
+    border-color:                   @border;
+    margin:                         0px 0px 0px 0px;
+    padding:                        0px;
+    position:                       center;
+}
+
+case-indicator {
+    background-color:               @background;
+    text-color:                     @text;
+    spacing:                        0;
+}
+
+listview {
+    enabled:                        false;
+}
+
+mainbox {
+    background-color:               @background;
+    children:                       [ inputbar, listview ];
+    spacing:                        15px;
+    padding:                        15px;
+}

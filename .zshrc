@@ -1,58 +1,49 @@
-export ZSH="$HOME/.oh-my-zsh" # Where is $ZSH?
-#ZSH_THEME="powerlevel10k/powerlevel10k" # Theme for typing area...
+# Define cache directory
+export ZSH_CACHE_DIR="$HOME/.cache/zsh"
+[[ ! -d "$ZSH_CACHE_DIR" ]] && mkdir -p "$ZSH_CACHE_DIR"
+
+# Move history file to cache directory
+export HISTFILE="$ZSH_CACHE_DIR/history"
+
+# Optional: Set history size
+export HISTSIZE=10000
+export SAVEHIST=10000
 
 
-#-------oh-my-zsh-------#
-zstyle ':omz:update' mode reminder  # mode can be reminder, auto or disabled
-# zstyle ':omz:update' frequency 7 # You may want this if using auto update. auto-update (in days).
+#-------Antigen Configuration-------#
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# Source Antigen (assumes Antigen is installed at $HOME/.antigen.zsh)
+source "$HOME/.antigen/antigen.zsh"
+
+# Use the Oh My Zsh framework (ensures compatibility)
+antigen use oh-my-zsh
+  
+
+# Core Oh My Zsh plugins
+antigen bundle git
+antigen bundle ssh
+antigen bundle ssh-agent
+antigen bundle ufw
+antigen bundle cp
+antigen bundle sudo
+antigen bundle history
+antigen bundle archlinux
+antigen bundle aliases
+
+# External plugins (not part of core Oh My Zsh)
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 
-CASE_SENSITIVE="true" # Case-sensitive completion.
+antigen bundle zsh-users/zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# Optional: Load a theme (e.g., robbyrussell, or omit for default)
+# antigen theme robbyrussell
 
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Ohmyzsh plugins
-plugins=(zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
-source $ZSH/oh-my-zsh.sh
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+# Apply all configurations
+antigen apply
 
 
 #-------Theming-------#
@@ -62,12 +53,6 @@ export PS1="%m+%d: "
 #eval "$(starship init zsh)"
 if [ "$TERM" != "linux" ]; then
   eval "$(starship init zsh)"
-fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 #-------Hypr-------#
@@ -123,12 +108,6 @@ alias la='eza --icons --color=always -Alh' # Show hidden files
 alias lk='eza --icons --color=always -lSrh' # Sort by size
 alias lka='eza --icons --color=always -AlSrh' # Sort by size | show hidden files
 
-
-#-------SSH-------#
-alias kssh="kitty +kitten ssh"
-# KITTY - alias to be able to use kitty features when connecting to remote servers(e.g use tmux on remote server)
-# Alias's for SSH
-# alias SERVERNAME='ssh YOURWEBSITE.com -l USERNAME -p PORTNUMBERHERE'
 
 #-------Files-------#
 alias rmd='/bin/rm  --recursive --force --verbose' # Remove a directory and all files
@@ -192,3 +171,4 @@ mvg ()
 	fi
 }
 
+export PATH="$HOME/.local/bin:$PATH"

@@ -2,21 +2,21 @@
 
 theme='power-menu'
 uptime="$(uptime -p | sed -e 's/up //g')"
-host=$(cat /etc/hostname)
+time=$(date '+%A, %d %B %Y • %H:%M')
 
 # Options
-shutdown=' Shutdown'
-reboot=' Reboot'
-lock=' Lock'
-suspend=' Suspend'
-logout=' Logout'
+shutdown='      Shutdown'
+reboot='      Reboot'
+lock='      Lock'
+suspend='      Suspend'
+logout='      Logout'
 yes='Yes'
 no='No'
 
 # Rofi CMD
 rofi_cmd() {
   rofi -dmenu \
-    -p "$host" \
+    -p "$time" \
     -mesg "Uptime: $uptime" \
     -theme "$dir/$theme".rasi
 }

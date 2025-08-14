@@ -1,7 +1,7 @@
 @theme "matugen"
 
 configuration{
-    font: "JetBrainsMono Nerd Font 12";
+    font: "JetBrainsMono Nerd Font";
     drun-display-format: "{icon} {name}";
     hide-scrollbar: true;
 }

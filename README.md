@@ -51,7 +51,6 @@ ln -s ~/.dotfiles/config/rofi ~/.config/rofi
 ln -s ~/.dotfiles/config/superfile ~/.config/superfile
 ln -s ~/.dotfiles/config/matugen ~/.config/matugen
 ln -s ~/.dotfiles/config/qt6ct ~/.config/qt6ct
-ln -s ~/.dotfiles/config/uwsm ~/.config/uwsm
 ln -s ~/.dotfiles/config/xdg-desktop-portal ~/.config/xdg-desktop-portal
 ```
 
@@ -76,7 +75,7 @@ yay -S waybar mako rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-
 ```
 Dependencies & Scripts etc
 ```zsh
-yay -S jq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd noto-fonts-emoji kitty zsh fastfetch socat sed nvtop btop eza uwsm xorg-xhost cpio cmake git meson and gcc make
+yay -S jq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd noto-fonts-emoji kitty zsh fastfetch socat sed nvtop btop eza xorg-xhost cpio cmake git meson and gcc make
 ```
 
 

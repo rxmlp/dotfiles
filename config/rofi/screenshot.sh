@@ -4,12 +4,12 @@
 prompt='Screenshot'
 theme='theme'
 
-option_1="󰹑 Capture"
-option_2="󰁫 Timer capture"
+option_1="󰹑      Capture"
+option_2="󰁫      Timer capture"
 
-option_capture_1="󰍺 All Screen"
-option_capture_2="󰍹 Active Screen"
-option_capture_3="󱣴 Area/Window"
+option_capture_1="󰍺      All Screen"
+option_capture_2="󰍹      Active Screen"
+option_capture_3="󱣴      Area/Window"
 
 option_time_1="5s"
 option_time_2="10s"
