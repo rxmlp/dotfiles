@@ -84,14 +84,14 @@ alias sysu='systemctl --user'
 alias attack='doas hping3 -S -i u100'
 alias flathub='flatpak install flathub --user'
 alias pk-clean='\
-  echo "Removing orphaned packages..." && \
-  yay -Yc --noconfirm && \
-  echo "Cleaning up package cache..." && \
-  doas pacman -Sc --noconfirm && \
   echo "Cleaning up Flatpak cache..." && \
   flatpak uninstall --unused --noninteractive && \
+  echo "Cleaning up package cache..." && \
+  doas pacman -Sc --noconfirm && \
+  echo "Killing the orphans..." && \
+  doas pacman -Rs $(pacman -Qtdq); \
   echo "System maintenance complete!"'
-alias pk-update='yay -Syu --noconfirm && flatpak update --noninteractive'
+alias pk-update='doas pacman -Syu --noconfirm && flatpak update --noninteractive'
 alias ai='sh ~/.sh/ai.sh' # Start and stop ai
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias ffshare='~/.dotfiles/scripts/Random/ffshare.sh'

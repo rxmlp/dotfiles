@@ -1,14 +1,14 @@
 #!/usr/bin/env bash 
 monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name')
-cd $HOME/.config/hypr/wall/$monitor
-choices=$(fd . --type f -d 1 -e png -e jpg -e mp4 --format {/.} | shuf | fzf --cycle --preview='$HOME/.config/hypr/wall/scripts/fzf-preview.sh {}' --preview-window=right,70% --info=hidden --color prompt:green,pointer:green,current-bg:-1,current-fg:green,gutter:-1,border:bright-black,current-hl:red,hl:red)
+cd $HOME/Pictures/Wallpapers/$monitor
+choices=$(fd . --type f -d 1 -e png -e jpg -e mp4 --format {/.} | shuf | fzf --cycle --preview='$HOME/.config/hypr/hyprland/scripts/wall/fzf-preview.sh {}' --preview-window=right,70% --info=hidden --color prompt:green,pointer:green,current-bg:-1,current-fg:green,gutter:-1,border:bright-black,current-hl:red,hl:red)
 choice=$(fd $choices)
 old_mpv=$(pgrep -f "mpvpaper $monitor")
 
 save_to_cache() {
   local monitor="$1"
   local choice="$2"
-  local cache_file="$HOME/.config/hypr/wall/cache"
+  local cache_file="$HOME/.cache/mpvpaper-hyprpaper"
 
   # Read the current content of the cache file into an array
   mapfile -t lines < "$cache_file"
@@ -44,11 +44,10 @@ if [ -n "$choice" ] && [ -f "$choice" ]; then
   fi
   if [[ "$choice" =~ \.(png|jpg)$ ]]; then
     save_to_cache "$monitor" "$choice"
-    hyprctl hyprpaper reload $monitor,"$HOME/.config/hypr/wall/$monitor/$choice"
+    hyprctl hyprpaper reload $monitor,"$HOME/.config/Pictures/Wallpapers/$monitor/$choice"
     if [[ "$monitor" =~ DP-1 ]]; then
       matugen -c ~/.config/matugen/matugen.toml image "$choice"
     fi
-    # matugen -c ~/.config/matugen/matugen.toml image "$choice"
     kill $old_mpv
   fi
 fi
