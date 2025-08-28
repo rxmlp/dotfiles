@@ -20,8 +20,8 @@ input_path = '~/.config/matugen/templates/quickshell-template.json'
 output_path = '~/.config/quickshell/matugen.json'
 
 [templates.mako]
-input_path = '~/.dotfiles/config/mako/config-env'
-output_path = '~/.dotfiles/config/mako/config'
+input_path = '~/.config/mako/config-env'
+output_path = '~/.config/mako/config'
 post_hook = 'makoctl reload'
 
 [templates.rofi]
