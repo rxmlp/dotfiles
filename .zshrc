@@ -91,7 +91,7 @@ alias pk-clean='\
   echo "Killing the orphans..." && \
   doas pacman -Rs $(pacman -Qtdq); \
   echo "System maintenance complete!"'
-alias pk-update='doas pacman -Syu --noconfirm && flatpak update --noninteractive'
+alias pk-update='doas pacman -Syu --noconfirm && flatpak update --user --noninteractive'
 alias ai='sh ~/.sh/ai.sh' # Start and stop ai
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias ffshare='~/.dotfiles/scripts/Random/ffshare.sh'

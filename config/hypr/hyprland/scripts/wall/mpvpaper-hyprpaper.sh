@@ -1,53 +1,59 @@
 #!/usr/bin/env bash 
-monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name')
-cd $HOME/Pictures/Wallpapers/$monitor
+set -euo pipefail
+trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
+
+source $HOME/.config/hypr/hyprland/scripts/wall/env.sh
+cd "$wall_dir/$monitor_path"
 choices=$(fd . --type f -d 1 -e png -e jpg -e mp4 --format {/.} | shuf | fzf --cycle --preview='$HOME/.config/hypr/hyprland/scripts/wall/fzf-preview.sh {}' --preview-window=right,70% --info=hidden --color prompt:green,pointer:green,current-bg:-1,current-fg:green,gutter:-1,border:bright-black,current-hl:red,hl:red)
-choice=$(fd $choices)
-old_mpv=$(pgrep -f "mpvpaper $monitor")
+choice=$(fd "$choices")
+old_mpv=$(pgrep -f "mpvpaper "$monitor_primary_port"" || true)
 
 save_to_cache() {
   local monitor="$1"
   local choice="$2"
-  local cache_file="$HOME/.cache/mpvpaper-hyprpaper"
 
   # Read the current content of the cache file into an array
-  mapfile -t lines < "$cache_file"
+  mapfile -t lines < "$cache"
 
   # Determine the line to modify
   case "$monitor" in
-    "DP-1")
+    "$monitor_primary")
       lines[0]="${choice}"
       ;;
-    "DP-2")
+    "$monitor_secondary")
       lines[1]="${choice}"
       ;;
     *)
-      echo "Unknown monitor: $monitor"
+      echo Unknown monitor: "$monitor"
       return 1
       ;;
   esac
 
   # Write the updated content back to the cache file
-  printf "%s\n" "${lines[@]}" > "$cache_file"
+  printf "%s\n" "${lines[@]}" > "$cache"
 }
 
 
 if [ -n "$choice" ] && [ -f "$choice" ]; then
   if [[ "$choice" =~ \.(mp4)$ ]]; then
     hyprctl dispatch movetoworkspacesilent special:load
-    if [[ "$monitor" =~ DP-1 ]]; then
+    if [[ "$monitor" =~ "$monitor_primary" ]]; then
       matugen -c ~/.config/matugen/matugen.toml image $(fd "$choices"-mpv.png .thumbnails)
     fi
-    kill $old_mpv
+    if [[ -n "$old_mpv" ]]; then
+      kill "$old_mpv"
+    fi
     save_to_cache "$monitor" "$choice"
-    mpvpaper $monitor $choice -o "input-ipc-server=/tmp/mpv-socket-$monitor --loop --mute"
+    mpvpaper "$monitor_primary_port" "$choice" -o "input-ipc-server=/tmp/mpv-socket-$monitor_primary_port --loop --mute"
   fi
   if [[ "$choice" =~ \.(png|jpg)$ ]]; then
     save_to_cache "$monitor" "$choice"
-    hyprctl hyprpaper reload $monitor,"$HOME/.config/Pictures/Wallpapers/$monitor/$choice"
-    if [[ "$monitor" =~ DP-1 ]]; then
+    hyprctl hyprpaper reload desc:$monitor,"$HOME/Pictures/Wallpapers/$monitor_path/$choice"
+    if [[ "$monitor" =~ "$monitor_primary" ]]; then
       matugen -c ~/.config/matugen/matugen.toml image "$choice"
     fi
-    kill $old_mpv
+    if [[ -n "$old_mpv" ]]; then
+      kill "$old_mpv"
+    fi
   fi
 fi

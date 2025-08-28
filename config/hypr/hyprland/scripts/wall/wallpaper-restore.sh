@@ -1,31 +1,31 @@
 #!/usr/bin/env bash
+set -euo pipefail
+trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
 while ! pgrep -x "hyprpaper" > /dev/null; do
     echo "Waiting for hyprpaper to start..."
     sleep 1
 done
 
-wall_dir=$HOME/Pictures/Wallpapers
-monitors=$(hyprctl monitors -j | jq -r '.[] | .name')
-cache=$HOME/.cache/mpvpaper-hyprpaper
-DP1_wall=$(sed -n 1p "$cache")
-DP2_wall=$(sed -n 2p "$cache")
+source $HOME/.config/hypr/hyprland/scripts/wall/env.sh
+monitor_primary_wall=$(sed -n 1p "$cache")
+monitor_secondary_wall=$(sed -n 2p "$cache")
 
 if [ ! -f "$cache" ]; then
-    echo "Cache file $cache does not exist!"
+    echo "Cache file "$cache" does not exist!"
     exit 1
 fi
 
-if echo "$monitors" | grep -q 'DP-1'; then
-    if echo "$DP1_wall" | grep -qE '\.mp4$'; then
-        mpvpaper DP-1 $wall_dir/DP-1/$DP1_wall -o "input-ipc-server=/tmp/mpv-socket-DP-1 --loop --mute" & disown
+if echo "$monitors" | grep -q "$monitor_primary"; then
+    if echo "$monitor_primary_wall" | grep -qE '\.mp4$'; then
+        mpvpaper "$monitor_primary_port" "$wall_dir/$monitor_primary_path/$monitor_primary_wall" -o "input-ipc-server=/tmp/mpv-socket-"$monitor_primary_port" --loop --mute" & disown
     else
-        hyprctl hyprpaper reload DP-1,"$wall_dir/DP-1/$DP1_wall"
+        hyprctl hyprpaper reload desc:$monitor_primary,"$wall_dir/$monitor_primary_path/$monitor_primary_wall"
     fi
 fi
 
-if echo "$monitors" | grep -q 'DP-2'; then
-        hyprctl hyprpaper reload DP-2,"$wall_dir/DP-2/$DP2_wall"
+if echo "$monitors" | grep -q "$monitor_secondary"; then
+        hyprctl hyprpaper reload desc:$monitor_secondary,"$wall_dir/$monitor_secondary_path/$monitor_secondary_wall"
     else
         exit
 fi
