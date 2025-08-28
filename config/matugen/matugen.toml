@@ -65,7 +65,6 @@ output_path = '~/.config/matugen/output/matugen-dark.css'
 [templates.steam]
 input_path = '~/.config/matugen/templates/steam-colors.css'
 output_path = '~/.config/matugen/scripts/steam/Adwaita-for-Steam/adwaita/colorthemes/matugen/matugen.css'
-#post_hook = '~/.config/matugen/scripts/steam/Steam-Adwaita.sh'
 
 [templates.signal]
 input_path = '~/.config/matugen/templates/signal-colors.css'
@@ -93,22 +92,3 @@ output_path = '~/.themes/Matugen/cinnamon/cinnamon.css'
 [templates.gtk-gnome]
 input_path = '~/.config/matugen/templates/GTK-colors/gnome-shell/gnome-shell.css'
 output_path = '~/.themes/Matugen/gnome-shell/pad-osd.css'
-
-
-
-
-# Not in use
-
-#[templates.superfile]
-#input_path = '~/.config/matugen/templates/superfile-colors.toml'
-#output_path = '~/.config/superfile/theme/matugen.toml'
-
-### PrismLauncher flatpak
-
-#[templates.prismjson]
-#input_path = '~/.config/matugen/templates/Prismlauncher/theme.json'
-#output_path = '~/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/themes/Matugen/theme.json'
-
-#[templates.prismcss]
-#input_path = '~/.config/matugen/templates/Prismlauncher/Style.css'
-#output_path = '~/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/themes/Matugen/Style.css'
