@@ -2,7 +2,7 @@
 #bind = $mainMod, TAB, hyprexpo:expo, toggle
 
 # This just makes it so hyprexpo don't work on my left monitor
-bind = $mainMod, TAB, exec, $hyprland/plugins/overview/hyprexpo.sh
+bind = $mainMod, TAB, exec, $hyprland/plugins/hyprexpo/hyprexpo.sh
 
 plugin {
     hyprexpo {

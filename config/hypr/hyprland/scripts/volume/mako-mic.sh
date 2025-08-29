@@ -62,7 +62,7 @@ case $1 in
     mute)
 	wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle > /dev/null
 	if [ "$(get_mute)" = "[MUTED]" ] ; then
-    notify-send --app-name volume -h string:x-canonical-private-synchronous:340716 "$HOME/.icons/$theme/16x16/symbolic/status/microphone-sensitivity-none-symbolic.svg" "Mute"
+    notify-send --app-name volume -h string:x-canonical-private-synchronous:340716 -i "$HOME/.icons/$theme/16x16/symbolic/status/microphone-sensitivity-none-symbolic.svg" "Mute"
 	else
 	send_notification
 	fi
