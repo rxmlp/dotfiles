@@ -42,6 +42,7 @@ ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/antigen ~/.antigen
 ln -s ~/.dotfiles/.nanorc ~/.nanorc
 ln -s ~/.dotfiles/config/kitty ~/.config/kitty
+ln -s ~/.dotfiles/config/swappy ~/.config/swappy
 ln -s ~/.dotfiles/config/ghostty ~/.config/ghostty
 ln -s ~/.dotfiles/config/helix ~/.config/helix
 ln -s ~/.dotfiles/config/fastfetch ~/.config/fastfetch
