@@ -11,7 +11,7 @@ export SAVEHIST=10000
 
 
 #-------Antigen Configuration-------#
-source "$HOME/.dotfiles/antigen/antigen.zsh"
+source "$HOME/.dotfiles/antigen.zsh"
 
 # Use the Oh My Zsh framework (ensures compatibility)
 antigen use oh-my-zsh
