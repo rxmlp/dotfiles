@@ -23778,3 +23778,11 @@ antigen
 [LOG][1755053719.0322594643] Return from hook antigen-apply with 0
 [LOG][1755053719.0324244499] /home/sisa/.antigen/antigen.zsh:1518
 [LOG][1755053719.0324244499] Return from hook antigen with 0
+[WRN][1757094182.8195562363] /home/sisa/.antigen/antigen.zsh:266
+[WRN][1757094182.8195562363] -antigen-interactive-mode: toplevel:shfunc:file:shfunc:shfunc $_ANTIGEN_INTERACTIVE = 
+[TRA][1757094182.8196966648] /home/sisa/.antigen/antigen.zsh:475
+[TRA][1757094182.8196966648] Gonna create compdump file @ env-setup COMPDUMP
+[TRA][1757094182.8196966648] TRACE
+-antigen-env-setup
+/home/sisa/.antigen/antigen.zsh
+antigen

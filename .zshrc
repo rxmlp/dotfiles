@@ -11,9 +11,7 @@ export SAVEHIST=10000
 
 
 #-------Antigen Configuration-------#
-
-# Source Antigen (assumes Antigen is installed at $HOME/.antigen.zsh)
-source "$HOME/.antigen/antigen.zsh"
+source "$HOME/.dotfiles/antigen/antigen.zsh"
 
 # Use the Oh My Zsh framework (ensures compatibility)
 antigen use oh-my-zsh
@@ -21,8 +19,6 @@ antigen use oh-my-zsh
 
 # Core Oh My Zsh plugins
 antigen bundle git
-antigen bundle ssh
-antigen bundle ssh-agent
 antigen bundle ufw
 antigen bundle cp
 antigen bundle sudo

@@ -39,7 +39,6 @@ Include = /etc/pacman.d/chaotic-mirrorlist
 
 ```zsh
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/antigen ~/.antigen
 ln -s ~/.dotfiles/.nanorc ~/.nanorc
 ln -s ~/.dotfiles/config/kitty ~/.config/kitty
 ln -s ~/.dotfiles/config/swappy ~/.config/swappy
@@ -86,8 +85,10 @@ yay -S jq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd not
 Install hyprland plugins
 ```zsh
 hyprpm add https://github.com/hyprwm/hyprland-plugins
+hyprpm add https://github.com/outfoxxed/hy3
 ```
 Enable used plugins
 ```zsh
 hyprpm enable hyprexpo
+hyprpm enable hy3
 ```
