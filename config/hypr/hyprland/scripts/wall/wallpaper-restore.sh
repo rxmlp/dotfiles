@@ -7,7 +7,7 @@ while ! pgrep -x "hyprpaper" > /dev/null; do
     sleep 1
 done
 
-source $HOME/.config/hypr/hyprland/scripts/wall/env.sh
+source $HOME/.config/hypr/hyprland/scripts/monitor-env.sh
 monitor_primary_wall=$(sed -n 1p "$cache")
 monitor_secondary_wall=$(sed -n 2p "$cache")
 

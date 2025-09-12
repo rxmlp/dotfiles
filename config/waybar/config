@@ -1,6 +1,6 @@
 {
     "layer": "top",
-        "output": "DP-1",
+    "output": "DP-1",
     "modules-left": [
         "hyprland/workspaces",
         "custom/hyprpicker",

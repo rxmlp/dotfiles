@@ -73,7 +73,6 @@ bindkey "^[[57438;5u" backward-word
 
 
 #-------My cute lil random alias-------#
-alias doas='doas '
 alias hx='helix'
 alias mirror-fix='doas reflector --latest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 alias sysu='systemctl --user'
