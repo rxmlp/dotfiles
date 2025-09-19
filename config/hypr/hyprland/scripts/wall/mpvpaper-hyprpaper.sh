@@ -51,9 +51,9 @@ if [ -n "$choice" ] && [ -f "$choice" ]; then
     hyprctl hyprpaper reload desc:$monitor,"$HOME/Pictures/Wallpapers/$monitor_path/$choice"
     if [[ "$monitor" =~ "$monitor_primary" ]]; then
       matugen -c ~/.config/matugen/matugen.toml image "$choice"
-    fi
     if [[ -n "$old_mpv" ]]; then
       kill "$old_mpv"
+    fi
     fi
   fi
 fi

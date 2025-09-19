@@ -14,6 +14,10 @@ monitor_secondary_port=$(hyprctl monitors -j | jq -r --arg desc "$monitor_second
 monitor_secondary_path=monitor_secondary
 
 
+if [ ! -f "$HOME/.cache/mpvpaper-hyprpaper" ]; then
+  touch "$HOME/.cache/mpvpaper-hyprpaper"
+fi
+
 cache=$HOME/.cache/mpvpaper-hyprpaper
 wall_dir=$HOME/Pictures/Wallpapers
 
