@@ -67,6 +67,7 @@ bindkey "^[[57438;5u" backward-word
 
 #-------My cute lil random alias-------#
 alias hx='helix'
+alias dh='doas helix'
 alias sysu='systemctl --user'
 alias attack='doas hping3 -S -i u100'
 
@@ -121,3 +122,4 @@ mvg ()
 }
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin-scripts:$PATH"

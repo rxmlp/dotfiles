@@ -16,6 +16,11 @@ if [ ! -f "$cache" ]; then
     exit 1
 fi
 
+old_mpv=$(pgrep -f "mpvpaper "$monitor_primary_port"" || true)
+if [[ -n "$old_mpv" ]]; then
+    kill "$old_mpv"
+fi
+
 if echo "$monitors" | grep -q "$monitor_primary"; then
     if echo "$monitor_primary_wall" | grep -qE '\.mp4$'; then
         mpvpaper "$monitor_primary_port" "$wall_dir/$monitor_primary_path/$monitor_primary_wall" -o "input-ipc-server=/tmp/mpv-socket-"$monitor_primary_port" --loop --mute" & disown

@@ -9,16 +9,7 @@ As I am also changing the setup a lot if you don't read changes before applying 
 ![monitor_secondary](monitor_secondary.png)
 
 
-1. Kinda need git for to clone and yay for last
-```zsh
-sudo pacman -S yay git
-```
-```zsh
-git clone https://github.com/rxmlp/dotfiles.git ~/.dotfiles
-```
-
-
-2. Chaotic aur (optional)
+1. Chaotic aur (optional)
 
 We start by retrieving the primary key to enable the installation of our keyring and mirror list:
 ```zsh
@@ -35,24 +26,33 @@ Include = /etc/pacman.d/chaotic-mirrorlist
 ```
 
 
+2. Kinda need git for to clone and yay for last
+```zsh
+sudo pacman -S yay git
+```
+```zsh
+git clone https://github.com/rxmlp/dotfiles.git ~/.dotfiles
+```
+
+
 3. Create symlinks in the Home directory to the real files in the repo.
 
 ```zsh
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.nanorc ~/.nanorc
-ln -s ~/.dotfiles/config/kitty ~/.config/kitty
-ln -s ~/.dotfiles/config/swappy ~/.config/swappy
+ln -s ~/.dotfiles/config/fastfetch ~/.config/fastfetch
 ln -s ~/.dotfiles/config/ghostty ~/.config/ghostty
 ln -s ~/.dotfiles/config/helix ~/.config/helix
-ln -s ~/.dotfiles/config/fastfetch ~/.config/fastfetch
 ln -s ~/.dotfiles/config/hypr ~/.config/hypr
-ln -s ~/.dotfiles/config/waybar ~/.config/waybar
+ln -s ~/.dotfiles/config/kitty ~/.config/kitty
 ln -s ~/.dotfiles/config/mako ~/.config/mako
-ln -s ~/.dotfiles/config/rofi ~/.config/rofi
-ln -s ~/.dotfiles/config/superfile ~/.config/superfile
 ln -s ~/.dotfiles/config/matugen ~/.config/matugen
 ln -s ~/.dotfiles/config/qt6ct ~/.config/qt6ct
+ln -s ~/.dotfiles/config/rofi ~/.config/rofi
+ln -s ~/.dotfiles/config/superfile ~/.config/superfile
+ln -s ~/.dotfiles/config/swappy ~/.config/swappy
+ln -s ~/.dotfiles/config/waybar ~/.config/waybar
 ln -s ~/.dotfiles/config/xdg-desktop-portal ~/.config/xdg-desktop-portal
+ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/.nanorc ~/.nanorc
 ```
 
 
