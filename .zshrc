@@ -77,6 +77,7 @@ alias logs="doas find /var/log -type f -exec file {} \; | grep 'text' | cut -d' 
 
 # Alias's for multiple directory listing commands
 alias ls='eza --icons --color=always' # Use eza insead of ls
+alias lt='eza --icons --color=always --tree' # Tree view
 alias ld='eza --icons --color=always -d */' # Show dirs only
 alias la='eza --icons --color=always -Alh' # Show hidden files
 alias lk='eza --icons --color=always -lSrh' # Sort by size
