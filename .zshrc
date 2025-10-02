@@ -66,6 +66,7 @@ bindkey "^[[57438;5u" backward-word
 
 
 #-------My cute lil random alias-------#
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias hx='helix'
 alias dh='doas helix'
 alias sysu='systemctl --user'
