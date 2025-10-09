@@ -2,10 +2,16 @@
 set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
-while ! pgrep -x "hyprpaper" > /dev/null; do
-    echo "Waiting for hyprpaper to start..."
-    sleep 1
-done
+if ! pgrep -x "hyprpaper" > /dev/null; then
+    hyprpaper &
+    while ! pgrep -x "hyprpaper" > /dev/null; do
+        echo "Waiting for hyprpaper to start..."
+        sleep 1
+    done
+    echo "hyprpaper started."
+else
+    echo "hyprpaper is already running."
+fi
 
 source $HOME/.config/hypr/hyprland/scripts/monitor-env.sh
 monitor_primary_wall=$(sed -n 1p "$cache")
