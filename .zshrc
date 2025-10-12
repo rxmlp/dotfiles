@@ -70,7 +70,7 @@ alias hx='helix'
 alias dh='doas helix'
 alias sysu='systemctl --user'
 alias attack='doas hping3 -S -i u100'
-
+alias sn='shutdown now'
 
 #-------Logs-------#
 alias logs="doas find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
@@ -124,3 +124,13 @@ mvg ()
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin-scripts:$PATH"
+
+# For terminal to follow yazi path
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
