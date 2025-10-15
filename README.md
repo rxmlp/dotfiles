@@ -72,7 +72,7 @@ yay -S hyprpaper mpvpaper matugen-bin papirus-icon-theme
 ```
 Bar, launcher, volume, notifications, clip & record
 ```zsh 
-yay -S waybar mako rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder better-control-git swappy
+yay -S waybar mako rofi-wayland networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder better-control-git swappy hyprsessionmanager-git
 ```
 Dependencies & Scripts etc
 ```zsh
