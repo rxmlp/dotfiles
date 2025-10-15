@@ -31,7 +31,7 @@ Include = /etc/pacman.d/chaotic-mirrorlist
 sudo pacman -S yay git
 ```
 ```zsh
-git clone https://github.com/rxmlp/dotfiles.git ~/.dotfiles
+git clone https://codeberg.org/xyrd/dotfiles.git ~/.dotfiles
 ```
 
 
