@@ -9,8 +9,7 @@ time=$(date '+%A, %d %B %Y • %H:%M')
 shutdown='      Shutdown'
 reboot='      Reboot'
 lock='      Lock'
-suspend='      Suspend'
-logout='      Logout'
+suspend='      Suspend'
 yes='Yes'
 no='No'
 
@@ -42,7 +41,7 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-  echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+  echo -e "$lock\n$suspend\n$reboot\n$shutdown" | rofi_cmd
 }
 
 # Execute Command
@@ -60,10 +59,6 @@ run_cmd() {
       playerctl pause -a
       hyprlock &
       sleep 1; systemctl suspend
-    elif [[ $1 == '--logout' ]]; then
-      if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
-        uwsm stop
-      fi
     fi
   else
     exit 0
@@ -84,8 +79,5 @@ case $chosen in
     ;;
   $suspend)
     run_cmd --suspend
-    ;;
-  $logout)
-    run_cmd --logout
     ;;
 esac

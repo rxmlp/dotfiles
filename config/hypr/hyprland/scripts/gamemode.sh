@@ -12,6 +12,10 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
         keyword general:gaps_out 0;\
         keyword general:border_size 1;\
         keyword decoration:rounding 0"
+    hyprctl keyword unbind SUPER, F
+    hyprctl keyword unbind SUPER, V
+    hyprctl keyword unbind SUPER, mouse:272
+    hyprctl keyword unbind SUPER, mouse:273
     if pgrep -f mpv > /dev/null; then
         echo '{ "command": ["set_property", "pause", true] }' | socat - /tmp/mpv-socket-$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name') > /dev/null 2>&1 
     fi
@@ -37,6 +41,10 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
         keyword general:gaps_out 0;\
         keyword general:border_size 1;\
         keyword decoration:rounding 0"
+    hyprctl keyword unbind SUPER, F
+    hyprctl keyword unbind SUPER, V
+    hyprctl keyword unbind SUPER, mouse:272
+    hyprctl keyword unbind SUPER, mouse:273
     if pgrep -f mpv > /dev/null; then
         echo '{ "command": ["set_property", "pause", true] }' | socat - /tmp/mpv-socket-$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name') > /dev/null 2>&1 
     fi
