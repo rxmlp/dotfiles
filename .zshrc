@@ -53,6 +53,13 @@ if [ "$TERM" != "linux" ]; then
   eval "$(starship init zsh)"
 fi
 
+
+#-------Exports-------#
+export EDITOR=helix
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin-scripts:$PATH"
+
+
 #-------Bindkeys-------#
 
 # Fix CTRL + C
@@ -121,9 +128,6 @@ mvg ()
 		mv "$1" "$2"
 	fi
 }
-
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/bin-scripts:$PATH"
 
 # For terminal to follow yazi path
 function yy() {
