@@ -3,8 +3,8 @@ cursor-text = #c4c6d0
 
 foreground = #e2e2e9
 background = #111318
-selection-foreground = #283141
-selection-background = #bec6dc
+selection-foreground = #293041
+selection-background = #bfc6dc
 
 
 # black
@@ -24,7 +24,7 @@ palette = 3=#aca98a
 palette = 11=#c4c19e
 
 # blue
-palette = 4=#aac7ff
+palette = 4=#adc6ff
 palette = 12=#a39ec4
 
 # magenta

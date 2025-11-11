@@ -2,9 +2,9 @@
     background: #111318;
     background-alt: #0c0e13;
     selected-background: #111318;
-    border: #aac7ff;
-    default: #aac7ff;
-    default-alt: #274777;
+    border: #adc6ff;
+    default: #adc6ff;
+    default-alt: #2b4678;
     text: #e2e2e9;
-    selected-text: #415f91;
+    selected-text: #445e91;
 }
