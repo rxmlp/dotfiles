@@ -10,6 +10,10 @@ input_path = '~/.config/matugen/templates/hyprland-colors.conf'
 output_path = '~/.config/matugen/output/hyprland-colors.conf'
 post_hook = 'hyprctl reload'
 
+#[templates.hyprtoolkit]
+#input_path = '~/.config/matugen/templates/hyprtoolkit-colors.conf'
+#output_path = '~/.config/hypr/hyprtoolkit.conf'
+
 [templates.waybar]
 input_path = '~/.config/matugen/templates/waybar-colors.css'
 output_path = '~/.config/waybar/matugen.css'
@@ -43,11 +47,6 @@ output_path = '~/.config/starship.toml'
 [templates.helix]
 input_path = '~/.config/matugen/templates/helix-colors.toml'
 output_path = '~/.config/helix/themes/matugen.toml'
-
-[templates.pywalfox] # https://github.com/Frewacom/pywalfox/issues/68#issuecomment-873381669
-input_path = '~/.config/matugen/templates/pywalfox-colors.json'
-output_path = '~/.cache/wal/colors.json'
-post_hook = 'source ~/.pywalfox/bin/activate; pywalfox install'
 
 [templates.vesktop]
 input_path = '~/.config/matugen/templates/vesktop-colors.css'
