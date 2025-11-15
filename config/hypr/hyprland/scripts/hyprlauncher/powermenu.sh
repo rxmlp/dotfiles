@@ -3,18 +3,15 @@ set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR 
 
 
-# Options
 shutdown='Shutdown'
 reboot='Reboot'
 lock='Lock'
 suspend='Suspend'
 
-# Pass variables to rofi dmenu
 launcher() {
   echo -e "$shutdown\n$reboot\n$lock\n$suspend" | hyprlauncher --dmenu
 }
 
-# Execute Command
 option() {
     if [[ $1 == '--shutdown' ]]; then
       systemctl poweroff
@@ -32,7 +29,6 @@ option() {
     fi
 }
 
-# Actions
 chosen="$(launcher)"
 case $chosen in
   "$shutdown")
