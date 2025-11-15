@@ -39,13 +39,10 @@ screenshot_option() {
   selected_option_screenshot="$(dmenu_screenshot_option)"
   if [[ "$selected_option_screenshot" == "$screenshot_all" ]]; then
     screenshot_option_chosen=screen
-    ${1}
   elif [[ "$selected_option_screenshot" == "$screenshot_active" ]]; then
     screenshot_option_chosen=output
-    ${1}
   elif [[ "$selected_option_screenshot" == "$screenshot_area" ]]; then
     screenshot_option_chosen=area
-    ${1}
   else exit 1
   fi
 }
