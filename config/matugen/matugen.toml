@@ -10,9 +10,9 @@ input_path = '~/.config/matugen/templates/hyprland-colors.conf'
 output_path = '~/.config/matugen/output/hyprland-colors.conf'
 post_hook = 'hyprctl reload'
 
-#[templates.hyprtoolkit]
-#input_path = '~/.config/matugen/templates/hyprtoolkit-colors.conf'
-#output_path = '~/.config/hypr/hyprtoolkit.conf'
+[templates.hyprtoolkit]
+input_path = '~/.config/matugen/templates/hyprtoolkit-colors.conf'
+output_path = '~/.config/hypr/hyprtoolkit.conf'
 
 [templates.waybar]
 input_path = '~/.config/matugen/templates/waybar-colors.css'

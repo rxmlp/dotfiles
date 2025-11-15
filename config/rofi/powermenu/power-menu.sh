@@ -75,7 +75,7 @@ case $chosen in
     run_cmd --reboot
     ;;
   $lock)
-      run_cmd --lock
+    run_cmd --lock
     ;;
   $suspend)
     run_cmd --suspend
