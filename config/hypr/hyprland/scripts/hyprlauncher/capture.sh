@@ -6,10 +6,10 @@ trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ER
 record_area="Record area"
 record_monitor="Record monitor"
 
-screenshot="Screenshot"
-screenshot_all="All Screen"
-screenshot_active="Active Screen"
-screenshot_area="Area/Window"
+screenshot="󰹑  Screenshot"
+screenshot_all="󰍹 󰨇  All Screen"
+screenshot_active="󰨇  Active Screen"
+screenshot_area="󰕢  Area/Window"
 
 copy='Copy'
 save='Save'
@@ -22,9 +22,9 @@ dmenu() {
 }
 
 if pgrep -x wf-recorder >/dev/null; then
-    record="Stop recording"
+    record="󱦿  Stop recording"
 else
-    record="Record"
+    record="󰵝  Record"
 fi
 
 screenshot_record() {

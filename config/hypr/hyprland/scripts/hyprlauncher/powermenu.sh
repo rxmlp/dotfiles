@@ -3,16 +3,28 @@ set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR 
 
 
-shutdown='Shutdown'
-reboot='Reboot'
-lock='Lock'
-suspend='Suspend'
+shutdown='  Shutdown'
+reboot='󰑙  Reboot'
+lock='  Lock'
+suspend='󰒲  Suspend'
+yes='  Yes'
+no='󰜺  No'
+
+dmenu() {
+    $HOME/.local/bin/hyprlauncher --dmenu
+}
 
 launcher() {
-  echo -e "$shutdown\n$reboot\n$lock\n$suspend" | hyprlauncher --dmenu
+  echo -e "$shutdown\n$reboot\n$lock\n$suspend" | dmenu
+}
+
+confirm() {
+  echo -e "$yes\n$no" | dmenu
 }
 
 option() {
+  confirmed="$(confirm)"
+  if [[ "$confirmed" == "$yes" ]]; then
     if [[ $1 == '--shutdown' ]]; then
       systemctl poweroff
     elif [[ $1 == '--reboot' ]]; then
@@ -27,6 +39,7 @@ option() {
     else
         exit 0
     fi
+  fi
 }
 
 chosen="$(launcher)"
