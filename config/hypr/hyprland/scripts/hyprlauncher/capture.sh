@@ -11,10 +11,10 @@ screenshot_all="󰍹 󰨇  All Screen"
 screenshot_active="󰨇  Active Screen"
 screenshot_area="󰕢  Area/Window"
 
-copy='Copy'
-save='Save'
-copy_save='CopySave'
-edit='Edit'
+copy='  Copy'
+save='  Save'
+copy_save='  CopySave'
+edit='  Edit'
 editor="pinta"
 
 dmenu() {
