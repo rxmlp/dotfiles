@@ -64,10 +64,6 @@ yay -S hyprland hyprlock hypridle hyprutils hyprgraphics hyprcursor hyprland-qt-
 ```
 Looks
 ```zsh
-Get pywalfox
-https://github.com/Frewacom/pywalfox
-```
-```zsh
 yay -S hyprpaper mpvpaper matugen-bin papirus-icon-theme
 ```
 Bar, launcher, volume, notifications, clip & record
