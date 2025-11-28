@@ -49,8 +49,11 @@ if [ -n "$choice" ] && [ -f "$choice" ]; then
   if [[ "$choice" =~ \.(png|jpg)$ ]]; then
     save_to_cache "$monitor" "$choice"
     hyprctl hyprpaper reload desc:$monitor,"$HOME/Pictures/Wallpapers/$monitor_path/$choice"
-    if [[ "$monitor" =~ "$monitor_primary" ]]; then
+    if [[ "$monitor" = "$monitor_primary" ]]; then
       matugen -c ~/.config/matugen/matugen.toml image "$choice"
+      if [[ "$(printenv hyprlockwall)" = "on" ]]; then
+        sed -i "s|\$hyprlockwall = .*|\$hyprlockwall = "\$HOME"/Pictures/Wallpapers/$monitor_path/$choice|" ~/.config/hypr/theme.conf
+      fi
     if [[ -n "$old_mpv" ]]; then
       kill "$old_mpv"
     fi

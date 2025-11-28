@@ -1,10 +1,10 @@
 * {
-    background: #111318;
-    background-alt: #0c0e13;
-    selected-background: #111318;
-    border: #adc6ff;
-    default: #adc6ff;
-    default-alt: #2b4678;
-    text: #e2e2e9;
-    selected-text: #445e91;
+    background: #151218;
+    background-alt: #100d12;
+    selected-background: #151218;
+    border: #d7bafb;
+    default: #d7bafb;
+    default-alt: #533c72;
+    text: #e7e0e8;
+    selected-text: #6b538c;
 }

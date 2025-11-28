@@ -48,9 +48,9 @@ output_path = '~/.config/starship.toml'
 input_path = '~/.config/matugen/templates/helix-colors.toml'
 output_path = '~/.config/helix/themes/matugen.toml'
 
-[templates.vesktop]
-input_path = '~/.config/matugen/templates/vesktop-colors.css'
-output_path = '~/.var/app/dev.vencord.Vesktop/config/vesktop/themes/matugen.css'
+#[templates.vesktop]
+#input_path = '~/.config/matugen/templates/vesktop-colors.css'
+#output_path = '~/.var/app/dev.vencord.Vesktop/config/vesktop/themes/matugen.css'
 
 [templates.spicetify]
 input_path = '~/.config/matugen/templates/spicetify-colors.ini'
