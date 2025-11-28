@@ -19,10 +19,6 @@ input_path = '~/.config/matugen/templates/waybar-colors.css'
 output_path = '~/.config/waybar/matugen.css'
 post_hook = 'pkill -SIGUSR2 waybar'
 
-#[templates.quickshell]
-#input_path = '~/.config/matugen/templates/quickshell-template.json'
-#output_path = '~/.config/quickshell/matugen.json'
-
 [templates.mako]
 input_path = '~/.config/mako/config-env'
 output_path = '~/.config/mako/config'
@@ -48,18 +44,10 @@ output_path = '~/.config/starship.toml'
 input_path = '~/.config/matugen/templates/helix-colors.toml'
 output_path = '~/.config/helix/themes/matugen.toml'
 
-#[templates.vesktop]
-#input_path = '~/.config/matugen/templates/vesktop-colors.css'
-#output_path = '~/.var/app/dev.vencord.Vesktop/config/vesktop/themes/matugen.css'
-
 [templates.spicetify]
 input_path = '~/.config/matugen/templates/spicetify-colors.ini'
 output_path = '~/.config/spicetify/Themes/matugen/color.ini'
 post_hook = 'spicetify apply -n'
-
-[templates.heroic]
-input_path = '~/.config/matugen/templates/heroic-colors.css'
-output_path = '~/.config/matugen/output/matugen-dark.css'
 
 [templates.steam]
 input_path = '~/.config/matugen/templates/steam-colors.css'
@@ -91,3 +79,19 @@ output_path = '~/.themes/Matugen/cinnamon/cinnamon.css'
 [templates.gtk-gnome]
 input_path = '~/.config/matugen/templates/GTK-colors/gnome-shell/gnome-shell.css'
 output_path = '~/.themes/Matugen/gnome-shell/pad-osd.css'
+
+
+
+# Not in use
+
+#[templates.heroic]
+#input_path = '~/.config/matugen/templates/heroic-colors.css'
+#output_path = '~/.config/matugen/output/matugen-dark.css'
+
+#[templates.vesktop]
+#input_path = '~/.config/matugen/templates/vesktop-colors.css'
+#output_path = '~/.var/app/dev.vencord.Vesktop/config/vesktop/themes/matugen.css'
+
+#[templates.quickshell]
+#input_path = '~/.config/matugen/templates/quickshell-template.json'
+#output_path = '~/.config/quickshell/matugen.json'
