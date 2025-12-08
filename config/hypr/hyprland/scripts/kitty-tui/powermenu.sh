@@ -47,12 +47,11 @@ option() {
                 ;;
             --lock)
                 playerctl pause -a &
-                sleep 1; hyprlock
+                loginctl lock-session
                 ;;
             --suspend)
                 playerctl pause -a &
-                sleep 1; hyprlock &
-                sleep 1; systemctl suspend
+                loginctl lock-session && systemctl suspend
                 ;;
             *)
                 exit 0
