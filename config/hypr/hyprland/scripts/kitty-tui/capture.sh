@@ -17,8 +17,23 @@ copy_save='  CopySave'
 edit='  Edit'
 editor="pinta"
 
-dmenu() {
-    $HOME/.local/bin/hyprlauncher --dmenu
+old_addr=$(hyprctl clients -j | jq -r '.[] | select(.title=="kitty-tui") | .address')
+if [ -n "$old_addr" ]; then
+  hyprctl dispatch killwindow address:"$old_addr"
+fi
+
+echo -ne '\033]2;kitty-tui\007'
+focus_lock() {
+  while true; do
+    sleep 0.05
+    hyprctl dispatch focuswindow title:kitty-tui >/dev/null || break
+  done
+}
+focus_lock &
+focus_lock_pid=$!
+
+menu() {
+    fzf --prompt='> ' --ansi --height=100%
 }
 
 if pgrep -x wf-recorder >/dev/null; then
@@ -28,15 +43,15 @@ else
 fi
 
 screenshot_record() {
-    echo -e "$screenshot\n$record" | dmenu
+    echo -e "$screenshot\n$record" | menu
 }
 
-dmenu_screenshot_option() {
-    echo -e "$screenshot_all\n$screenshot_active\n$screenshot_area" | dmenu
+menu_screenshot_option() {
+    echo -e "$screenshot_all\n$screenshot_active\n$screenshot_area" | menu
 }
 
 screenshot_option() {
-  selected_option_screenshot="$(dmenu_screenshot_option)"
+  selected_option_screenshot="$(menu_screenshot_option)"
   if [[ "$selected_option_screenshot" == "$screenshot_all" ]]; then
     screenshot_option_chosen=screen
   elif [[ "$selected_option_screenshot" == "$screenshot_active" ]]; then
@@ -47,12 +62,12 @@ screenshot_option() {
   fi
 }
 
-dmenu_screenshot_action() {
-  echo -e "$copy\n$save\n$copy_save\n$edit" | dmenu
+menu_screenshot_action() {
+  echo -e "$copy\n$save\n$copy_save\n$edit" | menu
 }
 
 screenshot_action() {
-  selected_chosen="$(dmenu_screenshot_action)"
+  selected_chosen="$(menu_screenshot_action)"
   if [[ "$selected_chosen" == "$copy" ]]; then
     screenshot_action_chosen=copy
     ${1}
@@ -70,8 +85,12 @@ screenshot_action() {
 }
 
 takescreenshot() {
-  sleep 1
-  GRIMBLAST_EDITOR="$editor" grimblast --notify "$screenshot_action_chosen" "$screenshot_option_chosen"
+  kill "$focus_lock_pid" 2>/dev/null
+  wait "$focus_lock_pid" 2>/dev/null || true
+  hyprctl dispatch movetoworkspacesilent special:load
+  sleep 0.5
+  GRIMBLAST_EDITOR="$editor" grimblast --notify "$screenshot_action_chosen" "$screenshot_option_chosen" 2>/dev/null
+  exit 0
 }
 
 screenshot_init() {
@@ -80,19 +99,29 @@ screenshot_init() {
 }
 
 record_area() {
+  kill "$focus_lock_pid" 2>/dev/null
+  wait "$focus_lock_pid" 2>/dev/null || true
+  echo -ne '\033]2;kitty-tui-recorder\007'
+  hyprctl dispatch movetoworkspacesilent special:load
+  sleep 1
   REGION=$(slurp)
-  hyprctl notify 0 1500 "0" "Recoring started"
-  wf-recorder -g "$REGION" -a --file=$HOME/Videos/recordings/area_$(date +"%Y-%m-%d_%H-%M-%S").mp4
+  hyprctl notify 0 1500 "0" "Recoring started" 2>/dev/null
+  wf-recorder -g "$REGION" -a --file=$HOME/Videos/recordings/area_$(date +"%Y-%m-%d_%H-%M-%S").mp4 2>/dev/null
+exit 0
 }
 
 record_monitor() {
+  echo -ne '\033]2;kitty-tui-recorder\007'
+  hyprctl dispatch movetoworkspacesilent special:load
+  sleep 1
   REGION=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name')
-  hyprctl notify 0 1500 "0" "Recoring started"
-  wf-recorder -o "$REGION" -a --file=$HOME/Videos/recordings/monitor_$(date +"%Y-%m-%d_%H-%M-%S").mp4
+  hyprctl notify 0 1500 "0" "Recoring started" 2>/dev/null
+  wf-recorder -o "$REGION" -a --file=$HOME/Videos/recordings/monitor_$(date +"%Y-%m-%d_%H-%M-%S").mp4 2>/dev/null
+exit 0
 }
 
-dmenu_record_options() {
-  echo -e "$record_area\n$record_monitor" | dmenu
+record_options() {
+  echo -e "$record_area\n$record_monitor" | menu
 }
 
 record_init() {
@@ -100,7 +129,7 @@ record_init() {
         pkill wf-recorder
         hyprctl notify 5 2000 "0" "Recoring stopped"
     else
-        record_option="$(dmenu_record_options)"
+        record_option="$(record_options)"
         if [[ "$record_option" == "$record_area" ]]; then
             record_area
         elif [[ "$record_option" == "$record_monitor" ]]; then

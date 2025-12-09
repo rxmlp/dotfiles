@@ -80,7 +80,7 @@
         "tooltip": true,
         "format": "󰖪 ",
         "format-wifi": " ",
-        "on-click-right": "$HOME/.config/rofi/wifimenu/scripts/wifimenu",
+        "on-click-right": "hyprctl dispatch exec '[size 750 500; float; workspace [w]' kitty $HOME/.config/hypr/hyprland/scripts/kitty-tui/wifi/wifimenu.sh",
         "format-ethernet": "󰈀 ",
         "tooltip-format-wifi": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b> \n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> \n<span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "tooltip-format-ethernet": "Interface: <b>{ifname}</b>\nLocal ip: <b>{ipaddr}</b> \n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> \n<span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
@@ -100,6 +100,6 @@
 		"tooltip-format-connected": " {device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}",
         "tooltip": false,
-        "on-click-right": "$HOME/.config/rofi/bluetoothmenu/scripts/bluetoothmenu"
-	},
+        "on-click-right": "hyprctl dispatch exec '[size 750 500; float; workspace [w]' kitty $HOME/.config/hypr/hyprland/scripts/kitty-tui/bluetooth.sh"
+	}
 }

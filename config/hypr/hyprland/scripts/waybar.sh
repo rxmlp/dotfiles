@@ -16,7 +16,7 @@ toggle() {
 
 boot() {
   # Get the DP/HDMI port of whatever is set as $monitor_primary in /hypr/hyprland/conf/devices.conf
-  source $HOME/.config/hypr/hyprland/scripts/monitor-env.sh
+  source $HOME/.config/hypr/hyprland/scripts/env.sh
   # Exit if there is no $monitor_primary
   if [[ -z "$monitor_primary_port" ]]; then
     echo "Error: monitor_primary_port is not set. Exiting."

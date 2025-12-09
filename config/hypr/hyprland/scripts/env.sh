@@ -2,6 +2,7 @@
 
 devices="$HOME/.config/hypr/hyprland/conf/devices.conf"
 
+
 monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .description')
 monitors=$(hyprctl monitors -j | jq -r '.[] | .description')
 monitor_primary_desc=$(grep '^\$monitor_primary = desc:' "$devices" | sed -E 's/^\$monitor_primary = desc:(.*)$/\1/')

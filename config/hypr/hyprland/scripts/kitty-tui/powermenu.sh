@@ -9,13 +9,17 @@ suspend='󰒲  Suspend'
 yes='  Yes'
 no='󰜺  No'
 
-#echo $(hyprctl -j activewindow | grep "tags":)
 
-echo -ne '\033]2;powermenu\007'
+old_addr=$(hyprctl clients -j | jq -r '.[] | select(.title=="kitty-tui") | .address')
+if [ -n "$old_addr" ]; then
+  hyprctl dispatch killwindow address:"$old_addr"
+fi
+
+echo -ne '\033]2;kitty-tui\007'
 focus_lock() {
   while true; do
     sleep 0.05
-    hyprctl dispatch focuswindow title:powermenu >/dev/null || break
+    hyprctl dispatch focuswindow title:kitty-tui >/dev/null || break
   done
 }
 focus_lock &
