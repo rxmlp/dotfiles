@@ -9,7 +9,8 @@ screenshot="󰍹  Screenshot / Record"
 powermenu="󰐥  Powermenu"
 theme="󰸉  Theme"
 wallpaper="󰸉  Wallpaper"
-signal="󰂮  Signal"
+signal="󰭹  Matugen Signal"
+steam="  Matugen Steam"
 wifi="󰤨  Wi-Fi"
 bluetooth="󰂯  Bluetooth"
 hyprfix="  Hyprfix"
@@ -41,6 +42,7 @@ theme_options="$(
   cat <<EOF
 $wallpaper
 $signal
+$steam
 EOF
 )"
 
@@ -66,6 +68,7 @@ while true; do
       case "$theme_choice" in
         *$wallpaper*)   "$HLS/wall/mpvpaper-hyprpaper.sh" && exit 0;;
         *$signal*)    hyprctl dispatch movetoworkspacesilent special:load & "$HOME/.config/matugen/scripts/signal-matugen.sh" && exit 0;;
+        *$steam*)    hyprctl dispatch movetoworkspacesilent special:load & "$HOME/.config/matugen/scripts/steam/steam-theme.sh" && exit 0;;
       esac
       ;;
     *$hyprfix*)

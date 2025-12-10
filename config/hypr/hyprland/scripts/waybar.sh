@@ -14,6 +14,12 @@ toggle() {
   fi
 }
 
+restart() {
+  if pgrep -x "waybar" > /dev/null; then
+      pkill -SIGUSR2 waybar
+  fi
+}
+
 boot() {
   # Get the DP/HDMI port of whatever is set as $monitor_primary in /hypr/hyprland/conf/devices.conf
   source $HOME/.config/hypr/hyprland/scripts/env.sh
