@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
+
+if [ -t 0 ]; then
+    # in terminal
+    ELEVATE=(pkexec)
+else
+    # no TTY (e.g. GUI launcher)
+    ELEVATE=(doas)
+fi
+
+if [[ ! -x /bin/rate-mirrors ]]; then
+    echo -e "${TEXT_RED}/bin/rate-mirrors not found or not executable. Please install it before running.${RESET_COLOR}"
+    exit 1
+fi
+doas rate-mirrors --allow-root --save=/etc/pacman.d/mirrorlist arch
+doas rate-mirrors --allow-root --save=/etc/pacman.d/chaotic-mirrorlist chaotic-aur
+

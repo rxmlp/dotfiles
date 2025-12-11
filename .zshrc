@@ -57,7 +57,7 @@ fi
 #-------Exports-------#
 export EDITOR=helix
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/bin-scripts:$PATH"
+export PATH="$HOME/.config/hypr/hyprland/scripts/bin:$PATH"
 
 
 #-------Bindkeys-------#

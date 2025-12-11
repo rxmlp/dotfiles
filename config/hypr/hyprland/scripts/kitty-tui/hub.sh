@@ -3,7 +3,7 @@ set -euo pipefail
 echo -ne '\033]2;kitty-tui-hub\007'
 
 HLS="$HOME/.config/hypr/hyprland/scripts"
-hyprfixsh="$HOME/.local/bin-scripts/hyprfix"
+hyprfixsh="$HLS/bin/hyprfix"
 
 screenshot="󰍹  Screenshot / Record"
 powermenu="󰐥  Powermenu"
@@ -27,14 +27,18 @@ menu() {
       --header="$(clock_header)"
 }
 
+hide() {
+  hyprctl dispatch movetoworkspacesilent special:load
+}
+
 options="$(
   cat <<EOF
 $screenshot
 $powermenu
 $theme
 $hyprfix
-$wifi
 $bluetooth
+$wifi
 EOF
 )"
 
@@ -48,10 +52,11 @@ EOF
 
 hyprfix_options="$(
   cat <<EOF
+$hyprfix cursor
 $hyprfix paper
 $hyprfix idle
 $hyprfix polkit
-$hyprfix cursor
+$hyprfix lock
 EOF
 )"
 
@@ -59,25 +64,26 @@ while true; do
   choice="$(printf '%s\n' "$options" | menu)" || exit 0
 
   case "$choice" in
-    *$screenshot*) "$HLS/kitty-tui/capture.sh" && exit 0;;
-    *$powermenu*) "$HLS/kitty-tui/powermenu.sh" && exit 0;;
-    *$wifi*)     "$HLS/kitty-tui/wifi/wifimenu.sh" && exit 0;;
-    *$bluetooth*) "$HLS/kitty-tui/bluetooth.sh" && exit 0;;
-    *$theme*)
-      theme_choice="$(printf '%s\n' "$theme_options" | menu)" || continue
+    $screenshot) "$HLS/kitty-tui/capture.sh";;
+    $powermenu) "$HLS/kitty-tui/powermenu.sh";;
+    $wifi)     "$HLS/kitty-tui/wifi/wifimenu.sh";;
+    $bluetooth) "$HLS/kitty-tui/bluetooth.sh";;
+    $theme)
+      theme_choice="$(printf '%s\n' "$theme_options" | menu)" || exit 0
       case "$theme_choice" in
-        *$wallpaper*)   "$HLS/wall/mpvpaper-hyprpaper.sh" && exit 0;;
-        *$signal*)    hyprctl dispatch movetoworkspacesilent special:load & "$HOME/.config/matugen/scripts/signal-matugen.sh" && exit 0;;
-        *$steam*)    hyprctl dispatch movetoworkspacesilent special:load & "$HOME/.config/matugen/scripts/steam/steam-theme.sh" && exit 0;;
+        $wallpaper)   "$HLS/wall/mpvpaper-hyprpaper.sh" && exit 0;;
+        $signal)    hide & "$HOME/.config/matugen/scripts/signal-matugen.sh" && exit 0;;
+        $steam)    hide & "$HOME/.config/matugen/scripts/steam/steam-theme.sh" && exit 0;;
       esac
       ;;
-    *$hyprfix*)
-      hyprfix_choice="$(printf '%s\n' "$hyprfix_options" | menu)" || continue
+    $hyprfix)
+      hyprfix_choice="$(printf '%s\n' "$hyprfix_options" | menu)" || exit 0
       case "$hyprfix_choice" in
-        *$hyprfix*|*paper*)   "$hyprfixsh" paper && exit 0;;
-        *$hyprfix*|*idle*)    "$hyprfixsh" idle && exit 0;;
-        *$hyprfix*|*polkit*)    "$hyprfixsh" polkit && exit 0;;
-        *$hyprfix*|*cursor*)    "$hyprfixsh" cursor && exit 0;;
+        "$hyprfix lock")   hide & "$hyprfixsh" lock && exit 0;;
+        "$hyprfix paper")   hide & "$hyprfixsh" paper && exit 0;;
+        "$hyprfix idle")    hide & "$hyprfixsh" idle && exit 0;;
+        "$hyprfix polkit")    hide & "$hyprfixsh" polkit && exit 0;;
+        "$hyprfix cursor")    hide & "$hyprfixsh" cursor && exit 0;;
       esac
       ;;
   esac

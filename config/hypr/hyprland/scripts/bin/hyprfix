@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+RESET_COLOR="\033[0m"
+TEXT_GREEN="\033[92m"
+TEXT_RED="\033[0;31m"
+
+usage() {
+  cat <<EOF
+Hyprfix - Utility to manage Hyprland related services and settings
+
+Usage: hyprfix <command>
+
+Commands:
+  lock         Lock the screen using hyprlock (instance 0)
+  paper        Restart hyprpaper wallpaper daemon
+  idle         Restart hypridle idle daemon
+  polkit       Restart the hyprpolkitagent polkit authentication agent
+  cursor       Set cursor theme to catppuccin-mocha-dark with appropriate sizes
+  help         Show this help message
+
+EOF
+}
+
+lock() {
+  echo -e "${TEXT_GREEN}Allowing session lock restore...${RESET_COLOR}"
+  hyprctl --instance 0 "keyword misc:allow_session_lock_restore 1"
+  echo -e "${TEXT_GREEN}Locking screen with hyprlock...${RESET_COLOR}"
+  hyprctl --instance 0 "dispatch exec hyprlock"
+}
+
+paper() {
+  echo -e "${TEXT_GREEN}Restarting hyprpaper...${RESET_COLOR}"
+  pkill hyprpaper
+  sleep 2
+  hyprpaper > /dev/null 2>&1 & disown
+  $HOME/.config/hypr/hyprland/scripts/wall/wallpaper-restore.sh > /dev/null 2>&1 & disown
+}
+
+idle() {
+  echo -e "${TEXT_GREEN}Restarting hypridle...${RESET_COLOR}"
+  pkill hypridle
+  sleep 2
+  hypridle > /dev/null 2>&1 & disown
+}
+
+polkit() {
+  echo -e "${TEXT_GREEN}Restarting hyprpolkitagent...${RESET_COLOR}"
+  systemctl --user restart hyprpolkitagent
+}
+
+cursor() {
+  echo -e "${TEXT_GREEN}Setting cursor theme to catppuccin-mocha-dark...${RESET_COLOR}"
+  hyprctl setcursor "catppuccin-mocha-dark-cursors" 24
+  gsettings set org.gnome.desktop.interface cursor-size 18
+  gsettings set org.gnome.desktop.interface cursor-theme "catppuccin-mocha-dark-cursors"
+}
+
+case "${1:-}" in
+  lock)       lock ;;
+  paper)      paper ;;
+  idle)       idle ;;
+  polkit)     polkit ;;
+  cursor)     cursor ;;
+  help|--help) usage ;;
+  *)
+    echo -e "${TEXT_RED}Error: Unknown or missing command${RESET_COLOR}"
+    usage
+    exit 1
+    ;;
+esac
