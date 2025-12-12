@@ -3,14 +3,24 @@ set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
 
+status=$(grep '^\$wbar = ' "/home/sisa/.dotfiles/config/hypr/hyprland/conf/env.conf")
+
+off() {
+  sed -i "s|\$wbar = .*|\$wbar = 1|" ~/.config/hypr/hyprland/conf/env.conf
+  pkill waybar
+}
+
+on() {
+  sed -i "s|\$wbar = .*|\$wbar = |" ~/.config/hypr/hyprland/conf/env.conf
+  waybar > /dev/null & disown
+}
+
 
 toggle() {
   if ! pgrep -x "waybar" > /dev/null; then
-      sed -i "s|\$less_anim = .*|\$less_anim = |" ~/.config/hypr/hyprland/conf/env.conf
-      waybar
+    on
   else
-      sed -i "s|\$less_anim = .*|\$less_anim = 1|" ~/.config/hypr/hyprland/conf/env.conf
-      pkill waybar
+    off
   fi
 }
 
@@ -20,7 +30,7 @@ restart() {
   fi
 }
 
-boot() {
+init() {
   # Get the DP/HDMI port of whatever is set as $monitor_primary in /hypr/hyprland/conf/devices.conf
   source $HOME/.config/hypr/hyprland/scripts/env.sh
   # Exit if there is no $monitor_primary
@@ -43,27 +53,32 @@ boot() {
   fi
 }
 
-boot-off() {
-  sed -i "s|\$less_anim = .*|\$less_anim = 1|" ~/.config/hypr/hyprland/conf/env.conf
-  boot
+start() {
+  init
+  if pgrep -x "waybar" > /dev/null; then
+    pkill -SIGUSR2 waybar
+  else
+    waybar
+  fi
 }
-
-boot-on() {
-  sed -i "s|\$less_anim = .*|\$less_anim = |" ~/.config/hypr/hyprland/conf/env.conf
-  boot
-  waybar
-}
-
-
 
 case "$1" in
   toggle)
     toggle
     ;;
-  boot-off)
-    boot-off
+  on)
+    on
     ;;
-  boot-on)
-    boot-on
+  off)
+    off
+    ;;
+  restart)
+    restart
+    ;;
+  init)
+    init
+    ;;
+  start)
+    start
     ;;
 esac

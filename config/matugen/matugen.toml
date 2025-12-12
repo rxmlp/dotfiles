@@ -17,7 +17,7 @@ output_path = '~/.config/hypr/hyprtoolkit.conf'
 [templates.waybar]
 input_path = '~/.config/matugen/templates/waybar-colors.css'
 output_path = '~/.config/waybar/matugen.css'
-post_hook = '~/.config/hypr/hyprland/scripts/waybar.sh restart'
+post_hook = '~/.config/hypr/hyprland/scripts/toggles/waybar.sh restart'
 
 [templates.mako]
 input_path = '~/.config/mako/config-env'

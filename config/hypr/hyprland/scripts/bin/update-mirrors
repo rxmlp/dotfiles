@@ -2,18 +2,28 @@
 set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
-if [ -t 0 ]; then
-    # in terminal
-    ELEVATE=(pkexec)
-else
-    # no TTY (e.g. GUI launcher)
-    ELEVATE=(doas)
-fi
+
+case "${1:-}" in
+  pkexec)
+    SUPER=(pkexec) ;;
+  *)
+    if command -v doas >/dev/null 2>&1; then
+      SUPER=(doas)
+    elif command -v sudo >/dev/null 2>&1; then
+      SUPER=(sudo)
+    else
+      echo "Neither sudo nor doas is installed"
+      exit 1
+    fi
+    ;;
+esac
 
 if [[ ! -x /bin/rate-mirrors ]]; then
     echo -e "${TEXT_RED}/bin/rate-mirrors not found or not executable. Please install it before running.${RESET_COLOR}"
     exit 1
 fi
-doas rate-mirrors --allow-root --save=/etc/pacman.d/mirrorlist arch
-doas rate-mirrors --allow-root --save=/etc/pacman.d/chaotic-mirrorlist chaotic-aur
 
+"${SUPER[@]}" bash -c '
+rate-mirrors --allow-root --save=/etc/pacman.d/mirrorlist arch
+rate-mirrors --allow-root --save=/etc/pacman.d/chaotic-mirrorlist chaotic-aur
+'

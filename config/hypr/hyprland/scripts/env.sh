@@ -35,4 +35,4 @@ fi
 export monitor_path
 
 
-hyprctl monitors -j | jq -r --arg desc "$(grep '^\$monitor_primary = desc:' "$devices" | sed -E 's/^\$monitor_primary = desc:(.*)$/\1/')" '.[] | select(.description == $desc) | .name'
+#hyprctl monitors -j | jq -r --arg desc "$(grep '^\$monitor_primary = desc:' "$devices" | sed -E 's/^\$monitor_primary = desc:(.*)$/\1/')" '.[] | select(.description == $desc) | .name'
