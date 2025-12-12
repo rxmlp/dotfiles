@@ -18,6 +18,7 @@ wallpaper="󰸉  Wallpaper"
 signal="󰭹  Matugen Signal"
 steam="  Matugen Steam"
 border="󰢡  Border toggle"
+opacity="󱡔  Opacity toggle"
 waybar="󱔓  Waybar toggle"
 
 
@@ -57,6 +58,7 @@ $wallpaper
 $signal
 $steam
 $border
+$opacity
 $waybar
 EOF
 )"
@@ -88,7 +90,8 @@ while true; do
         $wallpaper)   "$HLS/wall/mpvpaper-hyprpaper.sh" && exit 0;;
         $signal)    hide & "$HOME/.config/matugen/scripts/signal-matugen.sh" && exit 0;;
         $steam)    hide & "$HOME/.config/matugen/scripts/steam/steam-theme.sh" && exit 0;;
-        $border)   "$HLS/toggles/animations.sh" toggle && exit 0;;
+        $border)   "$HLS/toggles/borders.sh" toggle && exit 0;;
+        $opacity)   "$HLS/toggles/opacity.sh" toggle && exit 0;;
         $waybar)   "$HLS/toggles/waybar.sh" toggle && exit 0;;
       esac
       ;;
