@@ -1,0 +1,20 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family:
+    JetBrains Mono Nerd Font;
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: @surface_container_lowest;
+}
+
+tooltip {
+    background: @background;
+    border-radius: 10px;
+    border-color: @surface_container_lowest;
+}
+

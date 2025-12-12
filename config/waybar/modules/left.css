@@ -1,0 +1,32 @@
+
+#workspaces button {
+    color: @on_secondary;
+    padding: 0 6px;
+}
+
+#workspaces button.active {
+    color: @surface_tint;
+}
+
+#workspaces button.focused {
+    color: @surface_container_high;
+    background: @on_tertiary_fixed_variant;
+}
+
+#workspaces button.urgent {
+    color: @on_error_container;
+    background: @on_primary;
+}
+
+#workspaces button:hover {
+    background: @surface_container_lowest;
+    color: @on_background;
+}
+
+#workspaces {
+    background: @background;
+    margin-left: 10px;
+}
+
+#tray {
+}

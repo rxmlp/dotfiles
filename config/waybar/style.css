@@ -1,53 +1,11 @@
 
 
 @import "matugen.css";
+@import "modules/global.css";
+@import "modules/left.css";
+@import "modules/center.css";
+@import "modules/right.css";
 
-
-* {
-  border: none;
-  border-radius: 0;
-  font-family:
-  JetBrains Mono Nerd Font;
-  font-weight: bold;
-  font-size: 14px;
-  min-height: 0;
-}
-
-window#waybar {
-  background: rgba(0, 0, 0, 0);
-}
-
-tooltip {
-  background: @background;
-  border-radius: 10px;
-  border-color: @surface_container_lowest;
-}
-
-#workspaces button {
-  color: @surface_container;
-}
-
-#workspaces button.active {
-  color: @secondary;
-}
-
-#workspaces button.focused {
-  color: @surface_container_high;
-  background: @on_tertiary_fixed_variant;
-  border-radius: 10px;
-}
-
-#workspaces button.urgent {
-  color: @surface_container_lowest;
-  background: @on_primary;
-  border-radius: 10px;
-}
-
-#workspaces button:hover {
-  background: @surface_container_lowest;
-  color: @on_background;
-  border-radius: 10px;
-}
 
 #window,
 #clock,
@@ -57,58 +15,9 @@ tooltip {
 #workspaces,
 #tray,
 #custom-hyprpicker,
+
 #backlight {
   background: @background;
   padding: 0px 7px;
-  margin-top: 5px;
   border: 1px solid @surface;
-}
-
-#workspaces {
-  background: @background;
-  border-radius: 10px 0px 10px 0px;
-  margin-left: 10px;
-  padding-right: 0px;
-  padding-left: 5px;
-}
-
-#custom-hyprpicker {
-  color: @surface_tint;
-  border-radius: 10px 0px 0px 0px;
-  margin-left: 5px;
-  border-left: 0px;
-  border-right: 0px;
-}
-
-#tray {
-  border-radius: 0px 0px 10px 0px;
-}
-
-#clock {
-  color: @surface_tint;
-  border-radius: 10px 0px 10px 0px;
-  margin-left: 0px;
-  margin-right: 10px;
-  border-right: 0px;
-}
-
-#network {
-  color: @surface_bright;
-  border-left: 0px;
-  border-right: 0px;
-}
-
-#bluetooth {
-  color: @surface_bright;
-  border-radius: 0 0px 10px 0;
-  margin-right: 10px;
-  border-left: 0px;
-  border-right: 0px;
-}
-
-#wireplumber {
-  color: @tertiary;
-  border-radius: 10px 0 0 0px;
-  border-left: 0px;
-  border-right: 0px;
 }

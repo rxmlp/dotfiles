@@ -3,15 +3,14 @@
     "output": "DP-1",
     "modules-left": [
         "hyprland/workspaces",
-        "custom/hyprpicker",
         "tray"
     ],
     "modules-center": [
+    "custom/hyprpicker",
     "clock"
     ],
     "modules-right": [
         "wireplumber",
-        "network",
         "bluetooth"
     ],
 
@@ -39,9 +38,9 @@
             "9": []
         },
         "format-icons": {
-          "active": "󰮯",
-          "empty": "",
-          "default": ""
+          "active": "󰮯 ",
+          "empty": " ",
+          "default": " "
         }
     },
 
@@ -51,8 +50,8 @@
     },
 
     "clock": {
-        "format": " {:%H:%M}",
-        "format-alt": "󰃭 {:%d·%m·%y}",
+        "format": "{:%H:%M}",
+        "format-alt": "{:%d·%m·%y}",
         "on-click-right": "mode",
         "tooltip": false
     },
@@ -75,31 +74,9 @@
             "default": ["", "", ""]
         }
     },
-
-    "network": {
-        "tooltip": true,
-        "format": "󰖪 ",
-        "format-wifi": " ",
-        "on-click-right": "hyprctl dispatch exec '[size 750 500; float; workspace [w]' kitty $HOME/.config/hypr/hyprland/scripts/kitty-tui/wifi/wifimenu.sh",
-        "format-ethernet": "󰈀 ",
-        "tooltip-format-wifi": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b> \n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> \n<span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
-        "tooltip-format-ethernet": "Interface: <b>{ifname}</b>\nLocal ip: <b>{ipaddr}</b> \n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> \n<span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
-        "format-linked": "󰈀 {ifname} (No IP)",
-        "format-disconnected": "󰖪 ",
-        "format-alt": "<span> {bandwidthDownBytes}</span> <span> {bandwidthUpBytes}</span>",
-        "rotate": 0,
-        "interval": 2
-    },
     
 	"bluetooth": {
-		"format": " {status}",
-		"format-off": "󰂲 off",
-		"format-connected": " {num_connections}",
-        "format-alt": " {device_alias}",
-		"tooltip-format": "{device_alias}",
-		"tooltip-format-connected": " {device_enumerate}",
-		"tooltip-format-enumerate-connected": "{device_alias}",
-        "tooltip": false,
-        "on-click-right": "hyprctl dispatch exec '[size 750 500; float; workspace [w]' kitty $HOME/.config/hypr/hyprland/scripts/kitty-tui/bluetooth.sh"
+		"format": " {device_alias}",
+		"format-off": "󰂲 off"
 	}
 }
