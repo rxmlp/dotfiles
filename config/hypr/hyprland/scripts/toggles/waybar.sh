@@ -3,15 +3,15 @@ set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
 
-status=$(grep '^\$wbar = ' "/home/sisa/.dotfiles/config/hypr/hyprland/conf/env.conf")
+source "$(dirname -- "$(realpath -- "${BASH_SOURCE[0]}")")/../env.sh" && get_monitor_primary
 
 off() {
-  sed -i "s|\$wbar = .*|\$wbar = 1|" ~/.config/hypr/hyprland/conf/env.conf
+  sed -i "s|\$wbar = .*|\$wbar = 1|" "$env"
   pkill waybar
 }
 
 on() {
-  sed -i "s|\$wbar = .*|\$wbar = |" ~/.config/hypr/hyprland/conf/env.conf
+  sed -i "s|\$wbar = .*|\$wbar = |" "$env"
   waybar > /dev/null & disown
 }
 

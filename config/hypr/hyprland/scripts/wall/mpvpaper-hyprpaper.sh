@@ -2,7 +2,8 @@
 set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
-source $HOME/.config/hypr/hyprland/scripts/env.sh
+source "$(dirname -- "$(realpath -- "${BASH_SOURCE[0]}")")/../env.sh" && get_monitors
+
 cd "$wall_dir/$monitor_path"
 choices=$(fd . --type f -d 1 -e png -e jpg -e mp4 --format {/.} | shuf | fzf --cycle --preview='$HOME/.config/hypr/hyprland/scripts/wall/fzf-preview.sh {}' --preview-window=right,70% --info=hidden --color prompt:green,pointer:green,current-bg:-1,current-fg:green,gutter:-1,border:bright-black,current-hl:red,hl:red)
 choice=$(fd "$choices")

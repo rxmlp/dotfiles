@@ -2,7 +2,8 @@
 set -euo pipefail
 echo -ne '\033]2;kitty-tui-hub\007'
 
-HLS="$HOME/.config/hypr/hyprland/scripts"
+source "$(dirname -- "$(realpath -- "${BASH_SOURCE[0]}")")/../env.sh"
+
 hyprfixsh="$HLS/bin/hyprfix"
 
 screenshot="󰍹  Screenshot / Record"
