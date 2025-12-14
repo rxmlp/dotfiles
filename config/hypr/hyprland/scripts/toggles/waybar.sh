@@ -2,14 +2,15 @@
 set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
+env="$HLC/env.conf"
 
 off() {
-  sed -i "s|\$wbar = .*|\$wbar = 1|" "$HLC"
+  sed -i "s|\$wbar = .*|\$wbar = 1|" "$env"
   pkill waybar
 }
 
 on() {
-  sed -i "s|\$wbar = .*|\$wbar = |" "$HLC"
+  sed -i "s|\$wbar = .*|\$wbar = |" "$env"
   waybar > /dev/null & disown
 }
 

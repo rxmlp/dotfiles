@@ -2,15 +2,16 @@
 set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
-status=$(grep '^\$opacity = ' "$HLC")
+env="$HLC/env.conf"
+status=$(grep '^\$opacity = ' "$env")
 
 
 off() {
-  sed -i "s|\$opacity = .*|\$opacity = 1|" $HLC
+  sed -i "s|\$opacity = .*|\$opacity = 1|" $env
 }
 
 on() {
-  sed -i "s|\$opacity = .*|\$opacity = |" $HLC
+  sed -i "s|\$opacity = .*|\$opacity = |" $env
 }
 
 toggle () {
