@@ -2,7 +2,6 @@
 set -euo pipefail
 echo -ne '\033]2;kitty-tui-hub\007'
 
-source "$(dirname -- "$(realpath -- "${BASH_SOURCE[0]}")")/../env.sh"
 
 hyprfixsh="$HLS/bin/hyprfix"
 
@@ -21,7 +20,6 @@ steam="  Matugen Steam"
 border="󰢡  Border toggle"
 opacity="󱡔  Opacity toggle"
 waybar="󱔓  Waybar toggle"
-waybarrf="󱔓  Waybar refresh"
 
 
 clock_header() {
@@ -62,7 +60,6 @@ $steam
 $border
 $opacity
 $waybar
-$waybarrf
 EOF
 )"
 # X #
@@ -96,7 +93,6 @@ while true; do
         $border)   "$HLS/toggles/borders.sh" toggle && exit 0;;
         $opacity)   "$HLS/toggles/opacity.sh" toggle && exit 0;;
         $waybar)   "$HLS/toggles/waybar.sh" toggle && exit 0;;
-        $waybarrf)   "$HLS/toggles/waybar.sh" restart && exit 0;;
       esac
       ;;
     $hyprfix)

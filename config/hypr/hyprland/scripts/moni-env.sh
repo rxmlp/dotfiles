@@ -1,8 +1,6 @@
 #!/usr/bin/env bash 
 
-HLS="$(dirname -- "$(realpath -- "${BASH_SOURCE[0]}")")"
-devices="$HLS/../conf/devices.conf"
-env="$HLS/../conf/env.conf"
+devices="$HL/conf/devices.conf"
 
 get_monitor_primary() {
     monitor_primary_desc=$(grep '^\$monitor_primary = desc:' "$devices" | sed -E 's/^\$monitor_primary = desc:(.*)$/\1/')

@@ -3,15 +3,13 @@ set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
 
-source "$(dirname -- "$(realpath -- "${BASH_SOURCE[0]}")")/../env.sh" && get_monitor_primary
-
 off() {
-  sed -i "s|\$wbar = .*|\$wbar = 1|" "$env"
+  sed -i "s|\$wbar = .*|\$wbar = 1|" "$HLC"
   pkill waybar
 }
 
 on() {
-  sed -i "s|\$wbar = .*|\$wbar = |" "$env"
+  sed -i "s|\$wbar = .*|\$wbar = |" "$HLC"
   waybar > /dev/null & disown
 }
 
@@ -31,8 +29,7 @@ restart() {
 }
 
 init() {
-  # Get the DP/HDMI port of whatever is set as $monitor_primary in /hypr/hyprland/conf/devices.conf
-  source $HOME/.config/hypr/hyprland/scripts/env.sh
+  source "$HLS/moni-env.sh" && get_monitor_primary
   # Exit if there is no $monitor_primary
   if [[ -z "$monitor_primary_port" ]]; then
     echo "Error: monitor_primary_port is not set. Exiting."

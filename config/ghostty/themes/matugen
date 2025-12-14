@@ -1,10 +1,10 @@
-cursor-color = #e5e1e9
-cursor-text = #c9c5d0
+cursor-color = #e2e2e9
+cursor-text = #c4c6d0
 
-foreground = #e5e1e9
-background = #141318
-selection-foreground = #312e41
-selection-background = #c9c3dc
+foreground = #e2e2e9
+background = #111318
+selection-foreground = #283041
+selection-background = #bec6dc
 
 
 # black
@@ -24,7 +24,7 @@ palette = 3=#aca98a
 palette = 11=#c4c19e
 
 # blue
-palette = 4=#c8bfff
+palette = 4=#acc7ff
 palette = 12=#a39ec4
 
 # magenta

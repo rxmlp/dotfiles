@@ -13,7 +13,7 @@ else
     echo "hyprpaper is already running."
 fi
 
-source "$(dirname -- "$(realpath -- "${BASH_SOURCE[0]}")")/../env.sh" && get_monitors
+source "$HLS/moni-env.sh" && get_monitors
 monitor_primary_wall=$(sed -n 1p "$cache")
 monitor_secondary_wall=$(sed -n 2p "$cache")
 

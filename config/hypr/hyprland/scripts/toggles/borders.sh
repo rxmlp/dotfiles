@@ -2,16 +2,15 @@
 set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
-env="$HOME/.config/hypr/hyprland/conf/env.conf"
-status=$(grep '^\$border = ' "$env")
+status=$(grep '^\$border = ' "$HLC")
 
 
 off() {
-  sed -i "s|\$border = .*|\$border = 1|" $env
+  sed -i "s|\$border = .*|\$border = 1|" $HLC
 }
 
 on() {
-  sed -i "s|\$border = .*|\$border = |" $env
+  sed -i "s|\$border = .*|\$border = |" $HLC
 }
 
 toggle () {
