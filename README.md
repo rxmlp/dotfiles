@@ -6,7 +6,6 @@ This setup was made for dual monitor, so if you want to use only one monitor thi
 As I am also changing the setup a lot if you don't read changes before applying they might not work. Missing apps ect. That is usually not a problem but you have been warned.
 
 ![monitor_primary](monitor_primary.png)
-![monitor_secondary](monitor_secondary.png)
 
 
 1. Chaotic aur (optional)
