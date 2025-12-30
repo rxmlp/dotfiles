@@ -56,6 +56,9 @@ if [[ "$MODE" == "wait" ]]; then
     fi
 fi
 
+# Wait for internet connection to avoid apps (eg browsers) complaining
+nm-online -q
+
 # Read each line from the autostart config file and execute it as a command
 while IFS= read -r command; do
     # Skip empty lines and comments
