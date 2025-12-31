@@ -10,6 +10,7 @@ get_monitor_primary() {
 
 get_monitors() {
     monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .description')
+    monitor_name=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name')
     monitors=$(hyprctl monitors -j | jq -r '.[] | .description')
     get_monitor_primary
     monitor_primary_path=monitor_primary

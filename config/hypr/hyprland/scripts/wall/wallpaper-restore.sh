@@ -31,12 +31,12 @@ if echo "$monitors" | grep -q "$monitor_primary"; then
     if echo "$monitor_primary_wall" | grep -qE '\.mp4$'; then
         mpvpaper "$monitor_primary_port" "$wall_dir/$monitor_primary_path/$monitor_primary_wall" -o "input-ipc-server=/tmp/mpv-socket-"$monitor_primary_port" --loop --mute" & disown
     else
-        hyprctl hyprpaper reload desc:$monitor_primary,"$wall_dir/$monitor_primary_path/$monitor_primary_wall"
+        hyprctl hyprpaper wallpaper $monitor_primary_port,"$wall_dir/$monitor_primary_path/$monitor_primary_wall"
     fi
 fi
 
 if echo "$monitors" | grep -q "$monitor_secondary"; then
-        hyprctl hyprpaper reload desc:$monitor_secondary,"$wall_dir/$monitor_secondary_path/$monitor_secondary_wall"
+        hyprctl hyprpaper wallpaper $monitor_secondary_port,"$wall_dir/$monitor_secondary_path/$monitor_secondary_wall"
     else
         exit
 fi

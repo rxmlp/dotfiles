@@ -49,7 +49,7 @@ if [ -n "$choice" ] && [ -f "$choice" ]; then
   fi
   if [[ "$choice" =~ \.(png|jpg)$ ]]; then
     save_to_cache "$monitor" "$choice"
-    hyprctl hyprpaper reload desc:$monitor,"$HOME/Pictures/Wallpapers/$monitor_path/$choice"
+    hyprctl hyprpaper wallpaper $monitor_name,"$HOME/Pictures/Wallpapers/$monitor_path/$choice"
     if [[ "$monitor" = "$monitor_primary" ]]; then
       matugen -c ~/.config/matugen/matugen.toml image "$choice"
       if [[ "$(printenv hyprlockwall)" = "on" ]]; then
