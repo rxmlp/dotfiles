@@ -28,6 +28,10 @@ post_hook = 'makoctl reload'
 input_path = '~/.config/matugen/templates/rofi-colors.rasi'
 output_path = '~/.config/rofi/matugen.rasi'
 
+[templates.fuzzel]
+input_path = '~/.config/matugen/templates/fuzzel-colors.ini'
+output_path = '~/.config/fuzzel/matugen.ini'
+
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/matugen.conf'
@@ -91,7 +95,3 @@ output_path = '~/.themes/Matugen/gnome-shell/pad-osd.css'
 #[templates.vesktop]
 #input_path = '~/.config/matugen/templates/vesktop-colors.css'
 #output_path = '~/.var/app/dev.vencord.Vesktop/config/vesktop/themes/matugen.css'
-
-#[templates.quickshell]
-#input_path = '~/.config/matugen/templates/quickshell-template.json'
-#output_path = '~/.config/quickshell/matugen.json'
