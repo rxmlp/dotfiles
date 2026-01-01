@@ -38,7 +38,6 @@ git clone https://codeberg.org/xyrd/dotfiles.git ~/.dotfiles
 
 ```zsh
 ln -s ~/.dotfiles/config/fastfetch ~/.config/fastfetch
-ln -s ~/.dotfiles/config/ghostty ~/.config/ghostty
 ln -s ~/.dotfiles/config/helix ~/.config/helix
 ln -s ~/.dotfiles/config/hypr ~/.config/hypr
 ln -s ~/.dotfiles/config/kitty ~/.config/kitty

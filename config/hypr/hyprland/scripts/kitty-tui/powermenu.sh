@@ -41,13 +41,13 @@ option() {
     hyprctl dispatch tagwindow +powermenu
     confirmed="$(confirm)"
     if [[ "$confirmed" == "$yes" ]]; then
-    hyprctl dispatch movetoworkspacesilent special:load
+    #hyprctl dispatch movetoworkspacesilent special:load
         case "$1" in
             --shutdown)
-                systemctl poweroff
+                hyprshutdown -p "systemctl poweroff"
                 ;;
             --reboot)
-                systemctl reboot
+                hyprshutdown -p "systemctl reboot"
                 ;;
             --lock)
                 playerctl pause -a &
