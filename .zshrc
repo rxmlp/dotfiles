@@ -77,7 +77,15 @@ alias hx='helix'
 alias dh='doas helix'
 alias sysu='systemctl --user'
 alias attack='doas hping3 -S -i u100'
-alias sn='shutdown now'
+#alias sn='hyprshutdown -p "systemctl poweroff"'
+sn() {
+    if [[ "$1" == "-r" ]]; then
+        nohup hyprshutdown -p "systemctl reboot" >/dev/null 2>1 &
+    else
+        nohup hyprshutdown -p "systemctl poweroff" >/dev/null 2>&1 &
+    fi
+}
+
 
 #-------Logs-------#
 alias logs="doas find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
