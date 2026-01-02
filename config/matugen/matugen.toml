@@ -32,9 +32,9 @@ output_path = '~/.config/fuzzel/matugen.ini'
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/matugen.conf'
 
-[templates.ghostty]
-input_path = '~/.config/matugen/templates/ghostty-colors.conf'
-output_path = '~/.config/ghostty/themes/matugen'
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
 
 [templates.starship]
 input_path = '~/.config/matugen/templates/starship-colors.toml'

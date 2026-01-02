@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR 
+trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
 shutdown='  Shutdown'
 reboot='󰑙  Reboot'
@@ -41,7 +41,7 @@ option() {
     hyprctl dispatch tagwindow +powermenu
     confirmed="$(confirm)"
     if [[ "$confirmed" == "$yes" ]]; then
-    #hyprctl dispatch movetoworkspacesilent special:load
+    hyprctl dispatch movetoworkspacesilent special:load
         case "$1" in
             --shutdown)
                 hyprshutdown -p "systemctl poweroff"
