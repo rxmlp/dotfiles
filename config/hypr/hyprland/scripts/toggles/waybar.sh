@@ -59,7 +59,6 @@ hidden() {
     done
     if eval "$wtop" > /dev/null 2>&1; then
         pkill -SIGUSR1 waybar
-        echo "killed"
     fi
 }
 
