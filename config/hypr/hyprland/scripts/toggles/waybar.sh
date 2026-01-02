@@ -1,37 +1,18 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
 env="$HLC/env.conf"
-
-off() {
-  sed -i "s|\$wbar = .*|\$wbar = 1|" "$env"
-  pkill waybar
-}
-
-on() {
-  sed -i "s|\$wbar = .*|\$wbar = |" "$env"
-  waybar > /dev/null & disown
-}
+wtop='grep -A1 "Layer level 2 (top):" <<< "$(hyprctl layers)" | grep waybar'
 
 
 toggle() {
-  if ! pgrep -x "waybar" > /dev/null; then
-    on
-  else
-    off
-  fi
-}
-
-# Add "on-sigusr1": "toggle", to waybar conf
-toggle_v2() {
-  pkill -SIGUSR1 waybar
-}
-
-restart() {
-  if pgrep -x "waybar" > /dev/null; then
-      pkill -SIGUSR2 waybar
-  fi
+    pkill -SIGUSR1 waybar
+    if eval "$wtop" > /dev/null 2>&1; then
+        sed -i "s|\$wbar = .*|\$wbar = |" "$env"
+    else
+        sed -i "s|\$wbar = .*|\$wbar = 1|" "$env"
+    fi
 }
 
 init() {
@@ -61,27 +42,38 @@ start() {
   if pgrep -x "waybar" > /dev/null; then
     pkill -SIGUSR2 waybar
   else
-    waybar
+    waybar &
   fi
+}
+
+hidden() {
+    start
+    TIMEOUT=10
+    waited=0
+    while ! eval "$wtop" > /dev/null 2>&1; do
+        sleep 0.1
+        waited=$((waited + 1))
+        if [ $waited -ge $((TIMEOUT * 10)) ]; then
+            break
+        fi
+    done
+    if eval "$wtop" > /dev/null 2>&1; then
+        pkill -SIGUSR1 waybar
+        echo "killed"
+    fi
 }
 
 case "$1" in
   toggle)
     toggle
     ;;
-  on)
-    on
-    ;;
-  off)
-    off
-    ;;
-  restart)
-    restart
-    ;;
   init)
     init
     ;;
   start)
     start
+    ;;
+  hidden)
+    hidden
     ;;
 esac
