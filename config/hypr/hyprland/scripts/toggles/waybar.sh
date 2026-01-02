@@ -23,6 +23,11 @@ toggle() {
   fi
 }
 
+# Add "on-sigusr1": "toggle", to waybar conf
+toggle_v2() {
+  pkill -SIGUSR1 waybar
+}
+
 restart() {
   if pgrep -x "waybar" > /dev/null; then
       pkill -SIGUSR2 waybar

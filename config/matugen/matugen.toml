@@ -44,6 +44,10 @@ output_path = '~/.config/starship.toml'
 input_path = '~/.config/matugen/templates/helix-colors.toml'
 output_path = '~/.config/helix/themes/matugen.toml'
 
+[templates.zed]
+input_path = '~/.config/matugen/templates/zed-colors.json'
+output_path = '~/.config/zed/themes/matugen.json'
+
 [templates.spicetify]
 input_path = '~/.config/matugen/templates/spicetify-colors.ini'
 output_path = '~/.config/spicetify/Themes/matugen/color.ini'
