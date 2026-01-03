@@ -15,7 +15,7 @@ source "$HOME/.dotfiles/antigen.zsh"
 
 # Use the Oh My Zsh framework (ensures compatibility)
 antigen use oh-my-zsh
-  
+
 
 # Core Oh My Zsh plugins
 antigen bundle git
@@ -57,7 +57,7 @@ fi
 #-------Exports-------#
 export EDITOR=helix
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.config/hypr/hyprland/scripts/bin:$PATH"
+export PATH="$HLS/bin:$PATH"
 
 
 #-------Bindkeys-------#
