@@ -32,6 +32,10 @@ output_path = '~/.config/fuzzel/matugen.ini'
 input_path = '~/.config/matugen/templates/kitty.conf'
 output_path = '~/.config/kitty/matugen.conf'
 
+[templates.yazi]
+input_path = '~/.config/matugen/templates/yazi.toml'
+output_path = '~/.config/yazi/theme.toml'
+
 [templates.btop]
 input_path = '~/.config/matugen/templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'

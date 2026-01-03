@@ -41,6 +41,7 @@ ln -s ~/.dotfiles/config/fastfetch ~/.config/fastfetch
 ln -s ~/.dotfiles/config/helix ~/.config/helix
 ln -s ~/.dotfiles/config/hypr ~/.config/hypr
 ln -s ~/.dotfiles/config/kitty ~/.config/kitty
+ln -s ~/.dotfiles/config/yazi ~/.config/yazi
 ln -s ~/.dotfiles/config/mako ~/.config/mako
 ln -s ~/.dotfiles/config/matugen ~/.config/matugen
 ln -s ~/.dotfiles/config/qt6ct ~/.config/qt6ct
@@ -66,7 +67,7 @@ yay -S hyprpaper mpvpaper matugen-git papirus-icon-theme
 ```
 Bar, launcher, volume, notifications, clip & record
 ```zsh 
-yay -S waybar mako fuzzel networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder better-control-git swappy hyprsessionmanager-git
+yay -S yazi pcmanfm-qt waybar mako fuzzel networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder better-control-git swappy
 ```
 Dependencies & Scripts etc
 ```zsh
