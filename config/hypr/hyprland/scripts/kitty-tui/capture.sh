@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
-echo -ne '\033]2;kitty-tui-capture\007'
+echo -ne '\033]2;kitty-tui\007'
 
 lockfile=/tmp/kitty-tui.lock
 if [ -f "$lockfile" ]; then
@@ -29,16 +29,6 @@ old_addr=$(hyprctl clients -j | jq -r '.[] | select(.title=="kitty-tui") | .addr
 if [ -n "$old_addr" ]; then
   hyprctl dispatch killwindow address:"$old_addr"
 fi
-
-echo -ne '\033]2;kitty-tui\007'
-focus_lock() {
-  while true; do
-    sleep 0.05
-    hyprctl dispatch focuswindow title:kitty-tui >/dev/null || break
-  done
-}
-focus_lock &
-focus_lock_pid=$!
 
 menu() {
     fzf --prompt='> ' --ansi --height=100%

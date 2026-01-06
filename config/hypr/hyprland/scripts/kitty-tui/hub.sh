@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-echo -ne '\033]2;kitty-tui-hub\007'
+echo -ne '\033]2;kitty-tui\007'
 
 lockfile=/tmp/kitty-tui.lock
 if [ -f "$lockfile" ]; then

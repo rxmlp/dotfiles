@@ -11,35 +11,26 @@ export SAVEHIST=10000
 
 
 #-------Antigen Configuration-------#
-source "$HOME/.dotfiles/antigen.zsh"
-
-# Use the Oh My Zsh framework (ensures compatibility)
-antigen use oh-my-zsh
-
-
-# Core Oh My Zsh plugins
-antigen bundle cp
-antigen bundle sudo
-antigen bundle history
-antigen bundle archlinux
-antigen bundle extract
-antigen bundle aliases
-
-# External plugins (not part of core Oh My Zsh)
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle mfaerevaag/wd
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
 
 
-antigen bundle zsh-users/zsh-history-substring-search
+zinit load mfaerevaag/wd
+
+# OhMyZsh
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::aliases
+zinit snippet OMZP::extract
+zinit snippet OMZP::history
+
+# Zsh Community
+zinit load zsh-users/zsh-autosuggestions
+zinit load zsh-users/zsh-syntax-highlighting
+zinit load zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-
-# Optional: Load a theme (e.g., robbyrussell, or omit for default)
-# antigen theme robbyrussell
-
-# Apply all configurations
-antigen apply
 
 
 #-------Theming-------#
