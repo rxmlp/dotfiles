@@ -10,14 +10,14 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 
 
-#-------Antigen Configuration-------#
+#-------zinit Configuration-------#
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
 
-zinit load mfaerevaag/wd
+zinit light mfaerevaag/wd
 
 # OhMyZsh
 zinit snippet OMZP::archlinux
@@ -26,9 +26,10 @@ zinit snippet OMZP::extract
 zinit snippet OMZP::history
 
 # Zsh Community
-zinit load zsh-users/zsh-autosuggestions
-zinit load zsh-users/zsh-syntax-highlighting
-zinit load zsh-users/zsh-history-substring-search
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
@@ -104,26 +105,6 @@ tarit() {
   else
     echo "Directory '$1' does not exist."
   fi
-}
-
-# Copy and go to the directory
-cpg ()
-{
-	if [ -d "$2" ];then
-		cp "$1" "$2" && cd "$2"
-	else
-		cp "$1" "$2"
-	fi
-}
-
-# Move and go to the directory
-mvg ()
-{
-	if [ -d "$2" ];then
-		mv "$1" "$2" && cd "$2"
-	else
-		mv "$1" "$2"
-	fi
 }
 
 # For terminal to follow yazi path
