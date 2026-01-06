@@ -26,7 +26,6 @@ signal="󰭹  Matugen Signal"
 steam="  Matugen Steam"
 border="󰢡  Border toggle"
 opacity="󱡔  Opacity toggle"
-waybar="󱔓  Waybar toggle"
 
 
 clock_header() {
@@ -66,7 +65,6 @@ $signal
 $steam
 $border
 $opacity
-$waybar
 EOF
 )"
 # X #
@@ -99,7 +97,6 @@ while true; do
         $steam)    hide & "$HOME/.config/matugen/scripts/steam/steam-theme.sh" && exit 0;;
         $border)   "$HLS/toggles/borders.sh" toggle && exit 0;;
         $opacity)   "$HLS/toggles/opacity.sh" toggle && exit 0;;
-        $waybar)   "$HLS/toggles/waybar.sh" toggle && exit 0;;
       esac
       ;;
     $hyprfix)
