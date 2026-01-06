@@ -11,17 +11,3 @@
     border-left: 0px;
     border-right: 0px;
 }
-
-#custom-brightness {
-    color: @tertiary;
-    margin-right: 10px;
-    border-left: 0px;
-    border-right: 0px;
-}
-
-#custom-script {
-    color: @tertiary;
-    margin-right: 10px;
-    border-left: 0px;
-    border-right: 0px;
-}
