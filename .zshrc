@@ -30,8 +30,6 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-history-substring-search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 
 
 #-------Theming-------#
@@ -60,6 +58,9 @@ bindkey "^[[1;5D" backward-word
 # Ignore Volume
 bindkey "^[[57439;5u" forward-word
 bindkey "^[[57438;5u" backward-word
+# For zsh-users/zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 
 #-------My cute lil random alias-------#
@@ -67,7 +68,6 @@ alias hx='helix'
 alias dh='doas helix'
 alias sysu='systemctl --user'
 alias attack='doas hping3 -S -i u100'
-#alias sn='hyprshutdown -p "systemctl poweroff"'
 sn() {
     if [[ "$1" == "-r" ]]; then
         nohup hyprshutdown -p "systemctl reboot" >/dev/null 2>1 &
@@ -96,16 +96,6 @@ alias home='cd ~' # Go to home
 alias cd..='cd ..' # Typo..
 alias ..='cd ..' # Go back
 alias bd='cd "$OLDPWD"' # Where was I?
-
-
-# Alias's for archives
-tarit() {
-  if [ -d "$1" ]; then
-    tar -cvjf "${1}.tar.bz2" "$1"
-  else
-    echo "Directory '$1' does not exist."
-  fi
-}
 
 # For terminal to follow yazi path
 function yy() {
