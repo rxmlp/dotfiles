@@ -35,6 +35,12 @@ anchor=bottom-center
 default-timeout=2000
 outer-margin=20
 
+[app-name=brightness]
+border-color={{colors.primary.default.hex}}
+anchor=bottom-center
+default-timeout=2000
+outer-margin=20
+
 [app-name=Betterbird]
 border-color={{colors.primary.default.hex}}
 anchor=top-center

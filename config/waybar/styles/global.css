@@ -1,8 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family:
-    JetBrains Mono Nerd Font;
+    font-family: JetBrains Mono Nerd Font;
     font-weight: bold;
     font-size: 14px;
     min-height: 0;
@@ -17,4 +16,3 @@ tooltip {
     border-radius: 10px;
     border-color: @surface_container_lowest;
 }
-

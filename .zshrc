@@ -18,8 +18,6 @@ antigen use oh-my-zsh
 
 
 # Core Oh My Zsh plugins
-antigen bundle git
-antigen bundle ufw
 antigen bundle cp
 antigen bundle sudo
 antigen bundle history

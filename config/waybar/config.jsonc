@@ -1,0 +1,13 @@
+{
+  "layer": "top",
+  "output": "DP-1",
+  "include": [
+    "~/.config/waybar/modules/left.jsonc",
+    "~/.config/waybar/modules/center.jsonc",
+    "~/.config/waybar/modules/right.jsonc",
+  ],
+
+  "modules-left": ["hyprland/workspaces", "tray"],
+  "modules-center": ["custom/hyprpicker", "clock"],
+  "modules-right": ["wireplumber", "bluetooth"],
+}

@@ -2,6 +2,13 @@
 set -euo pipefail
 echo -ne '\033]2;kitty-tui-hub\007'
 
+lockfile=/tmp/kitty-tui.lock
+if [ -f "$lockfile" ]; then
+    echo "Script already running"
+    exit 1
+fi
+touch "$lockfile"
+trap "rm -f '$lockfile'; exit" INT TERM EXIT
 
 hyprfixsh="$HLS/bin/hyprfix"
 

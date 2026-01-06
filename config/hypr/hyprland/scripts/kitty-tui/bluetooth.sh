@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 trap 'echo "Error on line $LINENO: \"$BASH_COMMAND\" failed" >&2; exit 1' ERR
-
 echo -ne '\033]2;kitty-tui-bluetooth\007'
+
+lockfile=/tmp/kitty-tui.lock
+if [ -f "$lockfile" ]; then
+    echo "Script already running"
+    exit 1
+fi
+touch "$lockfile"
+trap "rm -f '$lockfile'; exit" INT TERM EXIT
 
 tag_start_scan="󰂰  Start scan"
 tag_stop_scan="󰙧  Stop scan"

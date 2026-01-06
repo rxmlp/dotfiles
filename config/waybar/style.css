@@ -1,23 +1,5 @@
-
-
-@import "matugen.css";
-@import "modules/global.css";
-@import "modules/left.css";
-@import "modules/center.css";
-@import "modules/right.css";
-
-
-#window,
-#clock,
-#wireplumber,
-#network,
-#bluetooth,
-#workspaces,
-#tray,
-#custom-hyprpicker,
-
-#backlight {
-  background: @background;
-  padding: 0px 7px;
-  border: 1px solid @surface;
-}
+@import "styles/matugen.css";
+@import "styles/global.css";
+@import "styles/left.css";
+@import "styles/center.css";
+@import "styles/right.css";

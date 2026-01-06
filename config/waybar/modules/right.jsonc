@@ -1,0 +1,29 @@
+{
+  "custom/brightness": {
+    "exec": "ddcutil getvcp 10 --dis=1 -t | awk '{print $4}'",
+    "exec-if": "sleep 1",
+    "tooltip": false,
+    "format": "{icon} {text}%",
+    "format-icons": [""],
+    "interval": "once",
+    "on-scroll-up": "$HLS/ddcutil.sh up",
+    "on-scroll-down": "$HLS/ddcutil.sh down",
+  },
+
+  "wireplumber": {
+    "format": "{icon}  {volume}%",
+    "on-scroll-up": "$HLS/volume/mako-volume.sh up",
+    "on-scroll-down": "$HLS/volume/mako-volume.sh down",
+    "tooltip": false,
+    "format-muted": " Muted",
+    "on-click": "$HLS/volume/mako-volume.sh mute",
+    "format-icons": {
+      "default": ["", "", ""],
+    },
+  },
+
+  "bluetooth": {
+    "format": " {device_alias}",
+    "format-off": "󰂲 off",
+  },
+}

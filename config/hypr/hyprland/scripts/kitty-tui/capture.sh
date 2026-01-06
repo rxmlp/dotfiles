@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
-trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR 
+trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
+echo -ne '\033]2;kitty-tui-capture\007'
 
+lockfile=/tmp/kitty-tui.lock
+if [ -f "$lockfile" ]; then
+    echo "Script already running"
+    exit 1
+fi
+touch "$lockfile"
+trap "rm -f '$lockfile'; exit" INT TERM EXIT
 
 record_area="Record area"
 record_monitor="Record monitor"
