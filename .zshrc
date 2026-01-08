@@ -66,7 +66,6 @@ bindkey '^[[B' history-substring-search-down
 #-------My cute lil random alias-------#
 alias hx='helix'
 alias dh='doas helix'
-alias sysu='systemctl --user'
 alias attack='doas hping3 -S -i u100'
 sn() {
     if [[ "$1" == "-r" ]]; then

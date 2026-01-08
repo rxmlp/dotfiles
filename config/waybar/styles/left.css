@@ -9,12 +9,10 @@
 
 #workspaces button.focused {
     color: @surface_container_high;
-    background: @on_tertiary_fixed_variant;
 }
 
 #workspaces button.urgent {
-    color: @on_error_container;
-    background: @on_primary;
+    color: @primary;
 }
 
 #workspaces button:hover {
