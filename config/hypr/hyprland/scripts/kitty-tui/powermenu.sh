@@ -19,11 +19,6 @@ yes='  Yes'
 no='󰜺  No'
 
 
-old_addr=$(hyprctl clients -j | jq -r '.[] | select(.title=="kitty-tui") | .address')
-if [ -n "$old_addr" ]; then
-  hyprctl dispatch killwindow address:"$old_addr"
-fi
-
 # Wrapper for fzf menus
 fzf_menu() {
     fzf --prompt='> ' --ansi --height=100%

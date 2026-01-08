@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 trap 'echo "Error on line $LINENO: \"$BASH_COMMAND\" failed" >&2; exit 1' ERR
-echo -ne '\033]2;kitty-tui-bluetooth\007'
+echo -ne '\033]2;kitty-tui\007'
 
 lockfile=/tmp/kitty-tui.lock
 if [ -f "$lockfile" ]; then

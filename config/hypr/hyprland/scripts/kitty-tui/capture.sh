@@ -25,11 +25,6 @@ copy_save='  CopySave'
 edit='  Edit'
 editor="pinta"
 
-old_addr=$(hyprctl clients -j | jq -r '.[] | select(.title=="kitty-tui") | .address')
-if [ -n "$old_addr" ]; then
-  hyprctl dispatch killwindow address:"$old_addr"
-fi
-
 menu() {
     fzf --prompt='> ' --ansi --height=100%
 }
@@ -83,8 +78,6 @@ screenshot_action() {
 }
 
 takescreenshot() {
-  kill "$focus_lock_pid" 2>/dev/null
-  wait "$focus_lock_pid" 2>/dev/null || true
   hyprctl dispatch movetoworkspacesilent special:load
   sleep 0.5
   GRIMBLAST_EDITOR="$editor" grimblast --notify "$screenshot_action_chosen" "$screenshot_option_chosen" 2>/dev/null
@@ -97,8 +90,6 @@ screenshot_init() {
 }
 
 record_area() {
-  kill "$focus_lock_pid" 2>/dev/null
-  wait "$focus_lock_pid" 2>/dev/null || true
   echo -ne '\033]2;kitty-tui-recorder\007'
   hyprctl dispatch movetoworkspacesilent special:load
   sleep 1
