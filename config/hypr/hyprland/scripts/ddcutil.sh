@@ -62,9 +62,13 @@ fi
 
 case "$1" in
     up)
+        if [ -z "${2:-}" ]; then
+            echo "Usage: $0 up <0-100>"
+            exit 1
+        fi
         # Get current brightness from first monitor
         current=$(get_brightness "${BUSES[0]}")
-        new_brightness=$((current + 10))
+        new_brightness=$((current + $2))
         if [ $new_brightness -gt 100 ]; then
             new_brightness=100
         fi
@@ -77,9 +81,13 @@ case "$1" in
         send_notification "$new_brightness"
         ;;
     down)
+        if [ -z "${2:-}" ]; then
+            echo "Usage: $0 down <0-100>"
+            exit 1
+        fi
         # Get current brightness from first monitor
         current=$(get_brightness "${BUSES[0]}")
-        new_brightness=$((current - 10))
+        new_brightness=$((current - $2))
         if [ $new_brightness -lt 0 ]; then
             new_brightness=0
         fi
@@ -92,16 +100,32 @@ case "$1" in
         send_notification "$new_brightness"
         ;;
     set)
-        if [ -z "$2" ]; then
+        if [ -z "${2:-}" ]; then
             echo "Usage: $0 set <0-100>"
             exit 1
         fi
+        current=$(get_brightness "${BUSES[0]}")
+        echo $current > ~/.cache/ddcutil-brightness
         for bus in "${BUSES[@]}"; do
             ddcutil --bus "$bus" setvcp 10 "$2" &
         done
         wait
         send_notification "$2"
         ;;
+    revert)
+        if [ -f ~/.cache/ddcutil-brightness ]; then
+            saved_brightness=$(cat ~/.cache/ddcutil-brightness)
+            for bus in "${BUSES[@]}"; do
+                ddcutil --bus "$bus" setvcp 10 "$saved_brightness" &
+            done
+            wait
+            send_notification "$saved_brightness"
+        else
+            echo "No previous brightness value found to restore"
+            exit 1
+        fi
+        ;;
+
     get)
         for bus in "${BUSES[@]}"; do
             echo "Monitor on bus $bus:"
@@ -114,7 +138,7 @@ case "$1" in
         ddcutil detect
         ;;
     *)
-        echo "Usage: $0 {up|down|set <value>|get|list}"
+        echo "Usage: $0 {up <value>|down <value>|set <value>|revert|get|list}"
         exit 1
         ;;
 esac
