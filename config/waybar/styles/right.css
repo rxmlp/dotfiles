@@ -1,5 +1,5 @@
 #custom-powermenu {
-    color: @surface_bright;
+    color: @tertiary;
     margin-right: 10px;
     margin-left: 10px;
 }
@@ -25,4 +25,35 @@
 #bluetooth.connected #wireplumber {
     color: @tertiary;
     margin-right: 10px;
+}
+
+#custom-hardware {
+    color: @surface_bright;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+#cpu {
+    color: @tertiary;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-left: 2px solid @surface_container_high;
+    padding-left: 10px;
+}
+#memory {
+    color: @surface_tint;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-left: 2px solid @surface_container_high;
+    padding-left: 10px;
+}
+#custom-gpu {
+    color: @tertiary;
+    margin-left: 10px;
+    border-left: 2px solid @surface_container_high;
+    padding-left: 10px;
+}
+#custom-temperature_gpu {
+    color: @tertiary;
+    margin-right: 10px;
+    margin-left: 10px;
 }
