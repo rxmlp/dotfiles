@@ -1,6 +1,6 @@
 {
-  "layer": "top",
   "output": "DP-1",
+  "layer": "top",
   "include": [
     "~/.config/waybar/modules/left.jsonc",
     "~/.config/waybar/modules/center.jsonc",
