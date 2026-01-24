@@ -27,3 +27,13 @@
 
 #tray {
 }
+
+#privacy {
+    color: @error;
+    margin-left: 10px;
+}
+
+#mpris {
+    color: @surface_tint;
+    margin-left: 10px;
+}

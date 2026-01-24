@@ -11,4 +11,46 @@
     "icon-size": 16,
     "spacing": 10,
   },
+
+  "group/media": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      //"click-to-reveal": true,
+    },
+    "modules": ["privacy", "mpris"],
+  },
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 14,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+    ],
+  },
+  "mpris": {
+    "format": "{player_icon} {artist} - {title}",
+    "format-paused": "<i></i>",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵",
+      "spotify": "",
+      "chromium": "",
+    },
+    // "ignored-players": ["firefox"]
+  },
 }

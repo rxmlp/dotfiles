@@ -7,7 +7,7 @@
     "~/.config/waybar/modules/right.jsonc",
   ],
 
-  "modules-left": ["hyprland/workspaces", "tray"],
-  "modules-center": ["custom/hyprpicker", "clock"],
-  "modules-right": ["wireplumber", "bluetooth"],
+  "modules-left": ["hyprland/workspaces", "tray", "group/media"],
+  "modules-center": ["clock"],
+  "modules-right": ["group/audio"],
 }

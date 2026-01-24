@@ -21,9 +21,10 @@ zinit light mfaerevaag/wd
 
 # OhMyZsh
 zinit snippet OMZP::archlinux
-zinit snippet OMZP::aliases
 zinit snippet OMZP::extract
 zinit snippet OMZP::history
+
+zinit light rxmlp/zsh-aliases # Just a clone of https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aliases
 
 # Zsh Community
 zinit light zsh-users/zsh-completions
@@ -105,3 +106,7 @@ function yy() {
 	fi
 	rm -f -- "$tmp"
 }
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/sisa/.lmstudio/bin"
+# End of LM Studio CLI section

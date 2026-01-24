@@ -1,14 +1,8 @@
 {
-  "custom/hyprpicker": {
-    "format": "󰌁",
-    "on-click": "hyprpicker -a",
-    "tooltip": false,
-  },
-
   "clock": {
     "format": "{:%H:%M}",
     "format-alt": "{:%d·%m·%y}",
-    "on-click-right": "mode",
+    "on-click-right": "hyprpicker -a",
     "tooltip": false,
   },
 }

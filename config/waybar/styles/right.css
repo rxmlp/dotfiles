@@ -1,13 +1,22 @@
-#bluetooth {
+#bluetooth.off {
     color: @surface_bright;
     margin-right: 10px;
-    border-left: 0px;
-    border-right: 0px;
+    margin-left: 10px;
 }
 
-#wireplumber {
+#bluetooth.on {
+    color: @surface_tint;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#bluetooth.connected {
     color: @tertiary;
     margin-right: 10px;
-    border-left: 0px;
-    border-right: 0px;
+    margin-left: 10px;
+}
+
+#bluetooth.connected #wireplumber {
+    color: @tertiary;
+    margin-right: 10px;
 }

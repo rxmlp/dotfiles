@@ -1,4 +1,13 @@
 {
+  "group/audio": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false,
+    },
+    "modules": ["wireplumber", "bluetooth"],
+  },
+
   "wireplumber": {
     "format": "{icon}  {volume}%",
     "on-scroll-up": "$HLS/volume/mako-volume.sh up",
@@ -12,7 +21,9 @@
   },
 
   "bluetooth": {
-    "format": " {device_alias}",
+    "format": " on",
+    "format-connected": " {device_alias}",
     "format-off": "󰂲 off",
+    "on-click": "$HOME/.config/waybar/scripts/bt.sh",
   },
 }

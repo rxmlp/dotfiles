@@ -91,6 +91,7 @@ screenshot_init() {
 
 record_area() {
   echo -ne '\033]2;kitty-tui-recorder\007'
+  rm -f "$lockfile"
   hyprctl dispatch movetoworkspacesilent special:load
   sleep 1
   REGION=$(slurp)
@@ -101,6 +102,7 @@ exit 0
 
 record_monitor() {
   echo -ne '\033]2;kitty-tui-recorder\007'
+  rm -f "$lockfile"
   hyprctl dispatch movetoworkspacesilent special:load
   sleep 1
   REGION=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name')
