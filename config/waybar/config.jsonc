@@ -9,5 +9,5 @@
 
   "modules-left": ["hyprland/workspaces", "tray", "group/media"],
   "modules-center": ["clock"],
-  "modules-right": ["group/audio"],
+  "modules-right": ["group/rmenu"],
 }

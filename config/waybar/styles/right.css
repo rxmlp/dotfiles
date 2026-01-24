@@ -1,3 +1,9 @@
+#custom-powermenu {
+    color: @surface_bright;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 #bluetooth.off {
     color: @surface_bright;
     margin-right: 10px;

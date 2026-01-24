@@ -1,11 +1,21 @@
 {
-  "group/audio": {
+  "group/rmenu": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 500,
       "transition-left-to-right": false,
     },
-    "modules": ["wireplumber", "bluetooth"],
+    "modules": [
+      "custom/powermenu",
+      "custom/rivalcfg",
+      "bluetooth",
+      "wireplumber",
+    ],
+  },
+
+  "custom/powermenu": {
+    "format": "󰍜",
+    "on-click": "hyprctl dispatch exec '[size 200 200; float; center; workspace [w]' kitty $HLS/kitty-tui/powermenu.sh",
   },
 
   "wireplumber": {
@@ -25,5 +35,10 @@
     "format-connected": " {device_alias}",
     "format-off": "󰂲 off",
     "on-click": "$HOME/.config/waybar/scripts/bt.sh",
+  },
+
+  "custom/rivalcfg": {
+    "exec": "while true; do rivalcfg --battery-level | grep -oP '\\d+'; sleep 10; done",
+    "format": "󰍽 {text}",
   },
 }
