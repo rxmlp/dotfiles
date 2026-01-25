@@ -29,7 +29,15 @@
 
   "custom/powermenu": {
     "format": "󰍜",
-    "on-click": "hyprctl dispatch exec '[size 200 200; float; center; workspace [w]' kitty $HLS/kitty-tui/powermenu.sh",
+    //"on-click": "hyprctl dispatch exec '[size 200 200; float; center; workspace [w]' kitty $HLS/kitty-tui/powermenu.sh",
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/xml/power.xml",
+    "menu-actions": {
+      "shutdown": "hyprshutdown -p \"systemctl poweroff\"",
+      "reboot": "hyprshutdown -p \"systemctl reboot\"",
+      "lock": "playerctl pause -a & loginctl lock-session",
+      "suspend": "playerctl pause -a & loginctl lock-session && systemctl suspend",
+    },
   },
 
   "wireplumber": {

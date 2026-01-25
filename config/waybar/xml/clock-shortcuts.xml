@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface>
+  <object class="GtkMenu" id="menu">
+	<child>
+		<object class="GtkMenuItem" id="hyprpicker">
+			<property name="label">Hyprpicker</property>
+        </object>
+	</child>
+	<child>
+		<object class="GtkMenuItem" id="wallpaper">
+			<property name="label">Wallpaper</property>
+        </object>
+	</child>
+  </object>
+</interface>

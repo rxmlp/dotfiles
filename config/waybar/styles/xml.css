@@ -1,0 +1,13 @@
+menu {
+    border-radius: 15px;
+    background: @surface_container_lowest;
+    color: @surface_tint;
+}
+menuitem {
+    border-radius: 15px;
+    color: @on_secondary;
+}
+
+menuitem:hover {
+    color: @secondary;
+}

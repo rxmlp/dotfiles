@@ -87,3 +87,7 @@ output_path = '~/.themes/Matugen/cinnamon/cinnamon.css'
 [templates.gtk-gnome]
 input_path = '~/.config/matugen/templates/GTK-colors/gnome-shell/gnome-shell.css'
 output_path = '~/.themes/Matugen/gnome-shell/pad-osd.css'
+
+# [templates.quickshell]
+# input_path = "~/.config/matugen/templates/quickshell.qml"
+# output_path = "/home/sisa/Code/Tests/quickshell/Colors.qml"
