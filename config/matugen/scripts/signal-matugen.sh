@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
+set -euo pipefail
+trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
-TEMP=$(mktemp -d --suffix=_SIGNAL) 
+
+TEMP=$(mktemp -d --suffix=_SIGNAL)
 SIGNAL_DIR="/usr/lib/signal-desktop/resources"
 
 asar e "${SIGNAL_DIR}/app.asar" ${TEMP}
@@ -19,5 +22,5 @@ if pkexec asar p ${TEMP} "${SIGNAL_DIR}/app.asar"; then
       echo "Signal is running, killing process..."
       pkill signal-desktop
     fi
-    hyprctl dispatch exec [workspace 20 silent]; signal-desktop --use-tray-icon --enable-features=UseOzonePlatform --ozone-platform=wayland > /dev/null 2>&1 & exit
+    hyprctl dispatch exec [silent]; signal-desktop --use-tray-icon --enable-features=UseOzonePlatform --ozone-platform=wayland > /dev/null 2>&1 & exit
 fi
