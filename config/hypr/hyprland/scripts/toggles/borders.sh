@@ -1,24 +1,24 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
 env="$HLC/env.conf"
-status=$(grep '^\$border = ' "$env")
+status=$(grep '^\$border =' "$env")
 
 
 off() {
-  sed -i "s|\$border = .*|\$border = 1|" $env
+  sed -i "s|\$border =.*|\$border =|" $env
 }
 
 on() {
-  sed -i "s|\$border = .*|\$border = |" $env
+  sed -i "s|\$border =.*|\$border = 1|" $env
 }
 
 toggle () {
   if [[ "$status" == "\$border = 1" ]]; then
-      on
-  else
       off
+  else
+      on
   fi
 }
 

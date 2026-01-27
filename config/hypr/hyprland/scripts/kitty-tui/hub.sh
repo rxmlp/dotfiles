@@ -87,10 +87,10 @@ while true; do
                     "$HOME/.config/matugen/scripts/steam/steam-theme.sh" && exit 0
                     ;;
                 "$border")
-                    "$HLS/toggles/borders.sh" toggle
+                    "$HLS/toggles/appearance.sh" toggle border
                     ;;
                 "$opacity")
-                    "$HLS/toggles/opacity.sh" toggle
+                    "$HLS/toggles/appearance.sh" toggle opacity
                     ;;
             esac
             ;;
