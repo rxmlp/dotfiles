@@ -20,11 +20,12 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light mfaerevaag/wd
 
 # OhMyZsh
-zinit snippet OMZP::archlinux
 zinit snippet OMZP::extract
 zinit snippet OMZP::history
 
 zinit light rxmlp/zsh-aliases # Just a clone of https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aliases
+zinit light rxmlp/zsh-doas
+zinit light rxmlp/zsh-archlinux
 
 # Zsh Community
 zinit light zsh-users/zsh-completions
