@@ -63,17 +63,16 @@ yay -S hyprland hyprlock hypridle hyprutils hyprgraphics hyprcursor hyprland-qt-
 ```
 Looks
 ```zsh
-yay -S hyprpaper mpvpaper matugen-git papirus-icon-theme
+yay -S hyprpaper matugen-git papirus-icon-theme
 ```
 Bar, launcher, volume, notifications, clip & record
 ```zsh 
-yay -S yazi pcmanfm-qt waybar mako fuzzel networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder better-control-git swappy
+yay -S yazi pcmanfm-qt waybar mako fuzzel networkmanager bluez bluez-tools bluez-utils wl-clipboard clipman grimblast-git wf-recorder swappy
 ```
 Dependencies & Scripts etc
 ```zsh
-yay -S jq sassc fd fzf imagemagick ffmpegthumbnailer ttf-jetbrains-mono-nerd noto-fonts-emoji kitty zsh fastfetch socat sed nvtop btop eza xorg-xhost cpio cmake git meson and gcc make
+yay -S jq sassc fd fzf imagemagick ttf-jetbrains-mono-nerd noto-fonts-emoji kitty zsh fastfetch socat sed nvtop btop eza xorg-xhost cpio cmake git meson and gcc make
 ```
-
 
 5. Installing some plugins
 

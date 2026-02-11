@@ -76,7 +76,7 @@ while true; do
             theme_choice="$(theme_menu)" || continue
             case "$theme_choice" in
                 "$wallpaper")
-                    "$HLS/wall/mpvpaper-hyprpaper.sh"
+                    "$HLS/wall/wallpaper.sh"
                     ;;
                 "$signal")
                     hide &

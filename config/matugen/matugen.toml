@@ -8,7 +8,7 @@ output_path = '~/.config/matugen/output/example.conf'
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland.conf'
 output_path = '~/.config/matugen/output/hyprland-colors.conf'
-post_hook = 'hyprctl reload'
+post_hook = 'hyprctl reload > /dev/null >&/dev/null &'
 
 [templates.hyprtoolkit]
 input_path = '~/.config/matugen/templates/hyprtoolkit.conf'
@@ -22,7 +22,7 @@ post_hook = 'pkill -SIGUSR2 waybar'
 [templates.mako]
 input_path = '~/.config/mako/config-env'
 output_path = '~/.config/mako/config'
-post_hook = 'makoctl reload'
+post_hook = 'makoctl reload > /dev/null >&/dev/null &'
 
 [templates.fuzzel]
 input_path = '~/.config/matugen/templates/fuzzel.ini'
