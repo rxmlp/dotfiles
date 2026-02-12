@@ -59,7 +59,7 @@ ln -s ~/.dotfiles/.nanorc ~/.nanorc
 
 Hypr
 ```zsh
-yay -S hyprland hyprlock hypridle hyprutils hyprgraphics hyprcursor hyprland-qt-support hyprwayland-scanner hyprpicker xdg-desktop-portal-hyprland hyprland-qtutils hyprland-protocols aquamarine hyprpolkitagent wayland-protocols qt6ct xdg-desktop-portal-gtk xdg-desktop-portal-wlr
+yay -S hyprland hyprlock hypridle hyprutils hyprgraphics hyprcursor hyprland-qt-support hyprwayland-scanner hyprpicker xdg-desktop-portal-hyprland hyprland-protocols aquamarine hyprpolkitagent wayland-protocols qt6ct xdg-desktop-portal-gtk xdg-desktop-portal-wlr
 ```
 Looks
 ```zsh
