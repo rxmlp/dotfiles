@@ -52,10 +52,10 @@ output_path = '~/.config/helix/themes/matugen.toml'
 input_path = '~/.config/matugen/templates/zed.json'
 output_path = '~/.config/zed/themes/matugen.json'
 
-[templates.spicetify]
-input_path = '~/.config/matugen/templates/spicetify.ini'
-output_path = '~/.config/spicetify/Themes/matugen/color.ini'
-post_hook = 'spicetify apply -n'
+# [templates.spicetify]
+# input_path = '~/.config/matugen/templates/spicetify.ini'
+# output_path = '~/.config/spicetify/Themes/matugen/color.ini'
+# post_hook = 'spicetify apply -n'
 
 [templates.steam]
 input_path = '~/.config/matugen/templates/steam.css'
@@ -88,6 +88,7 @@ output_path = '~/.themes/Matugen/cinnamon/cinnamon.css'
 input_path = '~/.config/matugen/templates/GTK-colors/gnome-shell/gnome-shell.css'
 output_path = '~/.themes/Matugen/gnome-shell/pad-osd.css'
 
-# [templates.quickshell]
-# input_path = "~/.config/matugen/templates/quickshell.qml"
-# output_path = "/home/sisa/Code/Tests/quickshell/Colors.qml"
+[templates.papirus-folders]
+input_path = '~/.config/matugen/templates/papirus-folders'
+output_path = '/tmp/papirus-folders'
+post_hook = '~/.config/matugen/scripts/papirus-folders.sh > /dev/null >&/dev/null &'

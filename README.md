@@ -63,7 +63,7 @@ yay -S hyprland hyprlock hypridle hyprutils hyprgraphics hyprcursor hyprland-qt-
 ```
 Looks
 ```zsh
-yay -S hyprpaper matugen-git papirus-icon-theme
+yay -S hyprpaper matugen papirus-folders papirus-icon-theme
 ```
 Bar, launcher, volume, notifications, clip & record
 ```zsh 
