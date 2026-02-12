@@ -10,6 +10,10 @@
   "tray": {
     "icon-size": 16,
     "spacing": 10,
+    "icons": {
+        "signal-desktop": "/home/sisa/Downloads/62749392.png",
+        "Signal": "/home/sisa/Downloads/62749392.png"
+    },
   },
 
   "group/media": {
