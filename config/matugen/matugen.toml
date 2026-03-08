@@ -52,6 +52,10 @@ output_path = '~/.config/helix/themes/matugen.toml'
 input_path = '~/.config/matugen/templates/zed.json'
 output_path = '~/.config/zed/themes/matugen.json'
 
+[templates.notesnook]
+input_path = '~/.config/matugen/templates/notesnook.json'
+output_path = '~/.config/Notesnook/matugen.json'
+
 [templates.steam]
 input_path = '~/.config/matugen/templates/steam.css'
 output_path = '~/.config/matugen/scripts/steam/Adwaita-for-Steam/adwaita/colorthemes/matugen/matugen.css'

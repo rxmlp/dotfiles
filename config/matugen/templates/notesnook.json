@@ -1,0 +1,114 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetwriters/notesnook-themes/main/schemas/v1.schema.json",
+  "name": "Matugen Dark",
+  "id": "matugen-dark",
+  "version": 2.1,
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://codeberg.org/xyrd/dotfiles",
+  "description": "Matugen theme for Notesnook",
+  "colorScheme": "dark",
+  "compatibilityVersion": 1,
+  "authors": [
+    {
+      "name": "xyrd",
+      "url": "https://codeberg.org/xyrd/dotfiles"
+    }
+  ],
+  "scopes": {
+    "base": {
+      "primary": {
+        "accent": "{{colors.surface_tint.default.hex}}",
+        "paragraph": "#D3D3D3",
+        "background": "{{colors.surface.default.hex}}",
+        "border": "{{colors.surface_container.default.hex}}",
+        "heading": "#e3e3e3",
+        "icon": "{{colors.inverse_primary.default.hex}}",
+        "separator": "{{colors.surface_bright.default.hex}}",
+        "placeholder": "{{colors.surface_container_highest.default.hex}}",
+        "hover": "{{colors.surface_container.default.hex}}",
+        "accentForeground": "#ffffff",
+        "backdrop": "#{{colors.surface_container_low.default.hex_stripped}}80"
+      },
+      "secondary": {
+        "accent": "{{colors.surface_tint.default.hex}}",
+        "paragraph": "#818589",
+        "background": "{{colors.surface_container_lowest.default.hex}}",
+        "border": "{{colors.surface_container.default.hex}}",
+        "heading": "{{colors.inverse_primary.default.hex}}",
+        "icon": "{{colors.inverse_primary.default.hex}}",
+        "separator": "{{colors.surface_bright.default.hex}}",
+        "placeholder": "{{colors.surface_container_highest.default.hex}}",
+        "hover": "#ffffff10",
+        "accentForeground": "#ffffff",
+        "backdrop": "#{{colors.surface_container_low.default.hex_stripped}}80"
+      },
+      "disabled": {
+        "accent": "{{colors.surface_tint.default.hex}}",
+        "paragraph": "#505050",
+        "background": "#ffffff",
+        "border": "{{colors.surface_bright.default.hex}}",
+        "heading": "{{colors.surface_container_high.default.hex}}",
+        "icon": "{{colors.inverse_primary.default.hex}}",
+        "separator": "{{colors.surface_bright.default.hex}}",
+        "placeholder": "{{colors.surface_container_highest.default.hex}}",
+        "hover": "#ffffff10",
+        "accentForeground": "#ffffff",
+        "backdrop": "#{{colors.surface_container_low.default.hex_stripped}}80"
+      },
+      "selected": {
+        "accent": "{{colors.surface_tint.default.hex}}",
+        "paragraph": "#FBFBFB",
+        "background": "{{colors.inverse_primary.default.hex}}",
+        "border": "{{colors.surface_tint.default.hex}}",
+        "heading": "#e3e3e3",
+        "icon": "{{colors.surface_tint.default.hex}}",
+        "separator": "{{colors.surface_bright.default.hex}}",
+        "placeholder": "{{colors.surface_container_highest.default.hex}}",
+        "hover": "#ffffff10",
+        "accentForeground": "#ffffff",
+        "backdrop": "#{{colors.surface_container_low.default.hex_stripped}}80"
+      },
+      "error": {
+        "accent": "{{colors.on_error.default.hex}}",
+        "paragraph": "{{colors.on_error.default.hex}}",
+        "background": "#250b0a",
+        "border": "{{colors.surface_bright.default.hex}}",
+        "heading": "{{colors.on_error.default.hex}}",
+        "icon": "{{colors.on_error.default.hex}}",
+        "separator": "{{colors.surface_bright.default.hex}}",
+        "placeholder": "{{colors.surface_container_highest.default.hex}}",
+        "hover": "#ffffff10",
+        "accentForeground": "#ffffff",
+        "backdrop": "#{{colors.surface_container_low.default.hex_stripped}}80"
+      },
+      "success": {
+        "accent": "{{colors.inverse_primary.default.hex}}",
+        "paragraph": "{{colors.inverse_primary.default.hex}}",
+        "background": "{{colors.secondary_container.default.hex}}",
+        "border": "{{colors.surface_bright.default.hex}}",
+        "heading": "{{colors.inverse_primary.default.hex}}",
+        "icon": "{{colors.inverse_primary.default.hex}}",
+        "separator": "{{colors.surface_bright.default.hex}}",
+        "placeholder": "{{colors.surface_container_highest.default.hex}}",
+        "hover": "#ffffff10",
+        "accentForeground": "#ffffff",
+        "backdrop": "#{{colors.surface_container_low.default.hex_stripped}}80"
+      }
+    },
+    "list": {
+      "selected": {
+        "background": "{{colors.surface_container_lowest.default.hex}}"
+      }
+    },
+    "contextMenu": {
+      "primary": {
+        "background": "{{colors.surface_container_lowest.default.hex}}"
+      }
+    },
+    "sheet": {
+      "selected": {
+        "paragraph": "{{colors.surface_tint.default.hex}}"
+      }
+    }
+  }
+}

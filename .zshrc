@@ -66,6 +66,7 @@ bindkey '^[[B' history-substring-search-down
 
 
 #-------My cute lil random alias-------#
+alias rs='rsync -av --progress --partial-dir=.rsync-tmp --rsync-path=/bin/rsync'
 alias hx='helix'
 alias dh='doas helix'
 alias attack='doas hping3 -S -i u100'

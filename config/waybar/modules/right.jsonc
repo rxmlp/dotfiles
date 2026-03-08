@@ -56,7 +56,7 @@
     "format": " on",
     "format-connected": " {device_alias}",
     "format-off": "󰂲 off",
-    "on-click": "$HLS/bluetooth.sh",
+    "on-click": "$HLS/toggles/bluetooth.sh",
   },
 
   "custom/rivalcfg": {
