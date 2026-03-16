@@ -26,6 +26,7 @@ zinit snippet OMZP::history
 zinit light rxmlp/zsh-aliases # Just a clone of https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aliases
 zinit light rxmlp/zsh-doas
 zinit light rxmlp/zsh-archlinux
+zinit light rxmlp/zsh-flatpak
 
 # Zsh Community
 zinit light zsh-users/zsh-completions
@@ -110,5 +111,5 @@ function yy() {
 }
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/sisa/.lmstudio/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
