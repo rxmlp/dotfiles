@@ -8,7 +8,7 @@
     "menu-file": "~/.config/waybar/xml/clock-shortcuts.xml",
     "menu-actions": {
       "hyprpicker": "hyprpicker -a",
-      "wallpaper": "hyprctl dispatch exec '[size 750 500; float; center; workspace [w]' 'kitty --config $HOME/.config/kitty/tui.conf' $HLS/wall/mpvpaper-hyprpaper.sh",
+      "wallpaper": "hyprctl dispatch exec '[size 750 500; float; center; workspace [w]' 'kitty --config $HOME/.config/kitty/tui.conf' $HLS/wall/wallpaper.sh",
     },
   },
 }

@@ -3,7 +3,6 @@ set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 echo -ne '\033]2;kitty-tui\007'
 
-
 hyprfixsh="$HLS/bin/hyprfix"
 
 screenshot='󰍹  Screenshot / Record'
@@ -11,6 +10,7 @@ powermenu='󰐥  Powermenu'
 hyprfix='  Hyprfix'
 wifi='󰤨  Wi-Fi'
 bluetooth='󰂯  Bluetooth'
+audio='  Audio'
 update_mirrors='  Update Mirrors'
 
 # Appearance
@@ -32,7 +32,7 @@ hide() {
 }
 
 main_menu() {
-    echo -e "$screenshot\n$powermenu\n$theme\n$hyprfix\n$update_mirrors\n$bluetooth\n$wifi" | fzf_menu "$(date '+%H:%M')"
+    echo -e "$screenshot\n$powermenu\n$theme\n$hyprfix\n$update_mirrors\n$audio\n$bluetooth\n$wifi" | fzf_menu "$(date '+%H:%M')"
 }
 
 theme_menu() {
@@ -55,10 +55,13 @@ while true; do
             "$HLS/kitty-tui/powermenu.sh"
             ;;
         "$wifi")
-            "$HLS/kitty-tui/wifi/wifimenu.sh"
+            "impala"
             ;;
         "$bluetooth")
-            "$HLS/kitty-tui/bluetooth.sh"
+            "bluetui"
+            ;;
+        "$audio")
+            "wiremix"
             ;;
         "$update_mirrors")
             hide &

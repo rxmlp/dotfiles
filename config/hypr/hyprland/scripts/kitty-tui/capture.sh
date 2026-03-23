@@ -3,40 +3,17 @@ set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 echo -ne '\033]2;kitty-tui\007'
 
-lockfile=/tmp/kitty-tui.lock
-if [ -f "$lockfile" ]; then
-    echo "Script already running"
-    exit 1
-fi
-touch "$lockfile"
-trap "rm -f '$lockfile'; exit" INT TERM EXIT
-
-record_area="Record area"
-record_monitor="Record monitor"
-
-screenshot="󰹑  Screenshot"
 screenshot_all="󰍹 󰨇  All Screen"
 screenshot_active="󰨇  Active Screen"
 screenshot_area="󰕢  Area/Window"
-
-copy='  Copy'
-save='  Save'
-copy_save='  CopySave'
-edit='  Edit'
+copy='  Copy'
+save='  Save'
+copy_save='  CopySave'
+edit='  Edit'
 editor="pinta"
 
 menu() {
     fzf --prompt='> ' --ansi --height=100%
-}
-
-if pgrep -x wf-recorder >/dev/null; then
-    record="󱦿  Stop recording"
-else
-    record="󰵝  Record"
-fi
-
-screenshot_record() {
-    echo -e "$screenshot\n$record" | menu
 }
 
 menu_screenshot_option() {
@@ -84,58 +61,5 @@ takescreenshot() {
   exit 0
 }
 
-screenshot_init() {
-    screenshot_option
-    screenshot_action "takescreenshot"
-}
-
-record_area() {
-  echo -ne '\033]2;kitty-tui-recorder\007'
-  rm -f "$lockfile"
-  hyprctl dispatch movetoworkspacesilent special:load
-  sleep 1
-  REGION=$(slurp)
-  hyprctl notify 0 1500 "0" "Recoring started" 2>/dev/null
-  wf-recorder -g "$REGION" -a --file=$HOME/Videos/recordings/area_$(date +"%Y-%m-%d_%H-%M-%S").mp4 2>/dev/null
-exit 0
-}
-
-record_monitor() {
-  echo -ne '\033]2;kitty-tui-recorder\007'
-  rm -f "$lockfile"
-  hyprctl dispatch movetoworkspacesilent special:load
-  sleep 1
-  REGION=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name')
-  hyprctl notify 0 1500 "0" "Recoring started" 2>/dev/null
-  wf-recorder -o "$REGION" -a --file=$HOME/Videos/recordings/monitor_$(date +"%Y-%m-%d_%H-%M-%S").mp4 2>/dev/null
-exit 0
-}
-
-record_options() {
-  echo -e "$record_area\n$record_monitor" | menu
-}
-
-record_init() {
-    if pgrep -x wf-recorder >/dev/null; then
-        pkill wf-recorder
-        hyprctl notify 5 2000 "0" "Recoring stopped"
-    else
-        record_option="$(record_options)"
-        if [[ "$record_option" == "$record_area" ]]; then
-            record_area
-        elif [[ "$record_option" == "$record_monitor" ]]; then
-            record_monitor
-        else exit 1
-        fi
-    fi
-}
-
-selected_init="$(screenshot_record)"
-case ${selected_init} in
-$screenshot)
-  screenshot_init
-  ;;
-$record)
-  record_init
-  ;;
-esac
+screenshot_option
+screenshot_action "takescreenshot"

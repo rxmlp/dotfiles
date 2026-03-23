@@ -47,6 +47,7 @@
     "tooltip": false,
     "format-muted": " Muted",
     "on-click": "$HLS/volume/mako-volume.sh mute",
+    "on-click-right": "hyprctl dispatch exec '[size 750 500; float; center; workspace w]' kitty wiremix",
     "format-icons": {
       "default": ["", "", ""],
     },
