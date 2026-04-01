@@ -58,6 +58,7 @@
     "format-connected": " {device_alias}",
     "format-off": "󰂲 off",
     "on-click": "$HLS/toggles/bluetooth.sh",
+    "on-click-right": "hyprctl dispatch exec '[size 750 500; float; center; workspace w]' kitty bluetui",
   },
 
   "custom/rivalcfg": {
