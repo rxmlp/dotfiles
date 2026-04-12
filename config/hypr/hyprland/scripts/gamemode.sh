@@ -15,8 +15,11 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
     hyprctl keyword unbind SUPER, V
     hyprctl keyword unbind SUPER, mouse:272
     hyprctl keyword unbind SUPER, mouse:273
+    hyprctl keyword unbind CTRL, 1
+    hyprctl keyword unbind CTRL, 2
+    hyprctl keyword unbind CTRL, 3
     if pgrep -f mpv > /dev/null; then
-        echo '{ "command": ["set_property", "pause", true] }' | socat - /tmp/mpv-socket-$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name') > /dev/null 2>&1 
+        echo '{ "command": ["set_property", "pause", true] }' | socat - /tmp/mpv-socket-$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name') > /dev/null 2>&1
     fi
     hyprctl notify 2 2000 "0" "Game mode on"
     exit
@@ -27,7 +30,7 @@ off() {
     HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==0{print $2}')
 hyprctl reload
 if pgrep -f mpv > /dev/null; then
-    echo '{ "command": ["set_property", "pause", false] }' | socat - /tmp/mpv-socket-$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name') > /dev/null 2>&1 
+    echo '{ "command": ["set_property", "pause", false] }' | socat - /tmp/mpv-socket-$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name') > /dev/null 2>&1
 fi
 hyprctl notify 2 2000 "0" "Game mode off"
 }
