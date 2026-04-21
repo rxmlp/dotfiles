@@ -2,7 +2,7 @@
 image = [
     { run = "pinta %s", for = "any" },
 ]
-edit = [
-  { run = "helix \"$@\"", block = true }
-]
 
+#edit = [
+#  { run = "helix \"$@\"", block = true }
+#]
