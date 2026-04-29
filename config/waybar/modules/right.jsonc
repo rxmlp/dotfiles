@@ -8,6 +8,7 @@
     "modules": [
       "custom/powermenu",
       "custom/rivalcfg",
+      "network",
       "bluetooth",
       "wireplumber",
     ],
@@ -29,15 +30,13 @@
 
   "custom/powermenu": {
     "format": "󰍜",
-    //"on-click": "hyprctl dispatch exec '[size 200 200; float; center; workspace [w]' kitty $HLS/kitty-tui/powermenu.sh",
-    "menu": "on-click",
-    "menu-file": "~/.config/waybar/xml/power.xml",
-    "menu-actions": {
-      "shutdown": "hyprshutdown -p \"systemctl poweroff\"",
-      "reboot": "hyprshutdown -p \"systemctl reboot\"",
-      "lock": "playerctl pause -a & loginctl lock-session",
-      "suspend": "playerctl pause -a & loginctl lock-session && systemctl suspend",
-    },
+    "on-click": "hyprctl dispatch exec '[size 200 200; float; center; workspace [w]' kitty $HLS/kitty-tui/powermenu.sh",
+    // "menu": "on-click",
+    // "menu-file": "~/.config/waybar/xml/power.xml",
+    // "menu-actions": {
+    //   "lock": "playerctl pause -a & loginctl lock-session",
+    //   "suspend": "playerctl pause -a & loginctl lock-session && systemctl suspend",
+    // },
   },
 
   "wireplumber": {
@@ -61,6 +60,20 @@
     "on-click-right": "hyprctl dispatch exec '[size 750 500; float; center; workspace w]' kitty bluetui",
   },
 
+  "network": {
+      "interface": "wlan0",
+      "format": "{ifname}",
+      "format-wifi": "{essid} ({signalStrength}%) ",
+      "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+      "format-disconnected": "", //An empty format will hide the module.
+      "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+      "tooltip-format-ethernet": "{ifname} ",
+      "tooltip-format-disconnected": "Disconnected",
+      "on-click-right": "hyprctl dispatch exec '[size 750 500; float; center; workspace w]' kitty impala",
+      "max-length": 50
+  },
+
   "custom/rivalcfg": {
     "exec": "while true; do rivalcfg --battery-level | grep -oP '\\d+'; sleep 10; done",
     "format": "󰍽 {text}",
@@ -68,7 +81,6 @@
 
   "custom/hardware": {
     "format": "",
-    "on-click": "missioncenter",
     "tooltip": false,
   },
 
