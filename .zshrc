@@ -46,7 +46,7 @@ fi
 
 
 #-------Exports-------#
-export EDITOR=helix
+export EDITOR=vim
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HLS/bin:$PATH"
 
@@ -68,8 +68,6 @@ bindkey '^[[B' history-substring-search-down
 
 #-------My cute lil random alias-------#
 alias rs='rsync -av --progress --partial-dir=.rsync-tmp --rsync-path=/bin/rsync'
-alias hx='helix'
-alias dh='doas helix'
 alias attack='doas hping3 -S -i u100'
 sn() {
     if [[ "$1" == "-r" ]]; then
