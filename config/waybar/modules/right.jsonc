@@ -30,7 +30,8 @@
 
   "custom/powermenu": {
     "format": "󰍜",
-    "on-click": "hyprctl dispatch exec '[size 200 200; float; center; workspace [w]' kitty $HLS/kitty-tui/powermenu.sh",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"[size 200 200; float; center; workspace w] kitty $HLS/kitty-tui/powermenu.sh\")'",
+    "on-click-right": "hyprctl dispatch 'hl.dsp.exec_cmd(\"[size 200 200; float; center; workspace w] kitty $HLS/kitty-tui/powermenu.sh\")'",
     // "menu": "on-click",
     // "menu-file": "~/.config/waybar/xml/power.xml",
     // "menu-actions": {
@@ -46,7 +47,7 @@
     "tooltip": false,
     "format-muted": " Muted",
     "on-click": "$HLS/volume/mako-volume.sh mute",
-    "on-click-right": "hyprctl dispatch exec '[size 750 500; float; center; workspace w]' kitty wiremix",
+    "on-click-right": "hyprctl dispatch 'hl.dsp.exec_cmd(\"[size 750 500; float; center; workspace w] kitty wiremix\")'",
     "format-icons": {
       "default": ["", "", ""],
     },
@@ -57,7 +58,7 @@
     "format-connected": " {device_alias}",
     "format-off": "󰂲 off",
     "on-click": "$HLS/toggles/bluetooth.sh",
-    "on-click-right": "hyprctl dispatch exec '[size 750 500; float; center; workspace w]' kitty bluetui",
+    "on-click-right": "hyprctl dispatch 'hl.dsp.exec_cmd(\"[size 750 500; float; center; workspace w] kitty bluetui\")'",
   },
 
   "network": {
@@ -70,7 +71,7 @@
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
       "tooltip-format-ethernet": "{ifname} ",
       "tooltip-format-disconnected": "Disconnected",
-      "on-click-right": "hyprctl dispatch exec '[size 750 500; float; center; workspace w]' kitty impala",
+      "on-click-right": "hyprctl dispatch 'hl.dsp.exec_cmd(\"[size 750 500; float; center; workspace w] kitty impala\")'",
       "max-length": 50
   },
 

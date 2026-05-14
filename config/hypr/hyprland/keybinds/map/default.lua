@@ -16,11 +16,10 @@ browser     = "gtk-launch $(xdg-settings get default-web-browser)"
 -- Menu/Appearance
 -------------------
 lock       = "[size 200 200; float; center; workspace w] " .. terminal .. " " .. HLS .. "/kitty-tui/powermenu.sh"
-borders    = "HLS/toggles/borders.sh toggle"
 bar        = "pkill -SIGUSR1 waybar"
 hub        = "[size 750 500; float; center; workspace w] " .. terminal .. " " .. HLS .. "/kitty-tui/hub.sh"
 wallpapers = "[size 750 500; float; center; workspace w] " .. terminal .. " " .. HLS .. "/wall/wallpaper.sh"
-matugenApps = "HOME/.config/matugen/scripts/signal-matugen.sh && HOME/.config/matugen/scripts/steam/Steam-Adwaita.sh"
+matugenApps = "" .. HOME .. "/.config/matugen/scripts/signal-matugen.sh && " .. HOME .. "/.config/matugen/scripts/steam/Steam-Adwaita.sh"
 
 -------------
 -- Clipboard

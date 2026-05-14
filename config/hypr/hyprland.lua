@@ -1,13 +1,14 @@
 
 
 -- Theme
-require("theme")
+require("hyprlua-colors")
 
 -- General
 require("hyprland.conf.env")
 require("hyprland.conf.general")
 require("hyprland.conf.devices")
 require("hyprland.conf.autostart")
+require("hyprland.conf.autostart-user")
 require("hyprland.rules.Application-Spawn")
 require("hyprland.rules.Basic")
 require("hyprland.rules.windowrules")

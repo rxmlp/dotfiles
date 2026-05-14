@@ -1,5 +1,8 @@
 -- keybinds/binds/default.lua
 
+
+
+
 --------------
 -- Sys & Apps
 --------------
@@ -13,7 +16,6 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 -- Menu/Appearance
 -------------------
 hl.bind(mainMod .. " + Scroll_Lock", hl.dsp.exec_cmd(lock))
-hl.bind("ALT + B",                   hl.dsp.exec_cmd(borders))
 hl.bind(mainMod .. " + ALT + B",       hl.dsp.exec_cmd(bar))
 hl.bind(mainMod .. " + Home",        hl.dsp.exec_cmd(hub))
 hl.bind(mainMod .. " + W",           hl.dsp.exec_cmd(wallpapers))

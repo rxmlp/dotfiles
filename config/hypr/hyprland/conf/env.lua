@@ -18,9 +18,9 @@ hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 
 -- Cursor/GTK Configuration
-hl.env("HYPRCURSOR_THEME", ("cursor"))
+hl.env("HYPRCURSOR_THEME", ("catppuccin-mocha-dark-cursors"))
 hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("XCURSOR_THEME", ("cursor"))
+hl.env("XCURSOR_THEME", ("catppuccin-mocha-dark-cursors"))
 hl.env("XCURSOR_SIZE", "18")
 hl.env("GTK_THEME", "Matugen")
 
@@ -31,6 +31,7 @@ hl.env("SSH_AUTH_SOCK", os.getenv("XDG_RUNTIME_DIR") .. "/ssh-agent.socket")
 hl.env("hyprlockwall", "on")
 
 -- Just some links
+HOME = os.getenv("HOME")
 HL = os.getenv("HOME") .. "/.config/hypr/hyprland"
 HLS     = HL .. "/scripts"
 

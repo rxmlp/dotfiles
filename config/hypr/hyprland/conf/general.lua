@@ -124,7 +124,7 @@ hl.config({
     misc = {
         force_default_wallpaper      = 0,
         disable_hyprland_logo        = true,
-        font_family                  = font,
+        font_family                  = "JetBrains Mono Nerd Font",
         -- vfr                       = 1,
         animate_manual_resizes       = false,
         animate_mouse_windowdragging = false,
