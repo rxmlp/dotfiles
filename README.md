@@ -72,16 +72,3 @@ Dependencies & Scripts etc
 ```zsh
 yay -S jq sassc fd fzf imagemagick ttf-jetbrains-mono-nerd noto-fonts-emoji kitty zsh fastfetch socat sed nvtop btop eza xorg-xhost cpio cmake git meson and gcc make impala bluetui wiremix
 ```
-
-5. Installing some plugins
-
-Install hyprland plugins
-```zsh
-hyprpm add https://github.com/hyprwm/hyprland-plugins
-hyprpm add https://github.com/outfoxxed/hy3
-```
-Enable used plugins
-```zsh
-hyprpm enable hyprexpo
-hyprpm enable hy3
-```
