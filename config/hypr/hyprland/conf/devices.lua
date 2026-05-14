@@ -1,0 +1,40 @@
+
+local mouse = "logitech-gaming-mouse-g502"
+local keyboard = "logitech-g515-tkl"
+monitor_secondary = "desc:Acer Technologies VG271 TG6EE0018521"
+monitor_primary = "desc:Microstep MSI G27CQ4 E2"
+
+hl.device({
+    name = (mouse),
+    sensitivity = "-0.5",
+})
+
+hl.device({
+    name = (keyboard),
+    kb_layout = "no",
+    kb_variant = "nodeadkeys",
+    kb_model = "pc105",
+})
+
+hl.monitor({
+  output = (monitor_primary),
+  mode = "2560x1440@120",
+  position = "0x0",
+  scale = "1",
+  -- vrr = "2",
+  cm = "srgb",
+})
+
+hl.monitor({
+  output = (monitor_secondary),
+  mode = "1920x1080@60",
+  position = "-1920x0",
+  scale = "1",
+  -- transform = "0",
+  cm = "srgb",
+})
+
+-- hl.render({
+--   -- cm_fs_passthrough = 2,  -- Passthrough color settings for fullscreen apps when possible. 0 - off, 1 - always, 2 - hdr only
+--   cm_auto_hdr = 0,  -- Auto-switch to HDR in fullscreen when needed. 0 - off, 1 - switch to cm, hdr, 2 - switch to cm, hdredid
+-- })
