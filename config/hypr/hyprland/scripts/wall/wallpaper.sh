@@ -2,7 +2,6 @@
 set -euo pipefail
 trap 'echo "Error on line $LINENO: command \"$BASH_COMMAND\" failed"; exit 1' ERR
 
-#source "$HLS/moni-env.sh" && get_monitors
 wall_dir="$HOME/Pictures/Wallpapers"
 cd "$wall_dir"
 choices=$(fd . --type f -d 1 -e png -e jpg --format {/.} | shuf | fzf --cycle --preview='$HLS/wall/fzf-preview.sh {}' --preview-window=right,70% --info=hidden --color prompt:green,pointer:green,current-bg:-1,current-fg:green,gutter:-1,border:bright-black,current-hl:red,hl:red)
@@ -65,7 +64,7 @@ if [[ "$choice" =~ \.(png|jpg)$ ]]; then
 save_to_hyprpaper_conf
 hyprctl hyprpaper wallpaper $monitor_name,"$choice"
 monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .description')
-monitor_primary=$(grep '^\$monitor_primary = desc:' "$HL/conf/devices.conf" | sed -E 's/^\$monitor_primary = desc:(.*)$/\1/')
+monitor_primary=$(grep 'monitor_primary = "desc:' "$HL/conf/devices.lua" | sed -E 's/.*"desc:([^"]+)".*/\1/')
 if [[ "$monitor" = "$monitor_primary" ]]; then
     matugen -c ~/.config/matugen/matugen.toml image "$choice"
     if [[ "$(printenv hyprlockwall)" = "on" ]]; then

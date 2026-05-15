@@ -1,6 +1,6 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 
-devices="$HL/conf/devices.conf"
+devices="$HL/conf/devices.lua"
 
 get_monitor_primary() {
     monitor_primary_desc=$(grep '^\$monitor_primary = desc:' "$devices" | sed -E 's/^\$monitor_primary = desc:(.*)$/\1/')

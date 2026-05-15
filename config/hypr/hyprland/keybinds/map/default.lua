@@ -9,7 +9,6 @@ tui         = "kitty --config 'HOME/.config/kitty/tui.conf'"
 terminal    = "kitty"
 fileManager = "pcmanfm-qt"
 menu        = "fuzzel"
-gamemode    = "HLS/gamemode.sh toggle"
 browser     = "gtk-launch $(xdg-settings get default-web-browser)"
 
 -------------------

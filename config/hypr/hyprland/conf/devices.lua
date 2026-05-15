@@ -4,6 +4,7 @@ local keyboard = "logitech-g515-tkl"
 monitor_secondary = "desc:Acer Technologies VG271 TG6EE0018521"
 monitor_primary = "desc:Microstep MSI G27CQ4 E2"
 
+
 hl.device({
     name = (mouse),
     sensitivity = "-0.5",

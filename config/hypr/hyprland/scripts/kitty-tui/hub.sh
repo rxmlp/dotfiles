@@ -18,8 +18,6 @@ theme='󰸉  Appearance'
 wallpaper='󰸉  Wallpaper'
 signal='󰭹  Matugen Signal'
 steam='  Matugen Steam'
-border='󰢡  Border toggle'
-opacity='󱡔  Opacity toggle'
 
 # Wrapper for fzf menus
 fzf_menu() {
@@ -36,7 +34,7 @@ main_menu() {
 }
 
 theme_menu() {
-    echo -e "$wallpaper\n$signal\n$steam\n$border\n$opacity" | fzf_menu "Appearance"
+    echo -e "$wallpaper\n$signal\n$steam" | fzf_menu "Appearance"
 }
 
 hyprfix_menu() {
@@ -80,12 +78,6 @@ while true; do
                 "$steam")
                     hide &
                     "$HOME/.config/matugen/scripts/steam/steam-theme.sh" && exit 0
-                    ;;
-                "$border")
-                    "$HLS/toggles/appearance.sh" toggle border
-                    ;;
-                "$opacity")
-                    "$HLS/toggles/appearance.sh" toggle opacity
                     ;;
             esac
             ;;
