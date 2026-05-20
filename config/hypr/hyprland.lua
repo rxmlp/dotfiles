@@ -15,6 +15,3 @@ require("hyprland.rules.workspace")
 
 -- Keyboard layout
 require("hyprland.keybinds.map.WindowWorkspace-dwindle")
-
--- Plugins
-require("hyprland.plugins.csgo-vulkan-fix")

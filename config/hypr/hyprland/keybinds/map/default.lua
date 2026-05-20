@@ -5,7 +5,6 @@
 --------------
 mainMod     = "SUPER"
 altMod      = "CTRL"
-tui         = "kitty --config 'HOME/.config/kitty/tui.conf'"
 terminal    = "kitty"
 fileManager = "pcmanfm-qt"
 menu        = "fuzzel"
@@ -18,7 +17,7 @@ lock       = "[size 200 200; float; center; workspace w] " .. terminal .. " " ..
 bar        = "pkill -SIGUSR1 waybar"
 hub        = "[size 750 500; float; center; workspace w] " .. terminal .. " " .. HLS .. "/kitty-tui/hub.sh"
 wallpapers = "[size 750 500; float; center; workspace w] " .. terminal .. " " .. HLS .. "/wall/wallpaper.sh"
-matugenApps = "" .. HOME .. "/.config/matugen/scripts/signal-matugen.sh && " .. HOME .. "/.config/matugen/scripts/steam/Steam-Adwaita.sh"
+matugenApps = "" .. HOME .. "/.config/matugen/scripts/signal-matugen.sh"
 
 -------------
 -- Clipboard
@@ -48,7 +47,7 @@ MicMute         = "" .. HLS .. "/volume/mako-mic.sh mute"
 --------------
 -- Brightness
 --------------
-ddcutilUp       = "" .. HLS .. "/ddcutil.sh up 10"
-ddcutilDown     = "" .. HLS .. "/ddcutil.sh down 10"
+ddcutilUp       = "" .. HLS .. "/brightness.sh up 10"
+ddcutilDown     = "" .. HLS .. "/brightness.sh down 10"
 
 require("hyprland.keybinds.binds.default")

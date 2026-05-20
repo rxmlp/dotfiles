@@ -1,7 +1,0 @@
-{
-    "mode": "hide",
-    "start_hidden": true,
-    "include": [
-        "~/.config/waybar/config.jsonc",
-    ],
-}

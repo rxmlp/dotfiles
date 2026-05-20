@@ -13,8 +13,8 @@ hl.config({
 -- See https://wiki.hyprland.org/Configuring/Variables/ for more
 hl.config({
     general = {
-        gaps_in = 5,
-        gaps_out = 10,
+        gaps_in = 1,
+        gaps_out = 1,
         border_size = 2,
         col = {
             active_border = inverse_primary,
