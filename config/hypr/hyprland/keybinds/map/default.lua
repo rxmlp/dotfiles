@@ -8,7 +8,6 @@ altMod      = "CTRL"
 terminal    = "kitty"
 fileManager = "pcmanfm-qt"
 menu        = "fuzzel"
-browser     = "gtk-launch $(xdg-settings get default-web-browser)"
 
 -------------------
 -- Menu/Appearance

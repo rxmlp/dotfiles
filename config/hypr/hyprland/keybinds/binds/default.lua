@@ -2,20 +2,18 @@
 
 
 
-
 --------------
 -- Sys & Apps
 --------------
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 
 -------------------
 -- Menu/Appearance
 -------------------
 hl.bind(mainMod .. " + Scroll_Lock", hl.dsp.exec_cmd(lock))
-hl.bind(mainMod .. " + ALT + B",       hl.dsp.exec_cmd(bar))
+hl.bind(mainMod .. " + B",       hl.dsp.exec_cmd(bar))
 hl.bind(mainMod .. " + Home",        hl.dsp.exec_cmd(hub))
 hl.bind(mainMod .. " + W",           hl.dsp.exec_cmd(wallpapers))
 hl.bind(mainMod .. " + SHIFT + W",     hl.dsp.exec_cmd(matugenApps))

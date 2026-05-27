@@ -19,7 +19,7 @@ local spawns = {
     { ws = "8",        class = "(eu.betterbird.Betterbird)|(org.mozilla.Thunderbird)", initial_title = "(Betterbird)|(Mozilla Thunderbird)" },
     { ws = "9 silent", class = "(net.lutris.Lutris)|(org.prismlauncher.PrismLauncher)|(steam)" },
     { ws = "10 silent",class = "(signal)|(fluffychat)|(org.gnome.Fractal)" },
-    { ws = "11 silent",class = "(spotify)|(spotify-qt)" },
+    { ws = "11 silent",class = "(Spotify)|(spotify)|(spotify-qt)" },
     { ws = "12 silent",class = "(FreeTube)|(io.freetubeapp.FreeTube)|(org.jellyfin.JellyfinDesktop)" },
 }
 
