@@ -1,14 +1,7 @@
 -- keybinds/binds/WindowWorkspace.lua
 
--- Move/resize with mouse
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
-
 -- Window actions
 hl.bind(mainMod .. " + C",       hl.dsp.window.close())
-hl.bind(mainMod .. " + V",       hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + F",       hl.dsp.window.fullscreen({ mode = 0 }))
-hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = 1 }))
 
 ---------------
 --  Windows
@@ -43,9 +36,6 @@ hl.bind(mainMod .. " + A",          hl.dsp.focus({ workspace = "m-1" }))
 for i = 1, 9 do
     hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))
 end
-hl.bind("CTRL + 1", hl.dsp.focus({ workspace = 10 }))
-hl.bind("CTRL + 2", hl.dsp.focus({ workspace = 11 }))
-hl.bind("CTRL + 3", hl.dsp.focus({ workspace = 12 }))
 
 -- Toggle special
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
@@ -76,3 +66,48 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:mag
 hl.bind(mainMod .. " + SHIFT + T", hl.dsp.window.move({ workspace = "special:shh"   }))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.window.move({ workspace = "special:edit"  }))
 hl.bind(mainMod .. " + SHIFT + G", hl.dsp.window.move({ workspace = "special:games" }))
+
+
+-- keybinds/binds/WindowWorkspace.lua
+-- ... rest of file, with the original SUPER+F / SUPER+V / mouse:272 / mouse:273 / CTRL+1/2/3 lines REMOVED ...
+
+---------------
+--  Conditional binds (disabled while focused window is in special:games)
+---------------
+local gamesSensitiveBound = false
+
+local function bindGamesSensitive()
+    if gamesSensitiveBound then return end
+    hl.bind(mainMod .. " + F",         hl.dsp.window.fullscreen({ mode = 0 }))
+    hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = 1 }))
+    hl.bind(mainMod .. " + V",         hl.dsp.window.float({ action = "toggle" }))
+    hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
+    hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+    hl.bind("CTRL + 1", hl.dsp.focus({ workspace = 10 }))
+    hl.bind("CTRL + 2", hl.dsp.focus({ workspace = 11 }))
+    hl.bind("CTRL + 3", hl.dsp.focus({ workspace = 12 }))
+    gamesSensitiveBound = true
+end
+
+local function unbindGamesSensitive()
+    if not gamesSensitiveBound then return end
+    hl.unbind(mainMod .. " + F")
+    hl.unbind(mainMod .. " + SHIFT + F")
+    hl.unbind(mainMod .. " + V")
+    hl.unbind(mainMod .. " + mouse:272")
+    hl.unbind(mainMod .. " + mouse:273")
+    hl.unbind("CTRL + 1")
+    hl.unbind("CTRL + 2")
+    hl.unbind("CTRL + 3")
+    gamesSensitiveBound = false
+end
+
+hl.on("window.active", function(w)
+    if w ~= nil and w.workspace ~= nil and w.workspace.name == "special:games" then
+        unbindGamesSensitive()
+    else
+        bindGamesSensitive()
+    end
+end)
+
+bindGamesSensitive() -- register them at startup

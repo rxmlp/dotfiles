@@ -26,5 +26,4 @@ fi
 "${SUPER[@]}" bash -c '
 rate-mirrors --allow-root --save=/etc/pacman.d/mirrorlist arch --max-delay=3600
 rate-mirrors --allow-root --save=/etc/pacman.d/chaotic-mirrorlist chaotic-aur
-rate-mirrors --allow-root --save=/etc/pacman.d/cachyos-v3-mirrorlist cachyos --arch='"'"'$arch_v3'"'"'
 '

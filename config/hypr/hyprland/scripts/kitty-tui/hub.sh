@@ -26,7 +26,7 @@ fzf_menu() {
 }
 
 hide() {
-    hyprctl dispatch movetoworkspacesilent special:load
+    hyprctl dispatch 'hl.dsp.window.move({ workspace = "special:load" })'
 }
 
 main_menu() {

@@ -42,9 +42,3 @@ hl.bind("XF86AudioMute",        hl.dsp.exec_cmd(AudioMute),       { locked = tru
 hl.bind(mainMod .. " + XF86AudioRaiseVolume", hl.dsp.exec_cmd(MicUp),   { locked = true })
 hl.bind(mainMod .. " + XF86AudioLowerVolume", hl.dsp.exec_cmd(MicDown), { locked = true })
 hl.bind(mainMod .. " + XF86AudioMute",        hl.dsp.exec_cmd(MicMute), { locked = true })
-
---------------
--- Brightness
---------------
-hl.bind("ALT + XF86AudioRaiseVolume", hl.dsp.exec_cmd(ddcutilUp),   { locked = true })
-hl.bind("ALT + XF86AudioLowerVolume", hl.dsp.exec_cmd(ddcutilDown), { locked = true })

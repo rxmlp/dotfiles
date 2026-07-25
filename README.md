@@ -70,5 +70,5 @@ yay -S yazi pcmanfm-qt waybar mako fuzzel networkmanager bluez bluez-tools bluez
 ```
 Dependencies & Scripts etc
 ```zsh
-yay -S jq sassc fd fzf imagemagick ttf-jetbrains-mono-nerd noto-fonts-emoji kitty zsh fastfetch socat sed nvtop btop eza xorg-xhost cpio cmake git meson and gcc make impala bluetui wiremix
+yay -S jq sassc fd fzf imagemagick ttf-jetbrains-mono-nerd noto-fonts-emoji kitty zsh fastfetch socat sed nvtop btop eza xorg-xhost cpio cmake git meson gcc make impala bluetui wiremix
 ```

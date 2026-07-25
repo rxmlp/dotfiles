@@ -43,10 +43,4 @@ MicUp           = "" .. HLS .. "/volume/mako-mic.sh up"
 MicDown         = "" .. HLS .. "/volume/mako-mic.sh down"
 MicMute         = "" .. HLS .. "/volume/mako-mic.sh mute"
 
---------------
--- Brightness
---------------
-ddcutilUp       = "" .. HLS .. "/brightness.sh up 10"
-ddcutilDown     = "" .. HLS .. "/brightness.sh down 10"
-
 require("hyprland.keybinds.binds.default")

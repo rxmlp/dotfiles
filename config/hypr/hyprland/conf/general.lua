@@ -8,10 +8,7 @@ hl.config({
         allow_workspace_cycles = true,
         scroll_event_delay = 150,
     },
-})
 
--- See https://wiki.hyprland.org/Configuring/Variables/ for more
-hl.config({
     general = {
         gaps_in = 1,
         gaps_out = 1,
@@ -24,15 +21,16 @@ hl.config({
         -- Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
         allow_tearing = true,
     },
-})
 
-hl.config({
     xwayland = {
         force_zero_scaling = true,
     },
-})
 
-hl.config({
+    master = {
+        new_status = "master",
+        mfact      = 0.70,
+    },
+
     decoration = {
         --rounding = 10,
         blur = {
@@ -60,13 +58,38 @@ hl.config({
         dim_strength = 0.1,
         dim_special  = 0,
     },
-})
 
-hl.config({
     animations = {
         enabled = true,
     },
+
+    dwindle = {
+        preserve_split = true, -- you probably want this
+        smart_split    = false,
+        smart_resizing = false,
+    },
+
+    misc = {
+        force_default_wallpaper      = 0,
+        disable_hyprland_logo        = true,
+        font_family                  = "JetBrains Mono Nerd Font",
+        -- vfr                       = 1,
+        animate_manual_resizes       = false,
+        animate_mouse_windowdragging = false,
+        enable_swallow               = false,
+        swallow_regex                = "(zsh|kitty)",
+        -- new_window_takes_over_fullscreen = 2,
+        allow_session_lock_restore   = true,
+        initial_workspace_tracking   = false,
+        enable_anr_dialog            = false,
+    },
+
+    ecosystem = {
+        no_update_news = true,
+    },
 })
+
+
 
 -- Animation curves
 hl.curve("linear",        { type = "bezier", points = { {0, 0},    {1, 1}    } })
@@ -102,43 +125,3 @@ hl.animation({ leaf = "workspaces",       enabled = true, speed = 4,   bezier = 
 -- hl.animation({ leaf = "workspaces",    enabled = true, speed = 7,   bezier = "menu_decel", style = "slidefade 65%"    })
 hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3,   bezier = "md3_decel",  style = "slidefadevert 65%" })
 hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3,   bezier = "md3_decel",  style = "slidevert"        })
-
--- See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-hl.config({
-    dwindle = {
-        preserve_split = true, -- you probably want this
-        smart_split    = false,
-        smart_resizing = false,
-    },
-})
-
-hl.config({
-    master = {
-        new_status = "master",
-        mfact      = 0.70,
-    },
-})
-
--- See https://wiki.hyprland.org/Configuring/Variables/ for more
-hl.config({
-    misc = {
-        force_default_wallpaper      = 0,
-        disable_hyprland_logo        = true,
-        font_family                  = "JetBrains Mono Nerd Font",
-        -- vfr                       = 1,
-        animate_manual_resizes       = false,
-        animate_mouse_windowdragging = false,
-        enable_swallow               = false,
-        swallow_regex                = "(zsh|kitty)",
-        -- new_window_takes_over_fullscreen = 2,
-        allow_session_lock_restore   = true,
-        initial_workspace_tracking   = false,
-        enable_anr_dialog            = false,
-    },
-})
-
-hl.config({
-    ecosystem = {
-        no_update_news = true,
-    },
-})

@@ -55,7 +55,7 @@ screenshot_action() {
 }
 
 takescreenshot() {
-  hyprctl dispatch movetoworkspacesilent special:load
+    hyprctl dispatch 'hl.dsp.window.move({ workspace = "special:load" })'
   sleep 0.5
   GRIMBLAST_EDITOR="$editor" grimblast --notify "$screenshot_action_chosen" "$screenshot_option_chosen" 2>/dev/null
   exit 0

@@ -25,10 +25,10 @@ confirm() {
 }
 
 option() {
-    hyprctl dispatch tagwindow +powermenu
+    hyprctl dispatch 'hl.dsp.window.tag({ tag = "+powermenu" })'
     confirmed="$(confirm)"
     if [[ "$confirmed" == "$yes" ]]; then
-    hyprctl dispatch movetoworkspacesilent special:load
+    hyprctl dispatch 'hl.dsp.window.move({ workspace = "special:load" })'
         case "$1" in
             --shutdown)
                 hyprshutdown -p "systemctl poweroff"

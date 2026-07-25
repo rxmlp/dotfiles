@@ -67,6 +67,7 @@ bindkey '^[[B' history-substring-search-down
 
 
 #-------My cute lil random alias-------#
+alias sysu='systemctl --user'
 alias rs='rsync -av --progress --partial-dir=.rsync-tmp --rsync-path=/bin/rsync'
 alias attack='doas hping3 -S -i u100'
 sn() {
