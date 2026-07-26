@@ -29,8 +29,8 @@ hl.bind("ALT + down",  hl.dsp.focus({ direction = "down"  }))
 --  Workspaces
 ---------------
 -- Navigate
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "m+1" }))
-hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "m-1" }))
+hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "m-1" }))
+hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "m+1" }))
 hl.bind(mainMod .. " + D",          hl.dsp.focus({ workspace = "m+1" }))
 hl.bind(mainMod .. " + A",          hl.dsp.focus({ workspace = "m-1" }))
 for i = 1, 9 do
@@ -44,8 +44,8 @@ hl.bind(mainMod .. " + P", hl.dsp.workspace.toggle_special("edit"))
 hl.bind(mainMod .. " + G", hl.dsp.workspace.toggle_special("games"))
 
 -- Move app to workspace
-hl.bind(mainMod .. " + SHIFT + mouse_down", movetoworkspaceDown)
-hl.bind(mainMod .. " + SHIFT + mouse_up",   movetoworkspaceUp)
+hl.bind(mainMod .. " + SHIFT + mouse_up",   movetoworkspaceDown)
+hl.bind(mainMod .. " + SHIFT + mouse_down", movetoworkspaceUp)
 hl.bind(mainMod .. " + SHIFT + D",          movetoworkspaceDown)
 hl.bind(mainMod .. " + SHIFT + A",          movetoworkspaceUp)
 hl.bind(mainMod .. " + SHIFT + 1", movetoworkspace_1)
