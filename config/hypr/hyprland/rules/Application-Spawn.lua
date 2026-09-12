@@ -13,7 +13,7 @@ local spawns = {
     { ws = "2",        class = "(codium)|(dev.zed.Zed)" },
     { ws = "3",        class = "(pcmanfm-qt)|(localsend)" },
     { ws = "4",        class = "(org.gnome.DiskUtility)" },
-    { ws = "5",        class = "(obsidian)|(@joplin/app-desktop)" },
+    { ws = "5",        class = "(obsidian)|(md.obsidian.Obsidian)|(@joplin/app-desktop)" },
     { ws = "6",        class = "(Timeshift-gtk)|(Bitwarden)" },
     { ws = "7",        class = "(rustdesk)|(Rustdesk)" },
     { ws = "8",        class = "(eu.betterbird.Betterbird)|(org.mozilla.Thunderbird)" },
